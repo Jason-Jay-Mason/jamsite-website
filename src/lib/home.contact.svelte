@@ -1,1 +1,1 @@
-<div class="bg-yellow-100 w-full">contact</div>
+<div class="w-full relative h-60">contact</div>

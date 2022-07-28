@@ -1,4 +1,32 @@
 <script>
+	import { onMount } from 'svelte';
+	import { DinoGame } from '../game/classes/dino-game';
+
+	let canvas;
+
+	onMount(() => {
+		canvas.width = innerWidth;
+		canvas.height = innerHeight;
+		const ctx = canvas.getContext('2d');
+
+		const dinoGame = new DinoGame({
+			dinosaurCount: 4,
+			context: ctx,
+			width: innerWidth,
+			height: innerHeight
+		});
+
+		let frame = requestAnimationFrame(loop);
+
+		function loop(time) {
+			frame = requestAnimationFrame(loop);
+			dinoGame.update(time);
+		}
+
+		return () => {
+			cancelAnimationFrame(frame);
+		};
+	});
 </script>
 
-<canvas class="absolute -z-10 top-0 h-full w-full" />
+<canvas bind:this={canvas} class="hidden md:block -z-10 absolute top-0 " />

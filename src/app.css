@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	button {
+		@apply font-rubik;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-white;
+	}
+
+	button {
+		@apply font-normal;
+		@apply rounded;
+		@apply shadow-button;
+	}
+
+	p,
+	a {
+		@apply font-body;
+		@apply font-thin;
+	}
+}

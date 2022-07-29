@@ -16,7 +16,7 @@ export class DinoGame {
 	initialize() {
 		// create the image elements for all the objects in the game
 		const playerImg = new Image()
-		playerImg.src = '/j-ship.svg'
+		playerImg.src = '/j-ship-2.svg'
 
 		const laserImg = new Image()
 		laserImg.src = '/laser.svg'
@@ -52,8 +52,8 @@ export class DinoGame {
 		const player = new Player({
 			imgEl: playerImg,
 			laserImg: laserImg,
-			width: 29,
-			height: 34,
+			width: 30,
+			height: 26,
 			position: {
 				// this is the starting position
 				x: innerWidth / 2,

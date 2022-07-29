@@ -1,26 +1,9 @@
 import { Controls } from './controls.js'
 import { Laser } from './laser'
-import { Sprite } from './sprite'
 import { Ai } from './ai'
 
-export class Player extends Sprite {
+export class Player {
 	constructor({ imgEl, laserImg, width, height, position, rotation, thrust, isAi, game }) {
-		//sprite props pulled in with super
-		super({
-			spriteIndex: {
-				x: 0,
-				y: 0
-			},
-			crop: {
-				x: 280,
-				y: 200
-			},
-			currentSprite: {
-				x: 0,
-				y: 0
-			},
-			updateFrame: 0
-		})
 		this.imgEl = imgEl //the image of the ship
 		this.laserImg = laserImg // the image of the laser
 
@@ -272,7 +255,7 @@ export class Player extends Sprite {
 			}
 
 			let colorStop = 1 - 1 / this.thrusterLength //fade the thrust out at its tail
-			ctx.translate(-this.width / 5.2, this.height / 2.3) //translate the canvas to draw the thrust
+			ctx.translate(-this.width / 5.2, this.height / 1.8) //translate the canvas to draw the thrust
 
 			//create the gradient for the thrust
 			let grd = ctx.createLinearGradient(

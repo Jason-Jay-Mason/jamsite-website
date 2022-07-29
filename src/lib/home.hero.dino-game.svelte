@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { DinoGame } from '../game/classes/dino-game';
+	export let ai;
 
 	let canvas;
 
@@ -13,7 +14,8 @@
 			dinosaurCount: 4,
 			context: ctx,
 			width: innerWidth,
-			height: innerHeight
+			height: innerHeight,
+			isAi: ai
 		});
 
 		let frame = requestAnimationFrame(loop);

@@ -29,6 +29,6 @@
 			<VideoBtn href="/" color="jamAqua-100">Watch Video</VideoBtn>
 		</div>
 	</div>
-	<DinoGame />
+	<DinoGame ai={true} />
 	<Transition />
 </div>

@@ -2,7 +2,7 @@ import { DinosaurSpawner } from './dinosaur-spawner.js'
 import { Player } from './player.js'
 
 export class DinoGame {
-	constructor({ dinosaurCount, context, height, width }) {
+	constructor({ dinosaurCount, context, height, width, isAi }) {
 		this.dinosaurCount = dinosaurCount
 		this.dinosaurSpawner = {}
 		this.player
@@ -10,6 +10,7 @@ export class DinoGame {
 		this.width = width
 		this.ctx = context
 		this.frame = 0
+		this.isAi = isAi
 		this.initialize()
 	}
 
@@ -61,7 +62,7 @@ export class DinoGame {
 			},
 			rotation: 0, //starting rotation
 			thrust: 0.09,
-			isAi: true,
+			isAi: this.isAi,
 			game: game
 		})
 		this.player = player
@@ -125,7 +126,6 @@ export class DinoGame {
 
 	update(frame) {
 		this.frame = frame
-		console.log(this.width, this.height)
 		//We clear the last frame so that we can render the new frame
 		this.ctx.clearRect(0, 0, this.width, this.height)
 		this.handleCollisions(frame)

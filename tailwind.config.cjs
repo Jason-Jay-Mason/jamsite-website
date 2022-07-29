@@ -7,6 +7,7 @@ module.exports = {
 		},
 		borderWidth: {
 			1: '1px',
+			form: '2px',
 			triangle: '0.9rem 1.1rem'
 		},
 		fontFamily: {
@@ -14,6 +15,7 @@ module.exports = {
 			rubik: ['Rubik', 'sans-serif']
 		},
 		colors: {
+			transparent: 'transparent',
 			analogBlack: {
 				100: '#5A5A5A',
 				200: '#424242',
@@ -45,6 +47,15 @@ module.exports = {
 		extend: {
 			lineHeight: {
 				xl: '2.25'
+			},
+			keyframes: {
+				fadeIn: {
+					'0% ': { opacity: '0' },
+					'100%': { opacity: '1' }
+				}
+			},
+			animation: {
+				fadeIn: 'fadeIn 2s ease'
 			},
 
 			backgroundImage: {

@@ -1,4 +1,5 @@
 <script>
+	import Transition from '$lib/transition-row.svelte';
 	import Cta from '$lib/home.hero.cta.svelte';
 	import BoxHighlight from '$lib/box-highlight.svelte';
 	import VideoBtn from '$lib/home.hero.video.btn.svelte';
@@ -29,4 +30,5 @@
 		</div>
 	</div>
 	<DinoGame />
+	<Transition />
 </div>

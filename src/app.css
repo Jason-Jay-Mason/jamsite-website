@@ -31,6 +31,7 @@
 	p,
 	a {
 		@apply font-body;
+		@apply text-base;
 		@apply font-thin;
 	}
 }

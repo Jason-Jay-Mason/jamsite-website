@@ -194,13 +194,15 @@
 			const data = await res.json();
 			let now = new Date();
 
-			window.localStorage.setItem(
-				'zoho',
-				JSON.stringify({
-					ttl: now.getTime() + 3000,
-					token: data.access_token
-				})
-			);
+			if (data?.access_token) {
+				window.localStorage.setItem(
+					'zoho',
+					JSON.stringify({
+						ttl: now.getTime() + 3000,
+						token: data.access_token
+					})
+				);
+			}
 		}
 
 		if (!window.localStorage.getItem('zoho')) {

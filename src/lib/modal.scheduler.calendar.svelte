@@ -195,7 +195,7 @@
 			let now = new Date();
 			console.log(data);
 
-			if (data?.access_token) {
+			if (data?.access_token && data?.access_token !== undefined) {
 				window.localStorage.setItem(
 					'zoho',
 					JSON.stringify({

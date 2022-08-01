@@ -1,3 +1,4 @@
+//Get a new token from zoho
 async function getNewToken() {
 	try {
 		let url = 'https://accounts.zoho.com/oauth/v2/token?'

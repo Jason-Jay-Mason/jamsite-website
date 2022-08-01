@@ -193,6 +193,7 @@
 			const res = await fetch('/api/zoho-auth');
 			const data = await res.json();
 			let now = new Date();
+			console.log(data);
 
 			if (data?.access_token) {
 				window.localStorage.setItem(
@@ -202,6 +203,8 @@
 						token: data.access_token
 					})
 				);
+			} else {
+				window.localStorage.removeItem('zoho');
 			}
 		}
 

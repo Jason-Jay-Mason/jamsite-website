@@ -31,4 +31,4 @@
 	});
 </script>
 
-<canvas bind:this={canvas} class="hidden md:block -z-10 absolute top-0 " />
+<canvas bind:this={canvas} class="hidden md:block -z-10 absolute top-0 w-full" />

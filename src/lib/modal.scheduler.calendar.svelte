@@ -1,5 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
+	import Button from '$lib/button.svelte';
+	import { fade } from 'svelte/transition';
 
 	//#region dummy data
 	let dummyData = [
@@ -169,170 +171,9 @@
 	let queries = new Array(scheduleMax);
 	let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 	let clientTimes = {};
+	let selectedTime = null;
 
-	//#region generateDays
-	//helper function to convert time zone to the clients time zone and add the final times into the clientTimes object for looping
-	async function addToClientTimes(date, times) {
-		times.forEach((time) => {
-			//loop through each of the times
-			//get a time object for mt time
-			const jamSiteTime = new Date(`2020-01-01T${time}`);
-			jamSiteTime.setMonth(date.getMonth());
-			jamSiteTime.setDate(date.getDate());
-			jamSiteTime.setFullYear(date.getFullYear());
-
-			// get a time string for the users times zone and spit it into parts
-			const [clientDateString, clientTime, standard] = jamSiteTime
-				.toLocaleString('en-US', { timeZone: timeZone })
-				.split(' ');
-
-			const clientDate = new Date(jamSiteTime.toLocaleString('en-US', { timeZone: timeZone })); // get the date for client
-
-			const [hours, minutes, seconds] = clientTime.split(':'); //get the hours and minutes off the time string
-
-			const finalTimeString = `${hours}:${minutes}${standard}`; //construct the time string for ui
-
-			//check to see if this date is already in the object
-			if (clientTimes[clientDate.getDate()]) {
-				console.log('adding times to cleint times');
-				clientTimes[clientDate.getDate()].times.push(finalTimeString);
-			} else {
-				console.log('create new object in client times');
-				clientTimes[clientDate.getDate()] = {
-					date: clientDate,
-					day: clientDate.getDay(),
-					month: clientDate.getMonth(),
-					times: [finalTimeString]
-				};
-			}
-		});
-	}
-
-	async function generateDays() {
-		loading = true;
-		const now = new Date();
-
-		//check for previously loaded times so we dont run the api limit out
-		let storedTimes = JSON.parse(window.localStorage.getItem('clientTimes')); //get the stored items out of local storage
-		console.log('stored items', storedTimes);
-		if (storedTimes && storedTimes !== undefined && storedTimes.clientTimes) {
-			if (storedTimes.ttl < now.getTime() || Object.keys(storedTimes.clientTimes).length < 1) {
-				console.log('time exceeded for client times or there are no times saved');
-				//if the times has expired on the local storage then refresh
-				window.localStorage.removeItem('clientTimes');
-			} else {
-				console.log('times found in storage');
-				//othersie set the client items in state to equal to client items in local storage
-				clientTimes = storedTimes;
-				return;
-			}
-		}
-
-		//handle zoho zoho auth
-		//if there is already an auth then check its age
-		let auth = JSON.parse(window.localStorage.getItem('auth')); //get the stored items out of local storage
-		if (auth) {
-			console.log('auth found in storage');
-
-			if (now.getTime() > auth.ttl) {
-				console.log('time exceeded for auth removing auath', now.getTime(), auth.ttl);
-				window.localStorage.removeItem('auth'); //remove if expired
-			}
-		}
-		//if there is not an auth in local the set it
-		if (!auth || auth == undefined) {
-			const res = await fetch('/api/zoho-auth'); //fetch to the api end point for the token
-			const data = await res.json();
-
-			if (data?.access_token && data?.access_token !== undefined) {
-				//if we get a token back then set it in local storage for a little under an hour
-				console.log('created new auth because there is no token in memory');
-				window.localStorage.setItem(
-					'auth',
-					JSON.stringify({
-						ttl: now.getTime() + 3000000,
-						token: data.access_token
-					})
-				);
-			}
-		}
-
-		if (window.localStorage.getItem('auth') == undefined || !window.localStorage.getItem('zoho')) {
-			//if we still do not have the token in local storage at this point then there is a bug
-			loading = false;
-			errorMessage =
-				'Oops! It looks like we are too busy right now to fullfil your request! Please try again in a few minutes.';
-			console.log('auth not found in storage after api call');
-			return; //exit the function
-		}
-
-		//get the next few days to query the api for availibility
-		for (let i = 0; i < scheduleMax; i++) {
-			var date = new Date(); //this will get todays date
-			date.setDate(date.getDate() + 2 + i); // this will get the i+1 day from tomorrow
-			dates[i] = date; //set the date to use in converting time zones
-			queries[i] = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`; //create the query string to send to zoho
-		}
-
-		//query the api for each of the days I just created
-		if (auth) {
-			console.log('auth found, now getting times');
-			//check for the token in local storage
-			for (let i = 0; i < queries.length; i++) {
-				if (Object.keys(clientTimes).length >= 4) {
-					//check the clientTimes final object to see if we have four days of times yet and if so stop
-					console.log('client times length is greater than 4');
-					break;
-				} else {
-					//othersie get the ith days tiems
-					try {
-						let zoho = JSON.parse(window.localStorage.getItem('auth')); //get the token
-						let params = new URLSearchParams({
-							date: queries[i],
-							token: zoho.token
-						}); //create the search params
-						const res = await fetch('/api/get-schedule?' + params, {
-							//hit the zoho api for the availibility
-							method: 'GET'
-						});
-						const data = await res.json();
-
-						console.log(data, 'this is the time data');
-						if (data?.response?.returnvalue?.data?.length > 1) {
-							//if we get a response then add the converted times to the final object
-							console.log('adding times fechted to client times obj', data);
-							addToClientTimes(dates[i], data.response.returnvalue.data);
-						}
-					} catch (err) {
-						console.error(err);
-					}
-				}
-			}
-
-			if (clientTimes.length === 0) {
-				//if we did not get times back then we must not have availibility
-				loading = false;
-				errorMessage =
-					'It looks like we are all booked for the next two weeks! Try sending us a message instead and we will get back to you as soon as we can.';
-			} else {
-				window.localStorage.setItem(
-					'clientTimes',
-					JSON.stringify({
-						clientTimes: clientTimes,
-						ttl: now.getTime() + 180000
-					})
-				); //set the client times in local storage to save on api for zoho
-				errorMessage = null; //clear the error messsage
-				loading = false; //we are done here
-				console.log(clientTimes);
-				console.log('client times loaded from api');
-			}
-		}
-	}
-
-	//#endregion
-
-	//#region time helpers
+	//#region time helper
 	function getMonth(monthIndex) {
 		switch (monthIndex) {
 			case 0:
@@ -368,51 +209,263 @@
 			case 1:
 				return 'Monday';
 			case 2:
-				return 'Wednesday';
+				return 'Tuesday';
 			case 3:
-				return 'Thursday';
+				return 'Wednesday';
 			case 4:
-				return 'Friday';
+				return 'Thursday';
 			case 5:
+				return 'Friday';
+			case 6:
 				return 'Saturday';
 		}
 	}
 	//#endregion time helpers
+	//#region generateDays
+	//helper function to convert time zone to the clients time zone and add the final times into the clientTimes object for looping
+	async function addToClientTimes(date, times) {
+		//loop through each of the times
+		times.forEach((time) => {
+			const jamsite = new Date( //get a time object in jamsite's local time as returned from zoho
+				date.toLocaleString('en-US', {
+					dateStyle: 'full'
+				}) + ` ${time}`
+			);
 
-	// onMount(generateDays);
+			//view friendly date and times in users timezone
+			const [day, longMonth, singleDate, year, standardTime, amPm] = jamsite
+				.toLocaleString('en-US', {
+					timeZone: timeZone,
+					dateStyle: 'full',
+					timeStyle: 'short',
+					hourCycle: 'h12'
+				})
+				.replaceAll(',', '') //remove cammas
+				.split(' ') //split by spaces
+				.filter((a) => a !== 'at'); //filter out the at
+
+			//query friendly date and time to send back to server and book the time
+			const [qmonth, qdate, qyear, militaryTime] = jamsite //get the rest of the time info for the client for querying
+				.toLocaleString('en-US', {
+					timeZone: timeZone,
+					day: '2-digit',
+					month: 'short',
+					year: 'numeric',
+					hour: 'numeric',
+					minute: '2-digit',
+					hourCycle: 'h24'
+				})
+				.replaceAll(',', '') //remove commas
+				.split(' '); //spit the string by spaces
+
+			const query = `${qdate}-${qmonth}-${qyear} ${militaryTime}:00`; //construct the date param when posting to book
+
+			const timeObj = {
+				//object for the view
+				//day props
+				day,
+				longMonth,
+				singleDate,
+				year,
+				qmonth,
+				qdate,
+				qyear,
+				//time props
+				standardTime,
+				amPm,
+				militaryTime,
+				query
+			};
+
+			const dateKey = `${qmonth}${qdate}${qyear}`; //key to store the dat in the client times obj
+
+			//check to see if this date is already in the object
+			if (clientTimes[dateKey]) {
+				clientTimes[dateKey].times.push(timeObj);
+			} else {
+				clientTimes[dateKey] = {
+					day,
+					longMonth,
+					singleDate,
+					year,
+					qmonth,
+					qdate,
+					qyear,
+					times: [timeObj]
+				};
+			}
+		});
+	}
+
+	async function generateDays() {
+		loading = true; //loading for spinner
+		const now = new Date();
+
+		//check for previously loaded times so we dont run the api limit out
+		let storedTimes = JSON.parse(window.localStorage.getItem('clientTimes')); //get the stored items out of local storage
+		console.log('stored items', storedTimes);
+		if (storedTimes && storedTimes.clientTimes) {
+			if (storedTimes.ttl < now.getTime() || Object.keys(storedTimes.clientTimes).length < 1) {
+				console.log('time exceeded for client times or there are no times saved');
+				//if the times has expired on the local storage then refresh
+				window.localStorage.removeItem('clientTimes');
+			} else {
+				console.log('times found in storage');
+				//othersie set the client items in state to equal to client items in local storage
+				clientTimes = storedTimes.clientTimes;
+				return;
+			}
+		}
+
+		//if there are not times in storage we need to fetch them but first we need to check for a token
+		//if there is already a auth then check its age
+		let auth = JSON.parse(window.localStorage.getItem('auth')); //get the stored items out of local storage
+		if (auth) {
+			console.log('auth found in storage');
+
+			if (now.getTime() > auth.ttl) {
+				console.log('time exceeded for auth removing auath', now.getTime(), auth.ttl);
+				window.localStorage.removeItem('auth'); //remove if expired
+			}
+		}
+		//if there is not an auth in local the set it
+		if (!window.localStorage.getItem('auth')) {
+			const res = await fetch('/api/auth'); //fetch to the api end point for the token
+			const data = await res.json();
+
+			if (data?.access_token) {
+				//if we get a token back then set it in local storage for a little under an hour
+				console.log('created new auth because there is no token in memory');
+				window.localStorage.setItem(
+					'auth',
+					JSON.stringify({
+						ttl: now.getTime() + 3000000,
+						token: data.access_token
+					})
+				);
+			}
+		}
+
+		if (!window.localStorage.getItem('auth')) {
+			//if we still do not have the token in local storage at this point then there is a bug
+			loading = false;
+			errorMessage =
+				'Oops! It looks like we are too busy right now to fullfil your request! Please try again in a few minutes.';
+			console.log('auth not found in storage after api call');
+			return; //exit the function
+		}
+
+		//get the next few days to query the api for availibility
+		for (let i = 0; i < scheduleMax; i++) {
+			let date = new Date(); //this will get todays date
+			date.setDate(date.getDate() + 2 + i); // this will get the i+1 day from tomorrow
+			dates[i] = date; //set the date to use in converting time zones
+			queries[i] = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`; //create the query string to send to zoho
+		}
+
+		//query the api for each of the days I just created
+		if (window.localStorage.getItem('auth')) {
+			console.log('auth found, now getting times');
+			//check for the token in local storage
+			for (let i = 0; i < queries.length; i++) {
+				if (Object.keys(clientTimes).length >= 4) {
+					//check the clientTimes final object to see if we have four days of times yet and if so stop
+					console.log('client times length is greater than 4');
+					break;
+				} else {
+					//othersie get the ith days times
+					try {
+						let auth = JSON.parse(window.localStorage.getItem('auth')); //get the token
+						let params = new URLSearchParams({
+							date: queries[i],
+							token: auth.token
+						}); //create the search params
+						const res = await fetch('/api/get-schedule?' + params, {
+							//hit the zoho api for the availibility
+							method: 'GET'
+						});
+						const data = await res.json();
+
+						console.log(data, 'this is the time data');
+						if (data?.response?.returnvalue?.data?.length > 1) {
+							//if we get a response then add the converted times to the final object
+							console.log('adding times fechted to client times obj', data);
+							addToClientTimes(dates[i], data.response.returnvalue.data);
+						}
+					} catch (err) {
+						console.error(err);
+					}
+				}
+			}
+
+			if (clientTimes.length < 1) {
+				//if we did not get times back then we must not have availibility
+				loading = false;
+				errorMessage =
+					'It looks like we are all booked for the next two weeks! Try sending us a message instead and we will get back to you as soon as we can.';
+			} else {
+				//set the client times in local storage to save on api for zoho
+				window.localStorage.setItem(
+					'clientTimes',
+					JSON.stringify({
+						clientTimes: clientTimes,
+						ttl: now.getTime() + 1800000 + 1000000000000 //half hour
+					})
+				);
+				errorMessage = null; //clear the error messsage
+				loading = false; //we are done here
+				console.log(clientTimes);
+				console.log('client times loaded from api');
+			}
+		}
+	}
+
+	//#endregion
+
+	onMount(generateDays);
+
+	const buttonStyles =
+		'transition-all shadow-transparent border-1 justify-center items-center text-base font-light w-10/12 py-2 my-2 rounded-sm';
 </script>
 
-<!-- <div> -->
-<!-- 	<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-lg m-auto"> -->
-<!-- 		{#each Object.keys(clientTimes) as clientTimeKey} -->
-<!-- 			<div class="flex items-center flex-col"> -->
-<!-- 				<p class="text-xl text-white pb-1">{getDay(clientTimes[clientTimeKey].day)}</p> -->
-<!-- 				<p class="text-sm text-white"> -->
-<!-- 					{getMonth(clientTimes[clientTimeKey].month) + ' ' + clientTimeKey} -->
-<!-- 				</p> -->
-<!-- 				{#each clientTimes[clientTimeKey].times as time, i} -->
-<!-- 					{#if i < 4} -->
-<!-- 						<button class="text-white">{time}</button> -->
-<!-- 					{/if} -->
-<!-- 				{/each} -->
-<!-- 			</div> -->
-<!-- 		{/each} -->
-<!-- 	</div> -->
-<!-- </div> -->
-<div>
-	<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-lg m-auto">
-		{#each dummyData as day}
-			<div class="flex items-center flex-col">
-				<p class="text-xl text-white pb-1">{getDay(day.day.getDay())}</p>
-				<p class="text-sm text-white">
-					{getMonth(day.day.getMonth()) + ' ' + day.day.getDate()}
+<div class="flex flex-col justify-center items-center h-auto md:h-full max-w-lg mx-auto">
+	<div class="flex flex-col md:flex-row justify-center  items-center ">
+		{#each Object.keys(clientTimes) as clientTimeKey}
+			<div class="flex items-center flex-col w-32">
+				<p class="text-xl text-white pb-1">{clientTimes[clientTimeKey].day}</p>
+				<p class="text-sm text-white pb-3">
+					{clientTimes[clientTimeKey].longMonth + ' ' + clientTimes[clientTimeKey].singleDate}
 				</p>
-				{#each day.times as time, i}
+				{#each clientTimes[clientTimeKey].times as time, i}
 					{#if i < 4}
-						<button class="text-white">{time}</button>
+						<button
+							on:click={() => {
+								selectedTime = time;
+							}}
+							class={selectedTime === time
+								? buttonStyles + ' text-successGreen-100 border-successGreen-100'
+								: buttonStyles + ' text-white border-white hover:bg-white/5'}
+							>{time.standardTime}{time.amPm}</button
+						>
 					{/if}
 				{/each}
 			</div>
 		{/each}
+	</div>
+	<div class="h-32 mb-12">
+		{#if selectedTime}
+			<div transition:fade class="flex flex-col justify-center items-center">
+				<p class="text-white text-center py-5">
+					{selectedTime.day}
+					{selectedTime.longMonth}
+					{selectedTime.singleDate}
+					@ {selectedTime.standardTime}{selectedTime.amPm}
+				</p>
+				<Button
+					styles="bg-successGreen-100/80 hover:bg-successGreen-100 shadow-successGreen-100/50 hover:shadow-successGreen-100"
+					>Next</Button
+				>
+			</div>
+		{/if}
 	</div>
 </div>

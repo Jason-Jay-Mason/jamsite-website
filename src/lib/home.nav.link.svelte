@@ -1,7 +1,7 @@
 <script>
 	export let href;
 	export let prefetch;
-	let styles = 'text-white/90 px-6 hover:text-white';
+	let styles = 'text-white/90 px-6 hover:text-white text-sm md:text:base';
 </script>
 
 {#if prefetch}

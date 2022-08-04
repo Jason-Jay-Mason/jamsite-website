@@ -12,6 +12,6 @@
 			<Link>Terms of Service</Link>
 			<Link>Service Level Agreement</Link>
 		</div>
-		<p class="text-white  text-sm md:text-xs lg:text-sm">All rights reserverd JamSite LLC. 2022</p>
+		<p class="text-white  text-sm md:text-xs lg:text-sm">Copyright © 2022 JamSite LLC</p>
 	</div>
 </div>

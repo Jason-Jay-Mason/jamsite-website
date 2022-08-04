@@ -6,7 +6,7 @@
 	>
 		<span class="absolute flex justify-center items-center w-12 h-12 bg-white rounded-full left-2">
 			<span
-				class="absolute border-triangle w-0 h-0 border-l-analogBlack-200 border-r-white/0 border-b-white/0 border-t-white/0  -right-1"
+				class="relative border-triangle w-0 h-0 border-l-analogBlack-200 border-r-white/0 border-b-white/0 border-t-white/0  right-[-0.69rem]"
 			/>
 		</span>
 	</span>

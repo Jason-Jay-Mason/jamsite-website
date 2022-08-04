@@ -3,12 +3,12 @@ module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		minHeight: {
-			hero: '750px'
+			hero: '900px'
 		},
 		borderWidth: {
 			1: '1px',
 			form: '2px',
-			triangle: '0.9rem 1.1rem'
+			triangle: '12px 16px'
 		},
 		fontFamily: {
 			body: ['Open Sans', 'sans-serif'],
@@ -16,6 +16,7 @@ module.exports = {
 		},
 		colors: {
 			transparent: 'transparent',
+			black: '#000000',
 			analogBlack: {
 				100: '#5A5A5A',
 				200: '#424242',
@@ -46,7 +47,8 @@ module.exports = {
 		},
 		extend: {
 			lineHeight: {
-				xl: '2.25'
+				5: '1.25rem',
+				xl: '2.25rem'
 			},
 			keyframes: {
 				fadeIn: {

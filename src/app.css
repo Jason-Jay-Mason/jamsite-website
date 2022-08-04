@@ -23,15 +23,11 @@
 	}
 
 	button {
-		@apply font-normal;
-		@apply rounded;
-		@apply shadow-button;
+		@apply font-normal rounded shadow-button;
 	}
 
 	p,
 	a {
-		@apply font-body;
-		@apply text-base;
-		@apply font-thin;
+		@apply font-body text-base font-thin;
 	}
 }

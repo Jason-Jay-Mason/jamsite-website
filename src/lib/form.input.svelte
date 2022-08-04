@@ -16,6 +16,7 @@
 	let message = validExpMessage;
 	let keypress = null;
 
+	//capture the key pressed
 	function handlePhoneInput(e) {
 		if (keypress.code[0] === 'K' || (e.target.value.length > 14 && keypress.key !== 'Backspace')) {
 			e.target.value = e.target.value.slice(0, e.target.value.length - 1);

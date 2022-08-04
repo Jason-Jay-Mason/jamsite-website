@@ -1,6 +1,5 @@
 <script>
 	import Link from '$lib/home.nav.link.svelte';
-	import Logo from '../../static/jamsite-logo.svg';
 	import { schedulerModalVisible } from '$lib/stores.js';
 
 	function showModel() {

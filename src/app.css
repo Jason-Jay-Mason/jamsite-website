@@ -21,7 +21,12 @@
 	h6 {
 		@apply text-white;
 	}
-
+	ul {
+		@apply list-item list-disc;
+	}
+	h2 {
+		@apply text-xl md:text-4xl py-4;
+	}
 	button {
 		@apply font-normal rounded shadow-button;
 	}
@@ -29,5 +34,12 @@
 	p,
 	a {
 		@apply font-body text-base font-thin;
+	}
+
+	.legal h2 {
+		@apply text-xl md:text-4xl pt-12;
+	}
+	.legal p {
+		@apply mb-4 leading-relaxed;
 	}
 }

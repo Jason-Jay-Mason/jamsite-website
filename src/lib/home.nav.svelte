@@ -7,7 +7,7 @@
 	}
 </script>
 
-<div class="z-40 absolute bg-analogBlack-300/60 w-full transition-all hover:bg-analogBlack-300 ">
+<div class="z-40 absolute bg-analogBlack-300/60 w-full transition-all hover:bg-analogBlack-300">
 	<div
 		class="container max-w-screen-2xl mx-auto flex justify-between items-center py-4 px-4 md:px-12 "
 	>

@@ -9,14 +9,16 @@
 
 <div class="z-40 absolute bg-analogBlack-300/60 w-full transition-all hover:bg-analogBlack-300">
 	<div
-		class="container max-w-screen-2xl mx-auto flex justify-between items-center py-4 px-4 md:px-12 "
+		class="container max-w-screen-2xl mx-auto flex justify-between items-center py-4 px-4 md:px-12"
 	>
 		<div class="flex items-center text-white">
-			<img src="/jamsite-logo-v1.svg" class="w-28 md:w-28 mr-9" />
+			<a href="/">
+				<img src="/jamsite-logo-v1.svg" class="w-28 md:w-28 mr-9" />
+			</a>
 			<div class="hidden md:flex">
-				<Link href="/about" prefetch={true}>About Us</Link>
-				<Link href="/work" prefetch={true}>Our Work</Link>
-				<Link href="/pricing" prefetch={true}>Pricing</Link>
+				<!-- <Link href="/about" prefetch={true}>About Us</Link> -->
+				<!-- <Link href="/work" prefetch={true}>Our Work</Link> -->
+				<!-- <Link href="/pricing" prefetch={true}>Pricing</Link> -->
 			</div>
 		</div>
 		<div class="items-center md:flex">

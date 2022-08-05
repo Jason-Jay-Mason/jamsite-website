@@ -191,7 +191,7 @@
 			//if we still do not have the token in local storage at this point then there is a bug
 			loading = false;
 			errorMessage =
-				'Oops! It looks like we are too busy right now to fullfil your request! Please try again in a few minutes.';
+				'Oops! It looks like we are too busy right now to fulfill your request! Please try again in a few minutes.';
 			console.log('auth not found in storage after api call');
 			loading = false;
 			return; //exit the function

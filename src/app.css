@@ -21,6 +21,9 @@
 	h6 {
 		@apply text-white;
 	}
+	h1{
+		@apply font-bold
+	}
 	ul {
 		@apply list-item list-disc;
 	}
@@ -31,15 +34,22 @@
 		@apply font-normal rounded shadow-button;
 	}
 
+	ul {
+		@apply leading-xl;
+	}
+
 	p,
 	a {
-		@apply font-body text-base font-thin;
+		@apply font-body text-base font-thin leading-xl;
 	}
 
 	.legal h2 {
-		@apply text-xl md:text-4xl pt-12;
+		@apply text-xl md:text-4xl pt-12 font-bold;
 	}
 	.legal p {
-		@apply mb-4 leading-relaxed;
+		@apply mb-4;
+	}
+	.legal ul {
+		@apply pb-4;
 	}
 }

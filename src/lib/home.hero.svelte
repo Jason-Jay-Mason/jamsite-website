@@ -6,9 +6,13 @@
 	import TypeWriter from '$lib/type-writer.svelte';
 	import DinoGame from '$lib/home.hero.dino-game.svelte';
 	import { schedulerModalVisible } from '$lib/stores.js';
+	import { videoModalVisible } from '$lib/stores.js';
 
-	function showModel() {
+	function showScheduleModel() {
 		schedulerModalVisible.update((v) => (v = true));
+	}
+	function showVideoModel() {
+		videoModalVisible.update((v) => (v = true));
 	}
 
 	let messages = ['ranks higher.', 'loads faster.', 'looks better.', 'wins more sales.'];
@@ -29,10 +33,10 @@
 			dinosaurs and feed starving children. Book a call and get a free site audit.
 		</h2>
 		<div class="container relative flex justify-center flex-col md:flex-row pt-12">
-			<span on:click={showModel}>
+			<span on:click={showScheduleModel}>
 				<Cta href="/" color="jamAqua-100">Book A Call</Cta>
 			</span>
-			<span>
+			<span on:click={showVideoModel}>
 				<VideoBtn href="/" color="jamAqua-100">Watch Video</VideoBtn>
 			</span>
 		</div>

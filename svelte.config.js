@@ -14,6 +14,7 @@ const config = {
 			postcss: true
 		}),
 		mdsvex({
+			extensions:['.svelte.md', '.md', '.svx', '.svelte'],
 			layout: {
 				legal: path.join(dirname, './src/lib/mvx-layouts/legal.svelte')
 			},

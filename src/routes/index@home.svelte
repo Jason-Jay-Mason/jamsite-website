@@ -2,6 +2,7 @@
 	import Contact from '$lib/home.contact.svelte';
 	import Hero from '$lib/home.hero.svelte';
 	import Scheduler from '$lib/modal.scheduler.svelte';
+	import Video from '$lib/modal.video.svelte';
 </script>
 
 <svelte:head>
@@ -13,6 +14,7 @@
 	/>
 </svelte:head>
 
+<Video />
 <Scheduler />
 <Hero />
 <Contact />

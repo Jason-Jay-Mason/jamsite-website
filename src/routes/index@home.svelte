@@ -3,6 +3,7 @@
 	import Hero from '$lib/home.hero.svelte';
 	import Scheduler from '$lib/modal.scheduler.svelte';
 	import Video from '$lib/modal.video.svelte';
+	import Problem from '$lib/home.problem.svelte';
 </script>
 
 <svelte:head>
@@ -17,4 +18,5 @@
 <Video />
 <Scheduler />
 <Hero />
+<Problem />
 <Contact />

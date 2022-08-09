@@ -13,7 +13,7 @@
 	>
 		<div class="flex items-center text-white">
 			<a href="/">
-				<img src="/jamsite-logo-v1.svg" class="w-28 md:w-28 mr-9" />
+				<img src="/jamsite-logo-v1.svg" class="w-32 md:w-36 mr-9" />
 			</a>
 			<div class="hidden md:flex">
 				<!-- <Link href="/about" prefetch={true}>About Us</Link> -->

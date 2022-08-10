@@ -5,7 +5,7 @@ is also a required prop and is an arbitrary value dependant on design requirment
 because we dont want to show the contents until we know the progress so that there are not elements shifting when the page loads
 -->
 <script>
-	import { windowScroll } from '$lib/actions/windowScroll.js'; //The window scroll is a simple scroll event listener attached to the window so that we can track scroll values.
+	import { windowScroll } from '$lib/actions/window-scroll.js'; //The window scroll is a simple scroll event listener attached to the window so that we can track scroll values.
 	export let frameHeight;
 	export let progress;
 
@@ -30,11 +30,11 @@ because we dont want to show the contents until we know the progress so that the
 		}
 	}
 
-	const frameStyles = `relative h-[${frameHeight}] bg-analogBlack-300`; //injecting the height of the frame into a tailwind class here
+	const frameStyles = `relative ${frameHeight} bg-analogBlack-300`; //injecting the height of the frame into a tailwind class here
 </script>
 
 <div use:windowScroll on:windowscroll={updateProgress} class={frameStyles} bind:this={frame}>
-	<div style={`opacity:${progress ? 1 : 0}`} class="sticky top-0">
+	<div style={`opacity:${progress ? 1 : 0}`} class="relative md:sticky top-0">
 		<slot />
 	</div>
 </div>

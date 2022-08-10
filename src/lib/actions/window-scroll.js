@@ -1,5 +1,5 @@
 export function windowScroll(node) {
-	const handleScroll = (event) => {
+	const handleScroll = () => {
 		node.dispatchEvent(new CustomEvent('windowscroll'))
 	}
 

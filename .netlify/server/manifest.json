@@ -1,0 +1,162 @@
+{
+  ".svelte-kit/build/index.js": {
+    "file": "index.js",
+    "src": ".svelte-kit/build/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/build/hooks.js"
+    ]
+  },
+  "src/routes/api/get-schedule.js": {
+    "file": "entries/endpoints/api/get-schedule.js",
+    "src": "src/routes/api/get-schedule.js",
+    "isEntry": true
+  },
+  "src/routes/api/book-appointment.js": {
+    "file": "entries/endpoints/api/book-appointment.js",
+    "src": "src/routes/api/book-appointment.js",
+    "isEntry": true
+  },
+  "src/routes/api/auth.js": {
+    "file": "entries/endpoints/api/auth.js",
+    "src": "src/routes/api/auth.js",
+    "isEntry": true
+  },
+  ".svelte-kit/runtime/components/layout.svelte": {
+    "file": "entries/fallbacks/layout.svelte.js",
+    "src": ".svelte-kit/runtime/components/layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js"
+    ]
+  },
+  "src/routes/__layout-home.svelte": {
+    "file": "entries/pages/__layout-home.svelte.js",
+    "src": "src/routes/__layout-home.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js",
+      "_footer-77d318f1.js",
+      "_home.nav-318c6344.js"
+    ]
+  },
+  "src/routes/index@home.svelte": {
+    "file": "entries/pages/index@home.svelte.js",
+    "src": "src/routes/index@home.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js",
+      "_home.hero.dino-game-91c58098.js",
+      "_transition-row-fead0798.js"
+    ]
+  },
+  "src/routes/legal/privacy-policy.md": {
+    "file": "entries/pages/legal/privacy-policy.md.js",
+    "src": "src/routes/legal/privacy-policy.md",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js",
+      "_legal-d313532a.js",
+      "_footer-77d318f1.js",
+      "_home.nav-318c6344.js",
+      "_transition-row-fead0798.js"
+    ]
+  },
+  "src/routes/legal/terms-of-service.md": {
+    "file": "entries/pages/legal/terms-of-service.md.js",
+    "src": "src/routes/legal/terms-of-service.md",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js",
+      "_legal-d313532a.js",
+      "_footer-77d318f1.js",
+      "_home.nav-318c6344.js",
+      "_transition-row-fead0798.js"
+    ]
+  },
+  "src/routes/thank-you-booking.svelte": {
+    "file": "entries/pages/thank-you-booking.svelte.js",
+    "src": "src/routes/thank-you-booking.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js",
+      "_footer-77d318f1.js",
+      "_thank-you-306b0bba.js",
+      "_home.hero.dino-game-91c58098.js"
+    ]
+  },
+  "src/routes/thank-you.svelte": {
+    "file": "entries/pages/thank-you.svelte.js",
+    "src": "src/routes/thank-you.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ebf9217c.js",
+      "_footer-77d318f1.js",
+      "_thank-you-306b0bba.js",
+      "_home.hero.dino-game-91c58098.js"
+    ]
+  },
+  "_index-ebf9217c.js": {
+    "file": "_app/immutable/chunks/index-ebf9217c.js"
+  },
+  "_footer-77d318f1.js": {
+    "file": "_app/immutable/chunks/footer-77d318f1.js",
+    "imports": [
+      "_index-ebf9217c.js"
+    ],
+    "css": [
+      "_app/immutable/assets/footer-511383b7.css"
+    ]
+  },
+  "_home.nav-318c6344.js": {
+    "file": "_app/immutable/chunks/home.nav-318c6344.js",
+    "imports": [
+      "_index-ebf9217c.js"
+    ]
+  },
+  "_transition-row-fead0798.js": {
+    "file": "_app/immutable/chunks/transition-row-fead0798.js",
+    "imports": [
+      "_index-ebf9217c.js"
+    ]
+  },
+  "_home.hero.dino-game-91c58098.js": {
+    "file": "_app/immutable/chunks/home.hero.dino-game-91c58098.js",
+    "imports": [
+      "_index-ebf9217c.js"
+    ]
+  },
+  "_legal-d313532a.js": {
+    "file": "_app/immutable/chunks/legal-d313532a.js",
+    "imports": [
+      "_index-ebf9217c.js",
+      "_footer-77d318f1.js",
+      "_home.nav-318c6344.js",
+      "_transition-row-fead0798.js"
+    ]
+  },
+  "_thank-you-306b0bba.js": {
+    "file": "_app/immutable/chunks/thank-you-306b0bba.js",
+    "imports": [
+      "_index-ebf9217c.js",
+      "_footer-77d318f1.js",
+      "_home.hero.dino-game-91c58098.js"
+    ]
+  },
+  ".svelte-kit/build/hooks.js": {
+    "file": "_app/immutable/chunks/hooks-bced8853.js",
+    "src": ".svelte-kit/build/hooks.js",
+    "isDynamicEntry": true
+  }
+}

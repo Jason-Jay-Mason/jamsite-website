@@ -46,6 +46,10 @@ module.exports = {
 			white: '#FFFFFF'
 		},
 		extend: {
+			dropShadow: {
+				icon: '0px 0px 17px rgba(255, 255, 255, 0.6)'
+				// icon: 'drop-shadow(0px 0px 17px rgba(255, 255, 255, 0.46)'
+			},
 			lineHeight: {
 				5: '1.25rem',
 				xl: '2.25rem'

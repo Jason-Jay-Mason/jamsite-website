@@ -21,15 +21,22 @@
 	h6 {
 		@apply text-white;
 	}
-	h1{
-		@apply font-bold
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply font-bold;
 	}
-	ul {
-		@apply list-item list-disc;
-	}
+
 	h2 {
 		@apply text-xl md:text-4xl py-4;
 	}
+
+	ul {
+		@apply list-item list-disc;
+	}
+
 	button {
 		@apply font-normal rounded shadow-button;
 	}

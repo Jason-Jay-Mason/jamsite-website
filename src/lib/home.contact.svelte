@@ -1,12 +1,12 @@
 <script>
 	import Form from '$lib/home.contact.form.svelte';
+	import Headline from '$lib/headline.svelte';
 </script>
 
 <section id="contact">
 	<div class="w-full relative bg-analogBlack-300 py-40">
 		<div class="max-w-screen-md m-auto text-center">
-			<h3 class="text-1xl md:text-4xl font-light pb-2 md:pb-5">Got questions? Let’s talk.</h3>
-			<h4 class="text-3xl md:text-6xl font-bold pb-3 md:pb-8">Send us a message</h4>
+			<Headline subHeadline="Got questions? Let’s talk.">Send us a message</Headline>
 			<Form />
 		</div>
 	</div>

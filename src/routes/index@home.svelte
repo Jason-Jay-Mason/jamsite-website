@@ -4,6 +4,7 @@
 	import Scheduler from '$lib/modal.scheduler.svelte';
 	import Video from '$lib/modal.video.svelte';
 	import Problem from '$lib/home.problem.svelte';
+	import Guide from '$lib/home.guide.svelte';
 </script>
 
 <svelte:head>
@@ -19,4 +20,5 @@
 <Scheduler />
 <Hero />
 <Problem />
+<Guide />
 <Contact />

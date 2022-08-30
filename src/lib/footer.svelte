@@ -7,7 +7,7 @@
 		class="container justify-between m-auto flex items-center flex-col md:flex-row p-4 max-w-screen-xl"
 	>
 		<a href="/">
-			<img src="/jamsite-logo-v1.svg" class="w-28 md:w-28 mr-9" />
+			<img src="/jamsite-logo-v1.svg" class="w-28 md:w-28 md:mr-9 pb-7" />
 		</a>
 		<div id="foor-links" class="flex items-center justify-center flex-col md:flex-row pb-10 md:p-0">
 			<Link href="/#contact">Contact Us</Link>

@@ -28,7 +28,7 @@
 			Get a website that<br />
 			<BoxHighlight><TypeWriter data={messages}>ranks higher</TypeWriter></BoxHighlight>
 		</h1>
-		<h2 class="leading-xl md:leading-xl text-base md:text-lg font-light font-body">
+		<h2 class="leading-xl md:leading-xl text-base md:text-lg font-base font-body">
 			We’re a web design and development agency on a mission to defend businesses from cyberspace
 			dinosaurs and feed starving children. Book a call and get a free site audit.
 		</h2>

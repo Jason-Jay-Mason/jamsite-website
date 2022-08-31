@@ -14,6 +14,6 @@ export function getStyleValue(progress, start, length, startValue, endValue) {
 	if (animationProgress > 1) {
 		return endValue
 	}
-	let valueDistance = Math.abs(endValue - startValue) //get the difference in start and end value
+	let valueDistance = endValue - startValue //get the difference in start and end value
 	return startValue + animationProgress * valueDistance //return the current value
 }

@@ -29,8 +29,8 @@ export class DinoGame {
 
 		//create an array of dino images to cycle through in the dino spawner
 		const dinoImages = [
-			{ image: wixRaptor, width: 90, height: 90 },
-			{ image: wordPressRex, width: 100, height: 100 }
+			{ image: wixRaptor, width: 100, height: 100 },
+			{ image: wordPressRex, width: 110, height: 110 }
 		]
 
 		//create a game object to reference game props in the dinos and player
@@ -53,8 +53,8 @@ export class DinoGame {
 		const player = new Player({
 			imgEl: playerImg,
 			laserImg: laserImg,
-			width: 30,
-			height: 26,
+			width: 32,
+			height: 28,
 			position: {
 				// this is the starting position
 				x: innerWidth / 2,

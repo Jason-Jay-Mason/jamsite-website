@@ -20,7 +20,7 @@
 
 <div class="z-0 relative bg-analogBlack-300 w-full h-auto md:h-screen md:min-h-hero bg-gameGrid">
 	<div
-		class="relative -top-6 container py-40 px-2 mx-auto flex justify-center items-center h-full flex-col text-center max-w-3xl"
+		class="relative -top-6 md:-top-14 container py-40 px-2 mx-auto flex justify-center items-center h-full flex-col text-center max-w-3xl"
 	>
 		<h1
 			class="text-3xl sm:text-5xl md:text-7xl font-bold leading-normal md:leading-snug sm:leading-normal pb-9"
@@ -28,7 +28,7 @@
 			Get a website that<br />
 			<BoxHighlight><TypeWriter data={messages}>ranks higher</TypeWriter></BoxHighlight>
 		</h1>
-		<h2 class="leading-xl md:leading-xl text-base md:text-lg font-base font-body">
+		<h2 class="leading-xl md:leading-xl text-base md:text-lg font-light font-body">
 			We’re a web design and development agency on a mission to defend businesses from cyberspace
 			dinosaurs and feed starving children. Book a call and get a free site audit.
 		</h2>
@@ -42,5 +42,5 @@
 		</div>
 	</div>
 	<DinoGame ai={true} />
-	<Transition />
+	<Transition fromColor="from-analogBlack-400" />
 </div>

@@ -9,18 +9,17 @@
 <section id="guide" class="hidden xl:block bg-analogBlack-300">
 	<div
 		class="py-44"
-		style={`background-color: rgb(14, 50, 65, ${getStyleValue(progress, 0.5, 0.3, 0, 1)})`}
+		style={`background-color: rgb(14, 50, 65, ${getStyleValue(progress, 0.5, 0.4, 0, 1)})`}
 	>
-		<AnimationFrame bind:progress frameHeight="h-[140vh]">
-			<div
-				class="h-[100vh] flex justify-center items-center"
-				style={`background-color: rgb(14, 50, 65, ${getStyleValue(progress, 0.5, 0.3, 0, 1)})`}
-			>
+		<AnimationFrame bind:progress frameHeight="h-[110vh]">
+			<div class="h-[100vh] flex justify-center items-center">
 				<div class="relative block w-full">
 					<Headline subHeadline="The Solution"
 						>That's why we started <span class="text-jamAqua-100">JamSite</span></Headline
 					>
-					<TopicSelect />
+					<div style={`opacity:${getStyleValue(progress, 0.5, 0.3, 0, 1)}`}>
+						<TopicSelect />
+					</div>
 				</div>
 			</div>
 		</AnimationFrame>

@@ -13,7 +13,10 @@
 		(selected ? 'bg-jamAqua-200 hover:bg-jamAqua-200' : 'bg-transparent hover:bg-white/10')}
 >
 	<div class="max-w-sm lg:max-w-md lg:w-full flex flex-row  ">
-		<div class={'pr-5 lg:pr-3 lg:w-1/3 flex justify-center items-center ' + (selected && 'filter drop-shadow-icon')}>
+		<div
+			class={'pr-5 lg:pr-3 lg:w-1/3 flex justify-center items-center ' +
+				(selected && 'filter drop-shadow-icon')}
+		>
 			<img class="w-12 md:w-10 xl:w-12" src={imgSrc} />
 		</div>
 
@@ -21,10 +24,18 @@
 			id="guide-button-text"
 			class={'text-white text-left w-full ' + (selected && 'filter drop-shadow-space')}
 		>
-			<p id="guide-button-main" class="lg:pb-1 font-bold font-rubik text-xl md:text-lg sm:text-2xl lg:text-2xl">
+			<p
+				id="guide-button-main"
+				class="lg:pb-1 font-semibold font-rubik text-xl md:text-lg sm:text-2xl lg:text-2xl"
+			>
 				<slot />
 			</p>
-			<p id="guide-button-sub" class="leading-7 text-xs md:text-xs sm:text-base lg:text-sm xl:text-base">{buttonSub}</p>
+			<p
+				id="guide-button-sub"
+				class="leading-7 text-xs md:text-xs sm:text-base lg:text-sm xl:text-base"
+			>
+				{buttonSub}
+			</p>
 		</div>
 	</div>
 </div>

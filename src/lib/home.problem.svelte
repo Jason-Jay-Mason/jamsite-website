@@ -8,17 +8,30 @@ type of bug with the global.css in applying leading styling.
 	import AnimationFrame from '$lib/animation-frame.svelte'; //Animation frame to handle opacity changes easily
 	import { getStyleValue } from '$lib/utils/animation.js'; //Helper function to get the opacity value for any progress value
 	import Blurb from '$lib/featured-icon-blurb.svelte'; //Component for the icon columns in this section
+	import Transition from '$lib/transition-row.svelte';
 	let progress; //Need to bind progress to the animation frame component which will reflect the percent progress through the section
 </script>
 
-<section id="problem" class="hidden xl:block">
+<section id="problem" class="bg-analogBlack-400 hidden xl:block">
 	<AnimationFrame bind:progress frameHeight="h-[400vh]">
-		<div class="bg-analogBlack-300 flex items-center justify-center py-9 h-[100vh]">
+		<div class="flex items-center justify-center py-9 h-[100vh]">
 			<div
-				class="mx-auto max-w-screen-2xl px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center items-center"
+				class="relative mx-auto max-w-screen-2xl px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center items-center"
 			>
 				<h3
-					style={`opacity:${getStyleValue(progress, 0.15, 0.1, 0, 1)}`}
+					style={`opacity:${getStyleValue(
+						progress,
+						0.1,
+						0.1,
+						0,
+						1
+					)}; transform:translateX(${getStyleValue(
+						progress,
+						0.25,
+						0.1,
+						160,
+						0
+					)}%) scale(${getStyleValue(progress, 0.25, 0.1, 150, 100)}%)`}
 					class="relative md:top-12 leading-tight md:leading-tight whitespace-nowrap font-bold w-full
 					text-4xl md:text-5xl pb-12 md:pr-9"
 				>
@@ -26,33 +39,65 @@ type of bug with the global.css in applying leading styling.
 				</h3>
 				<div style={`opacity:${getStyleValue(progress, 0.3, 0.15, 0, 1)}`}>
 					<Blurb
-						iconSrc="/dummy-icon.svg"
-						headline="Site Speed"
+						iconStyle={`filter:saturate(${getStyleValue(
+							progress,
+							0.55,
+							0.15,
+							1,
+							0
+						)}) brightness(${getStyleValue(progress, 0.55, 0.15, 1, 4)})
+							drop-shadow(0px 0px 17px rgba(${getStyleValue(progress, 0.55, 0.15, 206, 255)}, ${getStyleValue(
+							progress,
+							0.55,
+							0.15,
+							77,
+							255
+						)}, ${getStyleValue(progress, 0.55, 0.15, 69, 255)}, 0.46))
+						`}
+						iconSrc="/red-icon-dummy.svg"
+						headline="Scalability"
 						body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
 					/>
 				</div>
 
 				<div style={`opacity:${getStyleValue(progress, 0.55, 0.15, 0, 1)}`}>
 					<Blurb
-						iconSrc="/dummy-icon.svg"
+						iconStyle={`filter:saturate(${getStyleValue(
+							progress,
+							0.8,
+							0.15,
+							1,
+							0
+						)}) brightness(${getStyleValue(progress, 0.8, 0.15, 1, 4)})
+							drop-shadow(0px 0px 17px rgba(${getStyleValue(progress, 0.8, 0.15, 206, 255)}, ${getStyleValue(
+							progress,
+							0.8,
+							0.15,
+							77,
+							255
+						)}, ${getStyleValue(progress, 0.55, 0.15, 69, 255)}, 0.46))
+						`}
+						iconSrc="/red-icon-dummy.svg"
 						headline="Scalability"
 						body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
 					/>
 				</div>
 				<div style={`opacity:${getStyleValue(progress, 0.8, 0.15, 0, 1)}`}>
 					<Blurb
-						iconSrc="/dummy-icon.svg"
+						iconStyle="filter:drop-shadow(0px 0px 17px rgba(206,77,69,0.46))"
+						iconSrc="/red-icon-dummy.svg"
 						headline="Vendor Lockin"
 						body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
 					/>
 				</div>
 			</div>
 		</div>
+		<Transition fromColor="from-analogBlack-300" />
 	</AnimationFrame>
 </section>
 
 <section class="block xl:hidden" id="problem-mobile">
-	<div class="bg-analogBlack-300 flex items-center justify-center py-9">
+	<div class="bg-analogBlack-400 flex items-center justify-center py-9">
 		<div
 			class="mx-auto max-w-screen-2xl px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center items-center"
 		>

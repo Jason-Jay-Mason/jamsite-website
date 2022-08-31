@@ -20,8 +20,8 @@ module.exports = {
 			analogBlack: {
 				100: '#5A5A5A',
 				200: '#424242',
-				300: '#1C1C1C',
-				400: '#1B1B1B'
+				300: '#1b1b1b',
+				400: '#171717'
 			},
 			jamAqua: {
 				100: '#2A9ECF',
@@ -65,7 +65,9 @@ module.exports = {
 			},
 
 			backgroundImage: {
-				gameGrid: "url('/game-grid.svg')"
+				gameGrid: "url('/game-grid.svg')",
+				screen:
+					'radial-gradient( rgb(255,255,255, 0.01) 0%, rgb(255,255,255, 0.009) 2%, rgb(255,255,255,0 ) 120%)'
 			},
 			boxShadow: {
 				button: '0px 0px 17px'

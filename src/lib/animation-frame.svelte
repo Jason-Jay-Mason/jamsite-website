@@ -8,6 +8,7 @@ because we dont want to show the contents until we know the progress so that the
 	import { windowScroll } from '$lib/actions/window-scroll.js'; //The window scroll is a simple scroll event listener attached to the window so that we can track scroll values.
 	export let frameHeight;
 	export let progress;
+	export let classes;
 
 	let frame; //A binding that is set to the frame div
 
@@ -30,7 +31,7 @@ because we dont want to show the contents until we know the progress so that the
 		}
 	}
 
-	const frameStyles = `relative ${frameHeight} bg-analogBlack-300`; //injecting the height of the frame into a tailwind class here
+	const frameStyles = `relative ${frameHeight} ${classes}`; //injecting the height of the frame into a tailwind class here
 </script>
 
 <div use:windowScroll on:windowscroll={updateProgress} class={frameStyles} bind:this={frame}>

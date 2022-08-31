@@ -7,7 +7,7 @@
 	}
 </script>
 
-<div class="z-40 absolute bg-analogBlack-300/60 w-full transition-all hover:bg-analogBlack-300">
+<div class="z-40 absolute bg-analogBlack-300/20 w-full transition-all hover:bg-analogBlack-300">
 	<div
 		class="container max-w-screen-2xl mx-auto flex justify-between items-center py-4 px-4 md:px-12"
 	>
@@ -16,7 +16,7 @@
 				<img src="/jamsite-logo-v1.svg" class="w-[115px] md:w-32 mr-9" />
 			</a>
 			<div class="hidden md:flex">
-				<Link href="#guide" prefetch={true}>Our Solutions</Link>
+				<!-- <Link href="#guide" prefetch={true}>Our Solutions</Link> -->
 				<!-- <Link href="/work" prefetch={true}>Our Work</Link> -->
 				<!-- <Link href="/pricing" prefetch={true}>Pricing</Link> -->
 			</div>

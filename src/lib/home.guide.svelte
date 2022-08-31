@@ -9,9 +9,13 @@
 <section id="guide" class="hidden xl:block bg-analogBlack-300">
 	<div
 		class="py-44"
-		style={`background-color: rgb(14, 50, 65, ${getStyleValue(progress, 0.5, 0.4, 0, 1)})`}
+		style={`background-color: rgb(14, 50, 65, ${
+			progress < 0.85
+				? getStyleValue(progress, 0.6, 0.2, 0, 1)
+				: getStyleValue(progress, 0.85, 0.3, 1, 0)
+		})`}
 	>
-		<AnimationFrame bind:progress frameHeight="h-[110vh]">
+		<AnimationFrame bind:progress frameHeight="h-[140vh]">
 			<div class="h-[100vh] flex justify-center items-center">
 				<div class="relative block w-full">
 					<Headline subHeadline="The Solution"

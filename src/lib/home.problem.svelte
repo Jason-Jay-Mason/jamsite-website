@@ -92,12 +92,12 @@ type of bug with the global.css in applying leading styling.
 				</div>
 			</div>
 		</div>
-		<Transition fromColor="from-analogBlack-300" />
+		<Transition fromColor="from-analogBlack-400" />
 	</AnimationFrame>
 </section>
 
 <section class="block xl:hidden" id="problem-mobile">
-	<div class="bg-analogBlack-400 flex items-center justify-center py-9">
+	<div class="bg-analogBlack-400 flex items-center justify-center py-28 lg:py-44">
 		<div
 			class="mx-auto max-w-screen-2xl px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center items-center"
 		>

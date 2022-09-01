@@ -22,7 +22,7 @@ export class DinosaurSpawner {
 		switch (this.spawnPlace) {
 			case 1:
 				spawnPosition = {
-					x: getBoundedRandom(0.2, 0.8) * innerWidth,
+					x: getBoundedRandom(0.2, 0.8) * this.game.width,
 					y: 0 - spawnPadding
 				}
 				spawnVelocity = {
@@ -42,7 +42,7 @@ export class DinosaurSpawner {
 				break
 			case 3:
 				spawnPosition = {
-					x: innerWidth + spawnPadding,
+					x: this.game.width + spawnPadding,
 					y: getBoundedRandom(0.2, 0.8) * this.game.height
 				}
 				spawnVelocity = {
@@ -103,7 +103,8 @@ export class DinosaurSpawner {
 		})
 	}
 
-	update(ctx, frame) {
+	update(ctx, frame, game) {
+		this.game = game
 		this.buildDinosaurs(frame) // create new dinos
 		this.updateDinos(ctx, frame) //update the dinos
 	}

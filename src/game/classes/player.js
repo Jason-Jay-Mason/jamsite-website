@@ -3,7 +3,18 @@ import { Laser } from './laser'
 import { Ai } from './ai'
 
 export class Player {
-	constructor({ imgEl, laserImg, width, height, position, rotation, thrust, isAi, game }) {
+	constructor({
+		imgEl,
+		laserImg,
+		width,
+		height,
+		position,
+		rotation,
+		thrust,
+		isAi,
+		game,
+		gameWidth
+	}) {
 		this.imgEl = imgEl //the image of the ship
 		this.laserImg = laserImg // the image of the laser
 
@@ -96,7 +107,7 @@ export class Player {
 					laserValue.position.y < -outOfBounds ||
 					laserValue.position.y > this.game.height + outOfBounds ||
 					laserValue.position.x < -outOfBounds ||
-					laserValue.position.x > innerWidth + outOfBounds
+					laserValue.position.x > this.game.width + outOfBounds
 				) {
 					delete this.lasers[laser]
 					return
@@ -119,7 +130,8 @@ export class Player {
 
 		if (
 			(this.position.x <= this.boundaryPadding && Math.sign(this.velocity.x) === -1) ||
-			(this.position.x >= innerWidth - this.boundaryPadding && Math.sign(this.velocity.x) === 1)
+			(this.position.x >= this.game.width - this.boundaryPadding &&
+				Math.sign(this.velocity.x) === 1)
 		) {
 			this.velocity.x = (this.velocity.x / 2) * -1
 		}
@@ -154,12 +166,12 @@ export class Player {
 		//#region ships props
 
 		// get the ships position on a standard cartesian coordinate plane
-		let xPosition = (this.position.x - innerWidth / 2) / (innerWidth / 2)
+		let xPosition = (this.position.x - this.game.width / 2) / (this.game.width / 2)
 		let yPosition = -(this.position.y - this.game.height / 2) / (this.game.height / 2)
 
 		// get the ships distance to the center
 		let xToCenter =
-			Math.abs(this.position.x - innerWidth / 2) - innerWidth / 2 + this.boundaryPadding
+			Math.abs(this.position.x - this.game.width / 2) - this.game.width / 2 + this.boundaryPadding
 		let yToCenter =
 			Math.abs(this.position.y - this.game.height / 2) - this.game.height / 2 + this.boundaryPadding
 
@@ -212,7 +224,7 @@ export class Player {
 			}
 
 			//Make the distance a percentage of the game height and width
-			let normalizedDinoDistance = dinoDistance / Math.hypot(innerWidth, this.game.height)
+			let normalizedDinoDistance = dinoDistance / Math.hypot(this.game.width, this.game.height)
 			//#endregion
 
 			//add all of the props to the dino radar for consumption of the decision tree in the ai class
@@ -224,7 +236,7 @@ export class Player {
 				yToCenter: yToCenter,
 				direction: direction,
 				oppositeDirection: (direction + Math.PI) % (2 * Math.PI),
-				xTargetPosition: dino.position.x - innerWidth / 2,
+				xTargetPosition: dino.position.x - this.game.width / 2,
 				yTargetPosition: dino.position.y - this.game.height / 2,
 				targetDistance: normalizedDinoDistance,
 				targetRadians: radiansToTarget,
@@ -277,7 +289,8 @@ export class Player {
 	}
 
 	//simple update function that dictates in what order the ship is updated on every frame
-	update(frame, dinosaurs) {
+	update(frame, dinosaurs, game) {
+		this.game = game
 		//if there is an ai, get the sensor props to pass to the decision tree and feed the ai
 		if (this.ai) {
 			this.radarDetector(dinosaurs)

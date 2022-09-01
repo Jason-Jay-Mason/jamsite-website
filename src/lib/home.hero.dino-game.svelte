@@ -3,17 +3,18 @@
 	import { onMount } from 'svelte';
 	import { DinoGame } from '../game/classes/dino-game';
 	export let ai;
+	export let container;
 
 	let canvas;
 
 	function setDimensions() {
 		canvas.width = innerWidth;
-		canvas.height = innerHeight;
+		canvas.height = container.offsetHeight;
 	}
 
 	onMount(() => {
 		canvas.width = innerWidth;
-		canvas.height = innerHeight * 1.5;
+		canvas.height = container.offsetHeight;
 		const ctx = canvas.getContext('2d');
 
 		const dinoGame = new DinoGame({
@@ -28,8 +29,9 @@
 
 		function loop(time) {
 			frame = requestAnimationFrame(loop);
-			if (dinoGame.width !== innerWidth) {
+			if (dinoGame.width !== innerWidth || dinoGame.height !== container.offsetHeight) {
 				dinoGame.width = innerWidth;
+				canvas.height = container.offsetHeight;
 			}
 			dinoGame.update(time);
 		}
@@ -44,5 +46,5 @@
 	use:windowResize
 	on:windowresize={setDimensions}
 	bind:this={canvas}
-	class="hidden md:block z-10 absolute top-0 w-full h-full"
+	class="block z-10 absolute top-0 w-full h-full"
 />

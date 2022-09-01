@@ -4,7 +4,7 @@
 </script>
 
 <section id="contact">
-	<div class="w-full relative bg-analogBlack-300 py-40">
+	<div class="w-full relative bg-analogBlack-300 py-28 md:py-40">
 		<div class="max-w-screen-md m-auto text-center">
 			<Headline subHeadline="Got questions? Let’s talk.">Send us a message</Headline>
 			<Form />

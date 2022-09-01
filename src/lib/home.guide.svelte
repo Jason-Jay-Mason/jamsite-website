@@ -6,7 +6,7 @@
 	let progress; //Need to bind progress to the animation frame component which will reflect the percent progress through the section
 </script>
 
-<section id="guide" class="hidden xl:block bg-analogBlack-300">
+<section id="guide" class="hidden xl:block bg-analogBlack-400">
 	<div
 		class="py-44"
 		style={`background-color: rgb(14, 50, 65, ${
@@ -30,7 +30,7 @@
 	</div>
 </section>
 <section id="guide-mobile" class="block xl:hidden">
-	<div class="py-24 bg-jamAqua-300 px-3">
+	<div class="py-28 lg:py-44 bg-jamAqua-300 px-3">
 		<Headline subHeadline="The Solution"
 			>That's why we started <span class="text-jamAqua-100">JamSite</span></Headline
 		>

@@ -76,7 +76,7 @@
 		{#each DATA as topic, i}
 			{#if selected === i}
 				<div class="animate-fadeIn">
-					<h5 class="text-4xl font-bold font-rubik pb-8">{topic.headline}</h5>
+					<h5 class="text-3xl xl:text-4xl font-bold font-rubik pb-8">{topic.headline}</h5>
 					<p class="text-white pb-9">{topic.body}</p>
 					<div class="px-2">
 						<p class="text-white/30 text-lg font-bold">Primary arsenal...</p>

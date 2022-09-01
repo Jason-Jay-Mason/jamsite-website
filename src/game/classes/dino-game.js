@@ -25,16 +25,16 @@ export class DinoGame {
 		const wordPressRex = new Image()
 		wordPressRex.src = '/wordpress-rex-dark2.svg'
 		const wixRaptor = new Image()
-		wixRaptor.src = '/wix-raptor.svg'
+		wixRaptor.src = '/wix-raptor-dark.svg'
 
 		//create an array of dino images to cycle through in the dino spawner
 		const dinoImages = [
-			// { image: wixRaptor, width: 100, height: 100 },
-			{ image: wordPressRex, width: 110, height: 110 }
+			{ image: wixRaptor, width: 90, height: 90 },
+			{ image: wordPressRex, width: 100, height: 100 }
 		]
 
 		//create a game object to reference game props in the dinos and player
-		let game = {
+		this.game = {
 			width: this.width,
 			height: this.height,
 			frame: this.frame,
@@ -45,7 +45,7 @@ export class DinoGame {
 		const dinosaurSpawner = new DinosaurSpawner({
 			amount: this.dinosaurCount ? this.dinosaurCount : 1,
 			images: dinoImages,
-			game: game
+			game: this.game
 		})
 		this.dinosaurSpawner = dinosaurSpawner
 
@@ -63,7 +63,7 @@ export class DinoGame {
 			rotation: 0, //starting rotation
 			thrust: 0.09,
 			isAi: this.isAi,
-			game: game
+			game: this.game
 		})
 		this.player = player
 	}
@@ -121,7 +121,12 @@ export class DinoGame {
 					}
 				})
 		})
-		player.update(frame, this.dinosaurSpawner.dinosaurs) //update the player
+		player.update(frame, this.dinosaurSpawner.dinosaurs, {
+			width: this.width,
+			height: this.height,
+			frame: this.frame,
+			ctx: this.ctx
+		}) //update the player
 	}
 
 	update(frame) {
@@ -130,6 +135,11 @@ export class DinoGame {
 		this.ctx.clearRect(0, 0, this.width, this.height)
 		this.handleCollisions(frame)
 
-		this.dinosaurSpawner.update(this.ctx, frame)
+		this.dinosaurSpawner.update(this.ctx, frame, {
+			width: this.width,
+			height: this.height,
+			frame: this.frame,
+			ctx: this.ctx
+		})
 	}
 }

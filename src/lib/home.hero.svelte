@@ -14,31 +14,37 @@
 		videoModalVisible.update((v) => (v = true));
 	}
 
+	let heroContainer;
 	let messages = ['ranks higher.', 'loads faster.', 'looks better.', 'wins more sales.'];
 </script>
 
-<div class="relative bg-analogBlack-400 w-full h-auto md:h-[150vh] -mb-[90vh] bg-subtleGameGrid">
+<div
+	bind:this={heroContainer}
+	class="relative bg-analogBlack-400 w-full h-[100vh] xl:h-[150vh] min-h-hero xl:-mb-[65vh] bg-subtleGameGrid"
+>
 	<div
 		class="relative pt-56 px-2 mx-auto flex justify-center items-center h-auto flex-col text-center max-w-3xl"
 	>
 		<h1
-			class="text-white/90 text-3xl sm:text-5xl md:text-7xl font-bold leading-normal md:leading-snug sm:leading-normal pb-9 "
+			class="text-white/90 text-4xl sm:text-5xl md:text-7xl font-bold leading-normal md:leading-snug sm:leading-normal pb-9 "
 		>
 			Get a website that<br />
 			<BoxHighlight><TypeWriter data={messages}>ranks higher</TypeWriter></BoxHighlight>
 		</h1>
-		<h2 class="text-white/90 leading-xl md:leading-xl text-base md:text-lg font-normal font-body">
+		<h2 class="text-white/90 leading-xl md:leading-xl text-base md:text-lg font-light font-body">
 			We’re a web design and development agency on a mission to defend businesses from cyberspace
-			dinosaurs and feed starving children. Book a call and get a free site audit.
+			dinosaurs and feed starving children. Schedule a call and get a free site audit.
 		</h2>
 		<div class="z-20 container relative flex justify-center flex-col md:flex-row pt-12">
 			<span on:click={showScheduleModel}>
-				<Cta href="/" color="jamAqua-100">Book A Call</Cta>
+				<Cta href="/" color="jamAqua-100">Schedule Now</Cta>
 			</span>
-			<span on:click={showVideoModel}>
-				<VideoBtn href="/" color="jamAqua-100">Watch Video</VideoBtn>
-			</span>
+			<!-- <span on:click={showVideoModel}> -->
+			<!-- 	<VideoBtn href="/" color="jamAqua-100">Watch Video</VideoBtn> -->
+			<!-- </span> -->
 		</div>
 	</div>
-	<DinoGame ai={true} />
+	{#if heroContainer && heroContainer.offsetHeight}
+		<DinoGame ai={true} container={heroContainer} />
+	{/if}
 </div>

@@ -12,7 +12,7 @@ type of bug with the global.css in applying leading styling.
 	let progress; //Need to bind progress to the animation frame component which will reflect the percent progress through the section
 </script>
 
-<section id="problem" class="bg-analogBlack-400 hidden xl:block bg-subtleGameGrid">
+<section id="problem" class="bg-analogBlack-400 hidden xl:block bg-subtleGameGrid ">
 	<AnimationFrame bind:progress frameHeight="h-[400vh]">
 		<div class="flex items-center justify-center py-9 h-[100vh]">
 			<div
@@ -75,7 +75,7 @@ type of bug with the global.css in applying leading styling.
 							0.15,
 							77,
 							255
-						)}, ${getStyleValue(progress, 0.55, 0.15, 69, 255)}, 0.46))
+						)}, ${getStyleValue(progress, 0.8, 0.15, 69, 255)}, 0.46))
 						`}
 						iconSrc="/red-icon-dummy.svg"
 						headline="Scalability"
@@ -92,7 +92,6 @@ type of bug with the global.css in applying leading styling.
 				</div>
 			</div>
 		</div>
-		<Transition fromColor="from-analogBlack-400" />
 	</AnimationFrame>
 </section>
 

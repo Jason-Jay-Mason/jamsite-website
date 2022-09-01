@@ -3,7 +3,22 @@
 	//#region data
 	const DATA = [
 		{
-			buttonMain: 'Website & Web Apps',
+			buttonMain: 'JamStack Websites',
+			buttonSub: "We're a web design and development",
+			buttonImgSrc: '/button-dummy.svg',
+			headline: 'Speed, maintainability & security',
+			body: 'We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
+			toolingImgs: [
+				{
+					imgSrc: '/vercel.svg'
+				},
+				{
+					imgSrc: '/vercel.svg'
+				}
+			]
+		},
+		{
+			buttonMain: 'Mobile and Web Apps',
 			buttonSub: "We're a web design and development",
 			buttonImgSrc: '/button-dummy.svg',
 			headline: 'Websites & Web Apps',
@@ -18,22 +33,7 @@
 			]
 		},
 		{
-			buttonMain: 'Website & Web Apps',
-			buttonSub: "We're a web design and development",
-			buttonImgSrc: '/button-dummy.svg',
-			headline: 'Websites & Web Apps',
-			body: 'We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
-			toolingImgs: [
-				{
-					imgSrc: '/vercel.svg'
-				},
-				{
-					imgSrc: '/vercel.svg'
-				}
-			]
-		},
-		{
-			buttonMain: 'Website & Web Apps',
+			buttonMain: 'Ecommerce Stores',
 			buttonSub: "We're a web design and development",
 			buttonImgSrc: '/button-dummy.svg',
 			headline: 'Websites & Web Apps',
@@ -53,7 +53,7 @@
 </script>
 
 <div
-	class="flex flex-col md:flex-row justify-start md:justify-between max-w-screen-xl w-full mx-auto relative"
+	class="flex flex-col md:pt-9 md:flex-row justify-start md:justify-between max-w-screen-xl w-full mx-auto relative"
 	id="guide-container"
 >
 	<div

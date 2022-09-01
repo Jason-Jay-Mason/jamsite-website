@@ -109,12 +109,14 @@ export class Dinosaur extends Sprite {
 		}
 		ctx.resetTransform() //reset the transform on the context obj
 		ctx.translate(this.position.x, this.position.y) //translate the ctx to the dino's position
+		ctx.shadowBlur = 10 // set the glow radius
+		ctx.shadowColor = 'rgba(255, 255, 255, 1)' // add the glow to the ship
 
 		//loop through the explosion particles and display them on screen
 		for (let i = 0; i < this.explosionParticles.length; i++) {
 			ctx.rotate(this.explosionParticles[i].rotation)
 
-			let opacity = 200 / Math.pow(this.updateFrame, 2.6) //get an opacity value for fading the particles out
+			let opacity = 200 / Math.pow(this.updateFrame, 2.4) //get an opacity value for fading the particles out
 			ctx.fillStyle = `${this.explosionParticles[i].color}${opacity.toFixed(2)})` // set the particle fill color passed on the opacity
 
 			//create the rectangle on screen the +32 is for padding
@@ -135,8 +137,8 @@ export class Dinosaur extends Sprite {
 	render(ctx) {
 		ctx.resetTransform() //reset the context
 		ctx.translate(this.position.x, this.position.y) //translate the context to the current position of this dino
-		ctx.shadowBlur = 17 // set the glow radius
-		ctx.shadowColor = 'rgba(255, 255, 255, 0.46)' // add the glow to the ship
+		ctx.shadowBlur = 7 // set the glow radius
+		ctx.shadowColor = 'rgba(0, 0, 0, 1)' // add the glow to the ship
 		ctx.rotate(this.rotation) //rotate the context to this dinos rotation
 		ctx.drawImage(
 			this.imgEl,

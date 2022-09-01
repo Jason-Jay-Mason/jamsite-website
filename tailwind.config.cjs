@@ -17,6 +17,9 @@ module.exports = {
 		colors: {
 			transparent: 'transparent',
 			black: '#000000',
+			grey: {
+				100: '#d8d8d8'
+			},
 			analogBlack: {
 				100: '#5A5A5A',
 				200: '#424242',
@@ -26,7 +29,8 @@ module.exports = {
 			jamAqua: {
 				100: '#2A9ECF',
 				200: '#216A89',
-				300: '#0E3241'
+				300: '#0E3241',
+				400: '#00B2FF'
 			},
 			villainRed: {
 				100: '#F25D54',
@@ -41,7 +45,8 @@ module.exports = {
 			successGreen: {
 				100: '#2AA876',
 				200: '#209365',
-				300: '#287959'
+				300: '#287959',
+				400: '#0EE28E'
 			},
 			white: '#FFFFFF'
 		},
@@ -66,8 +71,7 @@ module.exports = {
 
 			backgroundImage: {
 				gameGrid: "url('/game-grid.svg')",
-				screen:
-					'radial-gradient( rgb(255,255,255, 0.01) 0%, rgb(255,255,255, 0.009) 2%, rgb(255,255,255,0 ) 120%)'
+				subtleGameGrid: "url('/subtle-game-grid.svg')"
 			},
 			boxShadow: {
 				button: '0px 0px 17px'

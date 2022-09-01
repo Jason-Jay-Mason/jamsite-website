@@ -13,7 +13,7 @@
 
 	onMount(() => {
 		canvas.width = innerWidth;
-		canvas.height = innerHeight;
+		canvas.height = innerHeight * 1.5;
 		const ctx = canvas.getContext('2d');
 
 		const dinoGame = new DinoGame({
@@ -44,5 +44,5 @@
 	use:windowResize
 	on:windowresize={setDimensions}
 	bind:this={canvas}
-	class="hidden md:block -z-10 absolute top-0 w-full"
+	class="hidden md:block z-10 absolute top-0 w-full h-full"
 />

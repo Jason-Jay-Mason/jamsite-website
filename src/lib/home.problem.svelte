@@ -12,7 +12,7 @@ type of bug with the global.css in applying leading styling.
 	let progress; //Need to bind progress to the animation frame component which will reflect the percent progress through the section
 </script>
 
-<section id="problem" class="bg-analogBlack-400 hidden xl:block">
+<section id="problem" class="bg-analogBlack-400 hidden xl:block bg-subtleGameGrid">
 	<AnimationFrame bind:progress frameHeight="h-[400vh]">
 		<div class="flex items-center justify-center py-9 h-[100vh]">
 			<div

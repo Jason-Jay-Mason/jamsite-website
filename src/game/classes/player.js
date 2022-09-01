@@ -237,7 +237,7 @@ export class Player {
 	render(ctx) {
 		ctx.translate(this.position.x, this.position.y) //translate the context to the current position of the ship
 		ctx.shadowBlur = 10 // set the glow radius
-		ctx.shadowColor = 'rgba(255, 255, 255, 0.5)' // add the glow to the ship
+		ctx.shadowColor = 'rgba(0, 0, 0, 1)' // add the glow to the ship
 		ctx.rotate(this.rotation) //rotate the context to the current rotation
 		ctx.drawImage(this.imgEl, -this.width / 2, -this.height / 2, this.width, this.height) //draw the ship to the canvas
 
@@ -246,6 +246,8 @@ export class Player {
 			this.thrusterLength = 0 //remove the thruster image if the ship is no longer thrusting
 		}
 		if (this.controls.thrust) {
+			ctx.shadowColor = 'rgba(242, 93, 84, 0.8)' // add the glow to the ship
+			ctx.shadowBlur = 7 // set the glow radius
 			if (this.thrusterLength >= 1) {
 				if (!(this.thrusterLength >= 3)) {
 					this.thrusterLength += 0.2

@@ -23,13 +23,13 @@ export class DinoGame {
 		laserImg.src = '/laser.svg'
 
 		const wordPressRex = new Image()
-		wordPressRex.src = '/wordpress-rex.svg'
+		wordPressRex.src = '/wordpress-rex-dark2.svg'
 		const wixRaptor = new Image()
 		wixRaptor.src = '/wix-raptor.svg'
 
 		//create an array of dino images to cycle through in the dino spawner
 		const dinoImages = [
-			{ image: wixRaptor, width: 100, height: 100 },
+			// { image: wixRaptor, width: 100, height: 100 },
 			{ image: wordPressRex, width: 110, height: 110 }
 		]
 

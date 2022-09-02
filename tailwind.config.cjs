@@ -35,7 +35,8 @@ module.exports = {
 			villainRed: {
 				100: '#F25D54',
 				200: '#CE4D45',
-				300: '#B1433D'
+				300: '#B1433D',
+				400: '#762C28'
 			},
 			warnYellow: {
 				100: '#FFD265',
@@ -53,7 +54,9 @@ module.exports = {
 		extend: {
 			dropShadow: {
 				icon: '0px 0px 17px rgba(255, 255, 255, 0.6)',
-				space: '0px 0px 17px rgba(255, 255, 255, 0.6)'
+				space: '0px 0px 17px rgba(255, 255, 255, 0.6)',
+				smIconWhite: '0px 0px 7px rgba(255, 255, 255, 0.6)',
+				smIconRed: '0px 0px 7px rgba(206, 77, 69, 0.6)'
 			},
 			lineHeight: {
 				5: '1.25rem',
@@ -66,7 +69,7 @@ module.exports = {
 				}
 			},
 			animation: {
-				fadeIn: 'fadeIn 2s ease'
+				fadeIn: 'fadeIn 1s ease'
 			},
 
 			backgroundImage: {

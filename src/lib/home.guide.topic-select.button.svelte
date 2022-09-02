@@ -4,7 +4,7 @@
 	export let selected;
 
 	const styles =
-		'w-full px-2 py-5 sm:py-6 lg:py-6 mb-4 sm:mb-5 w-fit  max-w-lg  mx-auto flex flex-row justify-center lg:justify-start items-center  transition-all cursor-pointer border-white rounded-lg border-form shadow-button shadow-white/40 ';
+		'w-full px-2 py-5 sm:py-6 lg:py-7 mb-4 sm:mb-5 w-fit  max-w-lg  mx-auto flex flex-row justify-center lg:justify-center items-center  transition-all cursor-pointer  ';
 </script>
 
 <div
@@ -12,7 +12,7 @@
 	class={styles +
 		(selected ? 'bg-jamAqua-200 hover:bg-jamAqua-200' : 'bg-transparent hover:bg-white/10')}
 >
-	<div class="max-w-sm lg:max-w-md lg:w-full flex flex-row  ">
+	<div class="flex flex-row justify-center items-center">
 		<div
 			class={'pr-5 lg:pr-3 lg:w-28 flex justify-center items-center ' +
 				(selected && 'filter drop-shadow-icon')}

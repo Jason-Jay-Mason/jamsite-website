@@ -53,11 +53,11 @@
 </script>
 
 <div
-	class="flex flex-col md:pt-9 md:flex-row justify-start md:justify-between max-w-screen-xl w-full mx-auto relative"
+	class="flex flex-col md:py-12 md:flex-row justify-start md:justify-between max-w-screen-2xl w-full mx-auto relative"
 	id="guide-container"
 >
 	<div
-		class="flex flex-col justify-center w-full md:w-2/3 lg:pr-20 md:pr-7 py-14 md:py-0"
+		class="flex flex-col justify-center items-center w-full md:w-2/3 lg:pr-0 md:pr-7 py-14 md:py-16 bg-gameGrid bg-analogBlack-400 border-white border-1"
 		id="guide-buttons"
 	>
 		{#each DATA as topic, i}
@@ -71,7 +71,7 @@
 
 	<div
 		id="guide-blurb"
-		class="flex flex-col justify-center items-start text-center  md:text-left w-full"
+		class="flex flex-col justify-center items-start text-center ml-16 md:text-left w-full"
 	>
 		{#each DATA as topic, i}
 			{#if selected === i}

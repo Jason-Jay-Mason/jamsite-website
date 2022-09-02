@@ -35,7 +35,7 @@ type of bug with the global.css in applying leading styling.
 					class="relative md:top-12 leading-tight md:leading-tight whitespace-nowrap font-bold w-full
 					text-4xl md:text-5xl pb-12 md:pr-9"
 				>
-					The <span class="text-villainRed-300">problem </span><br />with the web<br /> today...
+					The <span class="text-villainRed-200">problem </span><br />with the web<br /> today...
 				</h3>
 				<div style={`opacity:${getStyleValue(progress, 0.3, 0.15, 0, 1)}`}>
 					<Blurb
@@ -93,10 +93,11 @@ type of bug with the global.css in applying leading styling.
 			</div>
 		</div>
 	</AnimationFrame>
+	<!-- <Transition fromColor="from-analogBlack-300" /> -->
 </section>
 
 <section class="block xl:hidden" id="problem-mobile">
-	<div class="bg-analogBlack-400 flex items-center justify-center py-28 lg:py-44">
+	<div class="bg-analogBlack-400  flex items-center justify-center py-28 lg:py-44">
 		<div
 			class="mx-auto max-w-screen-2xl px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center items-center"
 		>

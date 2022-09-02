@@ -23,13 +23,15 @@
 	class="relative bg-analogBlack-400 w-full h-[100vh] xl:h-[150vh] min-h-hero xl:-mb-[65vh] bg-subtleGameGrid"
 >
 	<div
-		class="relative pt-56 px-2 mx-auto flex justify-center items-center h-auto flex-col text-center max-w-3xl"
+		class="relative px-2 mx-auto flex justify-center items-center h-[100vh] min-h-hero flex-col text-center max-w-3xl"
 	>
 		<h1
 			class="text-white/90 text-4xl sm:text-5xl md:text-7xl font-bold leading-normal md:leading-snug sm:leading-normal pb-9 "
 		>
 			Get a website that<br />
-			<BoxHighlight><TypeWriter data={messages}>ranks higher</TypeWriter></BoxHighlight>
+			<BoxHighlight classes="px-4 md:px-9"
+				><TypeWriter data={messages}>ranks higher</TypeWriter></BoxHighlight
+			>
 		</h1>
 		<h2 class="text-white/90 leading-xl md:leading-xl text-base md:text-lg font-light font-body">
 			We’re a web design and development agency on a mission to defend businesses from cyberspace

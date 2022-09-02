@@ -5,6 +5,7 @@
 	import Video from '$lib/modal.video.svelte';
 	import Problem from '$lib/home.problem.svelte';
 	import Guide from '$lib/home.guide.svelte';
+	import Villian from '$lib/home.villian.svelte';
 </script>
 
 <svelte:head>

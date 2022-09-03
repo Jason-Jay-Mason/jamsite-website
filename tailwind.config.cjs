@@ -56,7 +56,8 @@ module.exports = {
 				icon: '0px 0px 17px rgba(255, 255, 255, 0.6)',
 				space: '0px 0px 17px rgba(255, 255, 255, 0.6)',
 				smIconWhite: '0px 0px 7px rgba(255, 255, 255, 0.6)',
-				smIconRed: '0px 0px 7px rgba(206, 77, 69, 0.6)'
+				smIconRed: '0px 0px 7px rgba(206, 77, 69, 0.6)',
+				smIconYellow: '0px 0px 7px rgba(255, 188, 24, 0.6)'
 			},
 			lineHeight: {
 				5: '1.25rem',

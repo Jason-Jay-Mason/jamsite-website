@@ -4,7 +4,7 @@
 	export let selected;
 
 	const styles =
-		'w-full px-2 py-5 sm:py-6 lg:py-7 mb-4 sm:mb-5 w-fit  max-w-lg  mx-auto flex flex-row justify-center lg:justify-center items-center  transition-all cursor-pointer  ';
+		'w-full px-4 py-5 sm:py-6 lg:py-7 mb-4 sm:mb-5 w-fit  max-w-lg  mx-auto flex flex-row justify-center lg:justify-center items-center  transition-all cursor-pointer m ';
 </script>
 
 <div

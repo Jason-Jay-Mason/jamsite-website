@@ -57,7 +57,7 @@
 	id="guide-container"
 >
 	<div
-		class="flex flex-col justify-center items-center w-full md:w-2/3 lg:pr-0 md:pr-7 py-14 md:py-16 bg-gameGrid bg-analogBlack-400 border-white border-1"
+		class="flex flex-col justify-center items-center w-full md:w-2/3 px-2 py-14 md:py-20 bg-gameGrid bg-analogBlack-400 border-white border-1"
 		id="guide-buttons"
 	>
 		{#each DATA as topic, i}
@@ -71,7 +71,7 @@
 
 	<div
 		id="guide-blurb"
-		class="flex flex-col justify-center items-start text-center ml-16 md:text-left w-full"
+		class="flex flex-col justify-center items-start text-center pt-14 md:pt-0 md:ml-9 xl:ml-16 md:text-left w-full"
 	>
 		{#each DATA as topic, i}
 			{#if selected === i}

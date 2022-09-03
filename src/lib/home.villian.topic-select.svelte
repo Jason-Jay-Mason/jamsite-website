@@ -5,8 +5,8 @@
 	const DATA = [
 		{
 			title: 'WordPress',
-			imgSrc: '/wordpress-rex-button.svg',
-			sprite: '/wordpress-rex.svg',
+			imgSrc: '/wordpress-rex-icon.svg',
+			sprite: '/wordpress-rex-dark2.svg',
 			blurb:
 				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
 			downsides: [
@@ -26,7 +26,7 @@
 		},
 		{
 			title: 'WordPress',
-			imgSrc: '/wordpress-rex-button.svg',
+			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
 				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
@@ -47,7 +47,7 @@
 		},
 		{
 			title: 'WordPress',
-			imgSrc: '/wordpress-rex-button.svg',
+			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
 				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
@@ -68,7 +68,7 @@
 		},
 		{
 			title: 'WordPress',
-			imgSrc: '/wordpress-rex-button.svg',
+			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
 				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
@@ -89,7 +89,7 @@
 		},
 		{
 			title: 'WordPress',
-			imgSrc: '/wordpress-rex-button.svg',
+			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
 				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
@@ -110,7 +110,7 @@
 		},
 		{
 			title: 'WordPress',
-			imgSrc: '/wordpress-rex-button.svg',
+			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
 				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
@@ -150,10 +150,10 @@
 >
 	<div
 		id="dino-select"
-		class="bg-analogBlack-400 w-full md:w-1/3 lg:w-[40%] bg-gameGrid flex justify-center items-center border-1 border-white/50 shadow-button shadow-white/10"
+		class="bg-analogBlack-400 w-full md:w-[40%] bg-gameGrid flex justify-center items-center border-1 border-white/50 shadow-button shadow-white/10"
 	>
 		<div
-			class="grid justify-center items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 py-20 px-7"
+			class="max-w-md lg:max-w-none grid justify-center items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 py-20 px-1 xl:px-7"
 		>
 			{#each DATA as dino}
 				<div on:click={() => (selected = dino)} class="flex items-center justify-center py-3">
@@ -164,21 +164,20 @@
 	</div>
 	<div
 		id="selected-villian-display"
-		class="px-5 md:pl-12 w-full md:w-2/3 lg:w-[60%] h-fit pt-20 md:pt-0 "
+		class="px-5 ml-0 md:ml-4 xl:ml-16 w-full md:w-[60%] h-fit pt-20 md:pt-0 "
 	>
 		{#each DATA as dino}
 			<div class={selected === dino ? 'block animate-fadeIn' : 'hidden'}>
-				<!-- <h4 class="text-5xl pb-10 pl-2 text-white">WordPress Rex</h4> -->
 				<div class="flex flex-row justify-center items-center">
 					{#if frame}
 						<img
 							src={dino.sprite}
-							class="hidden xl:block h-[170px] w-[170px] object-cover object-left filter brightness-[3] drop-shadow-smIconWhite mr-10"
+							class="hidden xl:block h-[170px] w-[170px] object-cover object-left filter  mr-10"
 						/>
 					{:else}
 						<img
 							src={dino.sprite}
-							class="hidden xl:block h-[170px] w-[170px] object-cover object-right filter brightness-[3] drop-shadow-smIconWhite mr-10"
+							class="hidden xl:block h-[170px] w-[170px] object-cover object-right filter mr-10"
 						/>
 					{/if}
 

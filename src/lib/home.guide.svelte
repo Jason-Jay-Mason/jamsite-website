@@ -106,7 +106,7 @@
 <!-- mobile -->
 <section id="guide-mobile" class="block xl:hidden bg-analogBlack-400">
 	<Villians />
-	<div class="py-28 lg:pt-44 bg-jamAqua-300 px-3">
+	<div class="pt-28 pb-16 lg:pt-44 bg-jamAqua-300 px-3">
 		<Headline subHeadline="The Solution"
 			>That's why we started <span class="text-jamAqua-100">JamSite</span></Headline
 		>

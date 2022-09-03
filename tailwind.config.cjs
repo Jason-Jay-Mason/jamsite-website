@@ -61,7 +61,8 @@ module.exports = {
 			},
 			lineHeight: {
 				5: '1.25rem',
-				xl: '2.25rem'
+
+				xl: '2.7rem'
 			},
 			keyframes: {
 				fadeIn: {

@@ -5,7 +5,7 @@
 	import Video from '$lib/modal.video.svelte';
 	import Problem from '$lib/home.problem.svelte';
 	import Guide from '$lib/home.guide.svelte';
-	import Villian from '$lib/home.villian.svelte';
+	import Plan from '$lib/home.plan.svelte';
 </script>
 
 <svelte:head>
@@ -22,4 +22,5 @@
 <Hero />
 <Problem />
 <Guide />
+<Plan />
 <Contact />

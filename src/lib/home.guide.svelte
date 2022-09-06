@@ -8,13 +8,17 @@
 </script>
 
 <!-- desktop -->
-<section id="guide" class="hidden xl:block bg-analogBlack-300 ">
+<section
+	id="guide"
+	class="hidden xl:block bg-analogBlack-400 bg-subtleGameGrid "
+	style={`background-image: ${progress > 0.7 ? "url('/subtle-game-grid.svg');" : 'none'}`}
+>
 	<div
 		class="pb-72"
 		style={`background-color: rgb(14, 50, 65, ${
 			progress < 0.9
 				? getStyleValue(progress, 0.4, 0.5, 0, 1)
-				: getStyleValue(progress, 1.2, 0.5, 1, 0)
+				: getStyleValue(progress, 1.1, 0.5, 1, 0)
 		})`}
 	>
 		<Villians />
@@ -29,7 +33,7 @@
 			</div>
 		</AnimationFrame>
 		<!-- ship animation -->
-		<div class="relative pt-72 pb-44 overflow-hidden">
+		<div class="relative pt-72 pb-16 overflow-hidden">
 			<div
 				class="absolute -right-20 flex flex-row"
 				style={`transform: translateX(-${getStyleValue(progress, 1.3, 1, 0, 120)}vw)`}

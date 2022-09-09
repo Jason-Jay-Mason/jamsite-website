@@ -4,10 +4,8 @@
 </script>
 
 <Modal store={videoModalVisible}>
-	<div
-		class="w-screen flex flex-col justify-center items-center h-full md:h-full max-w-3xl mx-auto pt-4"
-	>
-		<div class="w-full h-4/6 max-h-[435px]">
+	<div class="mx-auto flex h-full w-screen max-w-3xl flex-col items-center justify-center pt-4 md:h-full">
+		<div class="h-4/6 max-h-[435px] w-full">
 			<iframe
 				width="100%"
 				height="100%"

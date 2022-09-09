@@ -5,15 +5,15 @@
 //startValue: The desired css properties start value
 //endValue: The desired css properties end value
 export function getStyleValue(progress, start, length, startValue, endValue) {
-	let animationProgress = (progress - start) / length // get the progress through this animation as a percentage
+	let animationProgress = (progress - start) / length; // get the progress through this animation as a percentage
 	//return the start value if we are not at the animation yet
 	if (animationProgress < 0) {
-		return startValue
+		return startValue;
 	}
 	//return the end value if we are at the end of the animation
 	if (animationProgress > 1) {
-		return endValue
+		return endValue;
 	}
-	let valueDistance = endValue - startValue //get the difference in start and end value
-	return startValue + animationProgress * valueDistance //return the current value
+	let valueDistance = endValue - startValue; //get the difference in start and end value
+	return startValue + animationProgress * valueDistance; //return the current value
 }

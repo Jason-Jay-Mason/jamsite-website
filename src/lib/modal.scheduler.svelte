@@ -190,8 +190,7 @@
 		if (!tokenOk) {
 			//if we still do not have the token in local storage at this point then there is a bug
 			loading = false;
-			errorMessage =
-				'Oops! It looks like we are too busy right now to fulfill your request! Please try again in a few minutes.';
+			errorMessage = 'Oops! It looks like we are too busy right now to fulfill your request! Please try again in a few minutes.';
 			console.log('auth not found in storage after api call');
 			loading = false;
 			return; //exit the function
@@ -297,13 +296,11 @@
 				} else {
 					loading = false;
 					if (data.response.returnvalue.message === 'slot not available') {
-						formError =
-							'Crap! It looks like this time slot was just taken by another site visitor! Please select a new time.';
+						formError = 'Crap! It looks like this time slot was just taken by another site visitor! Please select a new time.';
 						return false;
 					} else {
 						console.error(data);
-						errorMessage =
-							'It looks like there was a problem with your booking request. Please fill out our contact form.';
+						errorMessage = 'It looks like there was a problem with your booking request. Please fill out our contact form.';
 						return false;
 					}
 				}
@@ -313,15 +310,14 @@
 			}
 		} else {
 			loading = false;
-			errorMessage =
-				'Oops! It looks like we are too busy right now to fullfil your request! Please try again in a few minutes.';
+			errorMessage = 'Oops! It looks like we are too busy right now to fullfil your request! Please try again in a few minutes.';
 		}
 	}
 </script>
 
 <Modal store={schedulerModalVisible}>
 	{#if loading && !formValid}
-		<div class="h-full flex justify-center items-center">
+		<div class="flex h-full items-center justify-center">
 			<Spinner styles="w-16 h-16 text-white" />
 		</div>
 	{:else if errorMessage}
@@ -329,21 +325,17 @@
 	{:else if clientTimes && page === 1}
 		<Calendar bind:page bind:clientTimes bind:selectedTime />
 	{:else if clientTimes && page === 2 && selectedTime}
-		<div
-			transition:fade
-			class="flex flex-col w-full md:w-96 mx-auto h-full justify-center items-center px-3"
-		>
-			<div class="flex flex-row w-full justify-start items-center" transition:fade>
+		<div transition:fade class="mx-auto flex h-full w-full flex-col items-center justify-center px-3 md:w-96">
+			<div class="flex w-full flex-row items-center justify-start" transition:fade>
 				<button
 					on:click={() => {
 						page--;
 						formError = null;
 						console.log(formError);
 					}}
-					class="text-white border-1 border-white shadow-transparent px-2 pb-1 pt-1.5 hover:bg-white/10 transition-all mr-6"
-					>&crarr;</button
+					class="mr-6 border-1 border-white px-2 pb-1 pt-1.5 text-white shadow-transparent transition-all hover:bg-white/10">&crarr;</button
 				>
-				<p class="text-white font-semibold text-sm md:text-lg text-center">
+				<p class="text-center text-sm font-semibold text-white md:text-lg">
 					{selectedTime.day}
 					{selectedTime.longMonth}
 					{selectedTime.singleDate}
@@ -351,30 +343,13 @@
 				</p>
 			</div>
 			<form on:submit|preventDefault={handleSubmit} class="group w-full">
-				<StyledInput
-					placeholder="Name"
-					type="text"
-					bind:formValue={formValues.name.value}
-					bind:valid={formValues.name.valid}
-				/>
-				<StyledInput
-					placeholder="Email"
-					type="email"
-					bind:formValue={formValues.email.value}
-					bind:valid={formValues.email.valid}
-				/>
-				<StyledInput
-					placeholder="Phone"
-					type="phone"
-					bind:formValue={formValues.phone.value}
-					bind:valid={formValues.phone.valid}
-				/>
-				<div
-					class=" relative w-full h-40 mb-12 pt-5 mx-auto flex flex-col justify-center items-center"
-				>
+				<StyledInput placeholder="Name" type="text" bind:formValue={formValues.name.value} bind:valid={formValues.name.valid} />
+				<StyledInput placeholder="Email" type="email" bind:formValue={formValues.email.value} bind:valid={formValues.email.valid} />
+				<StyledInput placeholder="Phone" type="phone" bind:formValue={formValues.phone.value} bind:valid={formValues.phone.valid} />
+				<div class=" relative mx-auto mb-12 flex h-40 w-full flex-col items-center justify-center pt-5">
 					{#if formError}
 						<div transition:fade class="absolute">
-							<p class="text-villainRed-100 text-center">{formError}</p>
+							<p class="text-center text-villainRed-100">{formError}</p>
 						</div>
 					{:else if formValid && !formError}
 						<span transition:fade class="absolute">
@@ -401,8 +376,6 @@
 			</form>
 		</div>
 	{:else}
-		<Error
-			>It looks like there was a problem getting our schedule, please fill out our contact form.</Error
-		>
+		<Error>It looks like there was a problem getting our schedule, please fill out our contact form.</Error>
 	{/if}
 </Modal>

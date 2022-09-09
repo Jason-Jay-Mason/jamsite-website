@@ -42,9 +42,4 @@
 	});
 </script>
 
-<canvas
-	use:windowResize
-	on:windowresize={setDimensions}
-	bind:this={canvas}
-	class="block z-10 absolute top-0 w-full h-full"
-/>
+<canvas use:windowResize on:windowresize={setDimensions} bind:this={canvas} class="absolute top-0 z-10 block h-full w-full" />

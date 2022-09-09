@@ -52,40 +52,32 @@
 	let selected = 0;
 </script>
 
-<div
-	class="flex flex-col md:py-12 md:flex-row justify-start md:justify-between max-w-screen-2xl w-full mx-auto relative"
-	id="guide-container"
->
+<div class="relative mx-auto flex w-full max-w-screen-2xl flex-col justify-center md:pb-12 lg:flex-row" id="guide-container">
 	<div
-		class="flex flex-col justify-center items-center w-full md:w-2/3 px-2 py-14 md:py-20 bg-gameGrid bg-analogBlack-400 border-white border-1"
+		class="mx-auto mb-10 flex w-full max-w-screen-sm flex-col items-center justify-center border-1 border-white/50 bg-analogBlack-400 bg-gameGrid py-10  px-1 shadow-button shadow-white/10 lg:mb-0 lg:w-1/2 lg:max-w-none lg:py-10 lg:px-10 xl:w-[40%] xl:py-16 xl:px-10"
 		id="guide-buttons"
 	>
 		{#each DATA as topic, i}
-			<div on:click={() => (selected = i)}>
-				<Button selected={selected === i} imgSrc={topic.buttonImgSrc} buttonSub={topic.buttonSub}
-					>{topic.buttonMain}</Button
-				>
+			<div on:click={() => (selected = i)} class={i === DATA.length - 1 ? '' : 'mb-4'}>
+				<Button selected={selected === i} imgSrc={topic.buttonImgSrc} buttonSub={topic.buttonSub}>{topic.buttonMain}</Button>
 			</div>
 		{/each}
 	</div>
 
 	<div
 		id="guide-blurb"
-		class="flex flex-col justify-center items-start text-center pt-14 md:pt-0 md:ml-9 xl:ml-16 md:text-left w-full"
+		class="mx-auto flex w-full max-w-screen-sm flex-col items-start justify-center pt-14 text-center md:pt-0 lg:ml-7  lg:w-1/2 lg:max-w-none lg:text-left xl:ml-16 xl:w-[60%]"
 	>
 		{#each DATA as topic, i}
 			{#if selected === i}
 				<div class="animate-fadeIn">
-					<h5 class="text-3xl xl:text-4xl font-bold font-rubik pb-8">{topic.headline}</h5>
-					<p class="text-white pb-9">{topic.body}</p>
+					<h5 class="pb-8 font-rubik text-3xl font-bold xl:text-4xl">{topic.headline}</h5>
+					<p class="pb-9 text-white">{topic.body}</p>
 					<div class="px-2">
-						<p class="text-white/30 text-lg font-bold">Primary arsenal...</p>
-						<div
-							id="guide-toolingImgs"
-							class="flex flex-row flex-wrap justify-center md:justify-start pt-7"
-						>
+						<p class="text-lg font-bold text-white/30">Primary arsenal...</p>
+						<div id="guide-toolingImgs" class="flex flex-row flex-wrap justify-center pt-7 lg:justify-start">
 							{#each topic.toolingImgs as img}
-								<img src={img.imgSrc || '/'} class="pr-8 pb-7 w-32 md:w-36" />
+								<img src={img.imgSrc || '/'} class="w-32 pr-8 pb-7 md:w-36" />
 							{/each}
 						</div>
 					</div>

@@ -9,13 +9,13 @@
 
 <Nav />
 
-<div class="h-full bg-analogBlack-300 m-0 pb-20">
-	<div class="bg-gameGrid py-32 md:pt-52 md:pb-30">
+<div class="m-0 h-full bg-analogBlack-300 pb-20">
+	<div class="md:pb-30 bg-gameGrid py-32 md:pt-52">
 		<h1 class="text-center text-2xl md:text-5xl">{h1}</h1>
 	</div>
 	<Transition />
 
-	<div class="legal text-white max-w-screen-lg px-4 mx-auto">
+	<div class="legal mx-auto max-w-screen-lg px-4 text-white">
 		<slot />
 	</div>
 </div>

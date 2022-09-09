@@ -16,12 +16,9 @@
 </script>
 
 {#if active}
-	<div
-		transition:fade
-		class="z-40 flex justify-center items-center h-screen w-screen fixed max-h-screen overflow-y-scroll bg-analogBlack-300/95"
-	>
+	<div transition:fade class="fixed z-40 flex h-screen max-h-screen w-screen items-center justify-center overflow-y-scroll bg-analogBlack-300/95">
 		<div class="absolute top-7 left-7"><button class="text-white shadow-none">Close</button></div>
-		<div use:outclickaction on:outclick={hideModal} class=" h-full py-12 w-auto">
+		<div use:outclickaction on:outclick={hideModal} class=" h-full w-auto py-12">
 			<slot />
 		</div>
 	</div>

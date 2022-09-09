@@ -1,13 +1,13 @@
 export function windowScroll(node) {
 	const handleScroll = () => {
-		node.dispatchEvent(new CustomEvent('windowscroll'))
-	}
+		node.dispatchEvent(new CustomEvent('windowscroll'));
+	};
 
-	document.addEventListener('scroll', handleScroll, true)
+	document.addEventListener('scroll', handleScroll, true);
 
 	return {
 		destroy() {
-			document.removeEventListener('scroll', handleScroll, true)
+			document.removeEventListener('scroll', handleScroll, true);
 		}
-	}
+	};
 }

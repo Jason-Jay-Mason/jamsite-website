@@ -6,8 +6,8 @@
 	export let iconStyle;
 </script>
 
-<div class="flex flex-col w-full py-7 md:px-4 text-white">
+<div class="flex w-full flex-col py-7 text-white md:px-4">
 	<img src={iconSrc} class="w-12 pb-6" style={iconStyle} />
-	<h4 class="text-xl md:text-2xl pb-3">{headline}</h4>
+	<h4 class="pb-3 text-xl md:text-2xl">{headline}</h4>
 	<p>{body}</p>
 </div>

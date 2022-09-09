@@ -1,10 +1,10 @@
-import { mdsvex } from 'mdsvex'
-import preprocess from 'svelte-preprocess'
-import adapter from '@sveltejs/adapter-netlify'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { mdsvex } from 'mdsvex';
+import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-netlify';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const dirname = path.resolve(fileURLToPath(import.meta.url), '../')
+const dirname = path.resolve(fileURLToPath(import.meta.url), '../');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,7 +14,7 @@ const config = {
 			postcss: true
 		}),
 		mdsvex({
-			extensions:['.svelte.md', '.md', '.svx', '.svelte'],
+			extensions: ['.svelte.md', '.md', '.svx', '.svelte'],
 			layout: {
 				legal: path.join(dirname, './src/lib/mvx-layouts/legal.svelte')
 			},
@@ -27,6 +27,6 @@ const config = {
 	kit: {
 		adapter: adapter()
 	}
-}
+};
 
-export default config
+export default config;

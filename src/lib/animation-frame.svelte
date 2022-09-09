@@ -35,7 +35,7 @@ because we dont want to show the contents until we know the progress so that the
 </script>
 
 <div use:windowScroll on:windowscroll={updateProgress} class={frameStyles} bind:this={frame}>
-	<div style={`opacity:${progress ? 1 : 0}`} class="relative md:sticky top-0">
+	<div style={`opacity:${progress ? 1 : 0}`} class="relative top-0 md:sticky">
 		<slot />
 	</div>
 </div>

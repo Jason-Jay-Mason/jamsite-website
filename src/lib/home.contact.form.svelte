@@ -46,35 +46,20 @@
 	}
 </script>
 
-<form on:submit|preventDefault={handleSubmit} class="group flex flex-col w-full">
-	<div class="flex w-full flex-col md:flex-row justify-center items-center">
-		<div class="px-2 w-full">
-			<StyledInput
-				placeholder="Name"
-				type="text"
-				bind:formValue={formValues.name.value}
-				bind:valid={formValues.name.valid}
-			/>
+<form on:submit|preventDefault={handleSubmit} class="group flex w-full flex-col">
+	<div class="flex w-full flex-col items-center justify-center md:flex-row">
+		<div class="w-full px-2">
+			<StyledInput placeholder="Name" type="text" bind:formValue={formValues.name.value} bind:valid={formValues.name.valid} />
 		</div>
-		<div class="px-2 w-full">
-			<StyledInput
-				placeholder="Email"
-				type="email"
-				bind:formValue={formValues.email.value}
-				bind:valid={formValues.email.valid}
-			/>
+		<div class="w-full px-2">
+			<StyledInput placeholder="Email" type="email" bind:formValue={formValues.email.value} bind:valid={formValues.email.valid} />
 		</div>
 	</div>
-	<StyledInput
-		placeholder="How can we help?"
-		type="text-area"
-		bind:formValue={formValues.message.value}
-		bind:valid={formValues.message.valid}
-	/>
+	<StyledInput placeholder="How can we help?" type="text-area" bind:formValue={formValues.message.value} bind:valid={formValues.message.valid} />
 	{#if formError}
 		<p class="text-villainRed-100">{formError}</p>
 	{:else if formValid}
-		<div transition:fade class="w-full flex justify-center items-center">
+		<div transition:fade class="flex w-full items-center justify-center">
 			<Button
 				type="submit"
 				styles="transition-all

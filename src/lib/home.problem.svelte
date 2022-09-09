@@ -12,47 +12,33 @@ type of bug with the global.css in applying leading styling.
 	let progress; //Need to bind progress to the animation frame component which will reflect the percent progress through the section
 </script>
 
-<section id="problem" class="bg-analogBlack-400 hidden xl:block bg-subtleGameGrid ">
+<section id="problem" class="hidden bg-analogBlack-400 bg-subtleGameGrid xl:block ">
 	<AnimationFrame bind:progress frameHeight="h-[400vh]">
-		<div class="flex items-center justify-center py-9 h-[100vh]">
-			<div
-				class="relative mx-auto max-w-screen-2xl px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center items-center"
-			>
+		<div class="flex h-[100vh] items-center justify-center py-9">
+			<div class="relative mx-auto grid max-w-screen-2xl grid-cols-1 items-center justify-center px-6 md:grid-cols-2 md:px-8 xl:grid-cols-4">
 				<h3
-					style={`opacity:${getStyleValue(
-						progress,
-						0.1,
-						0.1,
-						0,
-						1
-					)}; transform:translateX(${getStyleValue(
+					style={`opacity:${getStyleValue(progress, 0.1, 0.1, 0, 1)}; transform:translateX(${getStyleValue(
 						progress,
 						0.25,
 						0.1,
 						160,
 						0
 					)}%) scale(${getStyleValue(progress, 0.25, 0.1, 150, 100)}%)`}
-					class="relative md:top-12 leading-tight md:leading-tight whitespace-nowrap font-bold w-full
-					text-4xl md:text-5xl pb-12 md:pr-9"
+					class="relative w-full whitespace-nowrap pb-12 text-4xl font-bold leading-tight
+					md:top-12 md:pr-9 md:text-5xl md:leading-tight"
 				>
 					The <span class="text-villainRed-200">problem </span><br />with the web<br /> today...
 				</h3>
 				<div style={`opacity:${getStyleValue(progress, 0.3, 0.15, 0, 1)}`}>
 					<Blurb
-						iconStyle={`filter:saturate(${getStyleValue(
+						iconStyle={`filter:saturate(${getStyleValue(progress, 0.55, 0.15, 1, 0)}) brightness(${getStyleValue(progress, 0.55, 0.15, 1, 4)})
+							drop-shadow(0px 0px 17px rgba(${getStyleValue(progress, 0.55, 0.15, 206, 255)}, ${getStyleValue(progress, 0.55, 0.15, 77, 255)}, ${getStyleValue(
 							progress,
 							0.55,
 							0.15,
-							1,
-							0
-						)}) brightness(${getStyleValue(progress, 0.55, 0.15, 1, 4)})
-							drop-shadow(0px 0px 17px rgba(${getStyleValue(progress, 0.55, 0.15, 206, 255)}, ${getStyleValue(
-							progress,
-							0.55,
-							0.15,
-							77,
+							69,
 							255
-						)}, ${getStyleValue(progress, 0.55, 0.15, 69, 255)}, 0.46))
+						)}, 0.46))
 						`}
 						iconSrc="/red-icon-dummy.svg"
 						headline="Scalability"
@@ -62,20 +48,14 @@ type of bug with the global.css in applying leading styling.
 
 				<div style={`opacity:${getStyleValue(progress, 0.55, 0.15, 0, 1)}`}>
 					<Blurb
-						iconStyle={`filter:saturate(${getStyleValue(
+						iconStyle={`filter:saturate(${getStyleValue(progress, 0.8, 0.15, 1, 0)}) brightness(${getStyleValue(progress, 0.8, 0.15, 1, 4)})
+							drop-shadow(0px 0px 17px rgba(${getStyleValue(progress, 0.8, 0.15, 206, 255)}, ${getStyleValue(progress, 0.8, 0.15, 77, 255)}, ${getStyleValue(
 							progress,
 							0.8,
 							0.15,
-							1,
-							0
-						)}) brightness(${getStyleValue(progress, 0.8, 0.15, 1, 4)})
-							drop-shadow(0px 0px 17px rgba(${getStyleValue(progress, 0.8, 0.15, 206, 255)}, ${getStyleValue(
-							progress,
-							0.8,
-							0.15,
-							77,
+							69,
 							255
-						)}, ${getStyleValue(progress, 0.8, 0.15, 69, 255)}, 0.46))
+						)}, 0.46))
 						`}
 						iconSrc="/red-icon-dummy.svg"
 						headline="Scalability"
@@ -97,14 +77,12 @@ type of bug with the global.css in applying leading styling.
 </section>
 
 <section class="block xl:hidden" id="problem-mobile">
-	<div class="bg-analogBlack-400  flex items-center justify-center py-28 lg:py-44">
-		<div
-			class="mx-auto max-w-screen-2xl px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-center items-center"
-		>
+	<div class="flex  items-center justify-center bg-analogBlack-400 py-28 lg:py-44">
+		<div class="mx-auto grid max-w-screen-2xl grid-cols-1 items-center justify-center px-4 md:grid-cols-2 md:px-8 xl:grid-cols-4">
 			<h3
 				style={`opacity:${getStyleValue(progress, 0.15, 0.1, 0, 1)}`}
-				class="relative top-auto md:top-12 leading-tight md:leading-tight font-bold w-full
-					text-4xl md:text-5xl pb-12 md:pr-9"
+				class="relative top-auto w-full pb-12 text-4xl font-bold leading-tight
+					md:top-12 md:pr-9 md:text-5xl md:leading-tight"
 			>
 				The <span class="text-villainRed-300">problem </span>with the web today...
 			</h3>

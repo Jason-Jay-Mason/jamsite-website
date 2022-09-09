@@ -108,15 +108,7 @@
 
 {#if type === 'text' || type === null || type === 'email'}
 	<label class={labelStyling}>
-		<input
-			type="text"
-			bind:value={formValue}
-			on:input={handleInput}
-			on:blur={handleChange}
-			minlength="2"
-			{placeholder}
-			class={inputStyling}
-		/>
+		<input type="text" bind:value={formValue} on:input={handleInput} on:blur={handleChange} minlength="2" {placeholder} class={inputStyling} />
 		<span class={messageStyling}>{message}&nbsp;</span>
 	</label>
 {:else if type === 'phone'}
@@ -137,15 +129,7 @@
 	</label>
 {:else if type === 'text-area'}
 	<label class={labelStyling}>
-		<textarea
-			bind:value={formValue}
-			type="text"
-			minlength="2"
-			on:input={handleInput}
-			on:blur={handleChange}
-			{placeholder}
-			class={inputStyling}
-		/>
+		<textarea bind:value={formValue} type="text" minlength="2" on:input={handleInput} on:blur={handleChange} {placeholder} class={inputStyling} />
 		<span class={messageStyling}>{message}&nbsp;</span>
 	</label>
 {/if}

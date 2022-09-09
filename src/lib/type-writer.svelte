@@ -58,11 +58,11 @@
 	}
 </script>
 
-<div class="relative w-fit mx-auto pb-1 flex justify-center items-center">
+<div class="relative mx-auto flex w-fit items-center justify-center pb-1">
 	<span class="w-auto">
 		{currentMessage}&nbsp;
 		{#if cursorActive}
-			<span class="font-thin absolute -ml-2 md:-ml-5">|</span>
+			<span class="absolute -ml-2 font-thin md:-ml-5">|</span>
 		{/if}
 	</span>
 </div>

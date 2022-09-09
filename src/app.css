@@ -30,7 +30,7 @@
 	}
 
 	h2 {
-		@apply text-xl md:text-4xl py-4;
+		@apply py-4 text-xl md:text-4xl;
 	}
 
 	ul {
@@ -38,7 +38,7 @@
 	}
 
 	button {
-		@apply font-normal rounded shadow-button;
+		@apply rounded font-normal shadow-button;
 	}
 
 	ul {
@@ -51,7 +51,7 @@
 	}
 
 	.legal h2 {
-		@apply text-xl md:text-4xl pt-12 font-bold;
+		@apply pt-12 text-xl font-bold md:text-4xl;
 	}
 	.legal p {
 		@apply mb-4;

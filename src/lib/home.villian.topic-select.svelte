@@ -144,58 +144,39 @@
 	});
 </script>
 
-<div
-	id="villian-dislplay"
-	class=" flex flex-col justify-center items-center lg:flex-row max-w-screen-2xl mx-auto mt-8 lg:px-4 "
->
+<div id="villian-dislplay" class="mx-3 flex max-w-screen-2xl flex-col items-center justify-center lg:mx-auto lg:flex-row  lg:pr-4">
 	<div
 		id="dino-select"
-		class="bg-analogBlack-400 w-full lg:w-1/2 xl:w-[40%] max-w-screen-sm lg:max-w-none mx-auto  bg-gameGrid flex justify-center items-center border-1 border-white/50 shadow-button shadow-white/10 mb-10 lg:mb-0"
+		class="mx-auto mb-10 flex w-full max-w-screen-sm items-center justify-center  border-1 border-white/50 bg-analogBlack-400 bg-gameGrid shadow-button shadow-white/10 lg:mb-0 lg:w-1/2 lg:max-w-none xl:w-[40%]"
 	>
 		<div
-			class="max-w-md lg:max-w-none grid justify-center items-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 py-10 lg:py-10 xl:py-16 px-1 lg:px-10 xl:px-10"
+			class="grid max-w-md grid-cols-2 items-center justify-center py-10 px-1 sm:grid-cols-3 lg:max-w-none lg:grid-cols-3 lg:py-10 lg:px-10 xl:py-16 xl:px-10"
 		>
 			{#each DATA as dino}
-				<div
-					on:click={() => (selected = dino)}
-					class="flex items-center justify-center py-2  lg:py-3 "
-				>
+				<div on:click={() => (selected = dino)} class="flex items-center justify-center py-2  lg:py-3 ">
 					<DinoButton {dino} isSelected={dino === selected} />
 				</div>
 			{/each}
 		</div>
 	</div>
-	<div
-		id="selected-villian-display"
-		class="px-3 ml-0 lg:ml-4 xl:ml-16 w-full max-w-screen-md lg:max-w-none lg:w-1/2 xl:w-[60%] h-fit "
-	>
+	<div id="selected-villian-display" class="ml-0 h-fit w-full max-w-screen-md px-3 lg:ml-4 lg:w-1/2 lg:max-w-none xl:ml-16 xl:w-[60%] ">
 		{#each DATA as dino}
 			<div class={selected === dino ? 'block animate-fadeIn' : 'hidden'}>
-				<div class="flex flex-row justify-center items-center">
+				<div class="flex flex-row items-center justify-center">
 					{#if frame}
-						<img
-							src={dino.sprite}
-							class="hidden xl:block h-[170px] w-[170px] object-cover object-left filter  mr-10"
-						/>
+						<img src={dino.sprite} class="mr-10 hidden h-[170px] w-[170px] object-cover object-left filter  xl:block" />
 					{:else}
-						<img
-							src={dino.sprite}
-							class="hidden xl:block h-[170px] w-[170px] object-cover object-right filter mr-10"
-						/>
+						<img src={dino.sprite} class="mr-10 hidden h-[170px] w-[170px] object-cover object-right filter xl:block" />
 					{/if}
-					<p class="text-white text-center lg:text-left">{dino.blurb}</p>
+					<p class="text-center text-white lg:text-left">{dino.blurb}</p>
 				</div>
-				<div
-					class="flex flex-row justify-center lg:justify-start items-center w-full pt-10 flex-wrap"
-				>
+				<div class="flex w-full flex-row flex-wrap items-center justify-center pt-10 lg:justify-start">
 					{#each dino.downsides as downside}
-						<div
-							class="flex flex-row justify-start items-center md:pr-3 max-w-[240px] xl:w-[33%] py-2"
-						>
+						<div class="flex max-w-[240px] flex-row items-center justify-start py-2 md:pr-3 xl:w-[33%]">
 							<img src="/negative-arrow.svg" />
 							<div>
-								<p class="text-white font-rubik font-semibold">{downside.title}</p>
-								<p class="text-white leading-tight">{downside.blurb}</p>
+								<p class="font-rubik font-semibold text-white">{downside.title}</p>
+								<p class="leading-tight text-white">{downside.blurb}</p>
 							</div>
 						</div>
 					{/each}

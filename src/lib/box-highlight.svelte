@@ -3,7 +3,7 @@
 	export let classes;
 </script>
 
-<div class={'relative w-fit mx-auto max-w-full  border-white/60 border-1 ' + classes}>
+<div class={'relative mx-auto w-fit max-w-full  border-1 border-white/60 ' + classes}>
 	<Corner xPosition="left" yPosition="top" />
 	<Corner xPosition="right" yPosition="top" />
 	<Corner xPosition="left" yPosition="bottom" />

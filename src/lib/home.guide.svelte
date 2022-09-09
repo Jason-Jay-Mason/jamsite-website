@@ -33,7 +33,7 @@
 			</div>
 		</AnimationFrame>
 		<!-- ship animation -->
-		<div class="relative pt-72 pb-16 overflow-hidden">
+		<div class="relative pt-72 pb-28 overflow-x-hidden">
 			<div
 				class="absolute -right-20 flex flex-row"
 				style={`transform: translateX(-${getStyleValue(progress, 1.3, 1, 0, 120)}vw)`}
@@ -80,9 +80,13 @@
 						150
 					)}vh) rotate(-90deg)`}
 				/>
-				<img src="/j-ship-2.svg" alt="j-ship firing at dino" class="-rotate-90" />
+				<img
+					src="/j-ship-2.svg"
+					alt="j-ship firing at dino"
+					class="filter drop-shadow-black -rotate-90"
+				/>
 				<span
-					class="h-[24px] w-[7px] bg-gradient-to-r from-villainRed-200 drop-shadow-smIconRed filter "
+					class="h-[19px] w-[9px] bg-gradient-to-r from-villainRed-200 drop-shadow-smIconRed filter mt-[1px] "
 				/>
 			</div>
 
@@ -93,7 +97,7 @@
 				<img
 					src="/wordpress-rex-dark2.svg"
 					alt="wordpress rex being shot at"
-					class="w-[100px] h-[100px] object-cover object-left"
+					class="w-[100px] h-[100px] object-cover object-left filter drop-shadow-black"
 					style={`transform: rotate(${getStyleValue(
 						progress,
 						1.2,

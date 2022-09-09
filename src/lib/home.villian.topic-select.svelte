@@ -146,17 +146,20 @@
 
 <div
 	id="villian-dislplay"
-	class=" flex flex-col justify-center items-center md:flex-row max-w-screen-2xl mx-auto mt-8 pb-20 md:pb-0 md:pr-4 "
+	class=" flex flex-col justify-center items-center lg:flex-row max-w-screen-2xl mx-auto mt-8 lg:px-4 "
 >
 	<div
 		id="dino-select"
-		class="bg-analogBlack-400 w-full md:w-[40%] bg-gameGrid flex justify-center items-center border-1 border-white/50 shadow-button shadow-white/10"
+		class="bg-analogBlack-400 w-full lg:w-1/2 xl:w-[40%] max-w-screen-sm lg:max-w-none mx-auto  bg-gameGrid flex justify-center items-center border-1 border-white/50 shadow-button shadow-white/10 mb-10 lg:mb-0"
 	>
 		<div
-			class="max-w-md lg:max-w-none grid justify-center items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 py-20 px-1 xl:px-7"
+			class="max-w-md lg:max-w-none grid justify-center items-center grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 py-10 lg:py-10 xl:py-16 px-1 lg:px-10 xl:px-10"
 		>
 			{#each DATA as dino}
-				<div on:click={() => (selected = dino)} class="flex items-center justify-center py-3">
+				<div
+					on:click={() => (selected = dino)}
+					class="flex items-center justify-center py-2  lg:py-3 "
+				>
 					<DinoButton {dino} isSelected={dino === selected} />
 				</div>
 			{/each}
@@ -164,7 +167,7 @@
 	</div>
 	<div
 		id="selected-villian-display"
-		class="px-5 ml-0 md:ml-4 xl:ml-16 w-full md:w-[60%] h-fit pt-20 md:pt-0 "
+		class="px-3 ml-0 lg:ml-4 xl:ml-16 w-full max-w-screen-md lg:max-w-none lg:w-1/2 xl:w-[60%] h-fit "
 	>
 		{#each DATA as dino}
 			<div class={selected === dino ? 'block animate-fadeIn' : 'hidden'}>
@@ -180,11 +183,10 @@
 							class="hidden xl:block h-[170px] w-[170px] object-cover object-right filter mr-10"
 						/>
 					{/if}
-
-					<p class="text-white text-center md:text-left">{dino.blurb}</p>
+					<p class="text-white text-center lg:text-left">{dino.blurb}</p>
 				</div>
 				<div
-					class="flex flex-row justify-center sm:justify-start items-center w-full pt-10 flex-wrap"
+					class="flex flex-row justify-center lg:justify-start items-center w-full pt-10 flex-wrap"
 				>
 					{#each dino.downsides as downside}
 						<div

@@ -135,7 +135,11 @@
 							`}
 							class="h-[7px] w-[24px] bg-gradient-to-t from-villainRed-200 drop-shadow-smIconRed filter -ml-2 mb-[2px]"
 						/>
-						<img src="/j-ship-2.svg" alt="j-ship flying" class="mx-auto rotate-180" />
+						<img
+							src="/j-ship-2.svg"
+							alt="j-ship flying"
+							class="mx-auto rotate-180 filter drop-shadow-black"
+						/>
 					</div>
 					<!-- #region ui animations -->
 					<div
@@ -173,7 +177,7 @@
 
 						<div
 							id="dummy-ui"
-							class="bg-white/10 border-white border-form h-full w-full min-w-[580px] filter drop-shadow-smIconWhite relative"
+							class="bg-white/10 border-white border-form h-full w-full min-w-[580px] filter drop-shadow-smIconWhite relative rounded-md"
 							style={`transform:translateX(${
 								progress > 2 / 3 + 0.07
 									? getStyleValue(progress, 2 / 3 + 0.07, 0.1, 0, 100)
@@ -241,7 +245,7 @@
 										class="flex w-[90px] flex-row "
 										style={`opacity:${getStyleValue(progress, 0.48, 0.08, 0, 1)}`}
 									>
-										<img src="/j-ship-2.svg" class="-rotate-90 w-5 mr-2 filter" />
+										<img src="/j-ship-2.svg" class="-rotate-90 w-5 mr-2" />
 										<p class="font-semibold whitespace-nowrap font-rubik text-lg">NEW SITE</p>
 									</div>
 									<div
@@ -262,11 +266,11 @@
 										class=" relative mt-2 flex flex-col w-[35px] items-end justify-start"
 										style={`opacity:${getStyleValue(progress, 0.65, 0.08, 0, 1)}`}
 									>
-										<div class="mb-1 h-[5px] w-[30px] h-3 bg-white" />
-										<div class="mb-1 h-[5px] w-[30px] h-3 bg-white" />
-										<div class="mb-1 h-[5px] w-[30px] h-3 bg-white" />
+										<div class="mb-1 h-[5px] w-[30px]  bg-white" />
+										<div class="mb-1 h-[5px] w-[30px]  bg-white" />
+										<div class="mb-1 h-[5px] w-[30px]  bg-white" />
 
-										<p class="absolute mt-28 whitespace-nowrap rotate-90 -left-12 text-lg">
+										<p class="absolute mt-28 whitespace-nowrap rotate-90 -left-[45px] text-lg">
 											여لدאָχεπ ηש하ئ니
 										</p>
 									</div>
@@ -365,80 +369,131 @@
 		</AnimationFrame>
 	</div>
 </section>
-<!-- #region mobile -->
-<section id="plan-mobile" class="block xl:hidden bg-analogBlack-400">
+<!-- #regios mobile -->
+<section
+	id="plan-mobile"
+	class="py-24 lg:py-48 text-center lg:text-left block xl:hidden bg-analogBlack-400 bg-subtleGameGrid"
+>
 	<div>
-		{#each DATA as step, i}
-			<div class="w-full">
-				<p class="font-rubik font-bold text-6xl text-white filter drop-shadow-smIconWhite pb-6">
-					{i + 1}.
-				</p>
-				<h4 class="text-4xl font-semibold leading-relaxed pb-4">
-					{step.headline}
-				</h4>
-				<div>
-					<!-- ui for new website -->
-					<div
-						id="hero-nav"
-						class="text-white flex flex-row justify-between items-center px-7 py-5"
-					>
-						<div id="hero-logo" class="flex w-[90px] flex-row ">
-							<img src="/j-ship-2.svg" class="-rotate-90 w-5 mr-2 filter" />
-							<p class="font-semibold whitespace-nowrap font-rubik text-lg">NEW SITE</p>
-						</div>
-						<div class="flex flex-row border-form border-white rounded-md px-4">
-							<p class="rotate-180 px-2 text-xs py-1 -mb-1">عσ ש</p>
-							<p class="rotate-180 px-2 text-xs py-1 -mb-1">χαع 니σ</p>
-							<p class="rotate-180 px-2 text-xs py-1 -mb-1">אָχεπ</p>
-							<p class="rotate-180 px-2 text-xs py-1 -mb-1">ع비ائع</p>
-						</div>
-						<div class=" relative mt-2 flex flex-col w-[35px] items-end justify-start">
-							<div class="mb-1 h-[5px] w-[30px] h-3 bg-white" />
-							<div class="mb-1 h-[5px] w-[30px] h-3 bg-white" />
-							<div class="mb-1 h-[5px] w-[30px] h-3 bg-white" />
+		<Headline subHeadline="Ready to work with us?"
+			>It’s easy to get <span class="text-jamAqua-100">started</span></Headline
+		>
 
-							<p class="absolute mt-28 whitespace-nowrap rotate-90 -left-12 text-lg">
-								여لدאָχεπ ηש하ئ니
+		{#each DATA as step, i}
+			<div
+				class="w-full flex flex-col lg:flex-row px-4 md:px-9 my-20 lg:my-32 md:mb-32 mx-auto max-w-screen-sm lg:max-w-none"
+			>
+				<div class="w-full lg:w-[45%] mx-auto">
+					<p
+						class="font-rubik font-bold text-4xl md:text-5xl text-white filter drop-shadow-smIconWhite pb-6"
+					>
+						{i + 1}.
+					</p>
+					<h4 class="text-2xl md:text-4xl lg:text-4xl font-semibold leading-relaxed pb-4">
+						{step.headline}
+					</h4>
+					<p class="text-white pb-10 leading-xl">
+						{step.body}
+					</p>
+				</div>
+				<!-- dummy ui  -->
+
+				{#if i === 0}
+					<!-- #region step 1 -->
+					<div class="flex  lg:flex-col justify-center relative lg:-right-16">
+						<PieChart value={80}>Page <br /> Speed</PieChart>
+						<PieChart value={180}>Best <br /> Practices</PieChart>
+						<PieChart value={200}>SEO</PieChart>
+					</div>
+					<div
+						class="relative lg:-right-20 w-[90%] lg:w-1/2 bg-white/20 w-full max-w-screen-sm m-auto border-white border-form rounded-md"
+					>
+						<div
+							class="relative flex justify-start align-center flex-row  my-[0%] px-[2%] text-white border-white border-b-[2px]"
+						>
+							<img src="/wordpress-rex-icon.svg" class="w-[6%] min-w-[30px] " />
+							<p class="text-[120%] font-bold px-2 whitespace-nowrap">Your Site</p>
+
+							<div class="md:hidden w-full flex flex-col justify-center items-end pr-3 ">
+								<div class="w-5 h-1 mb-1 bg-white" />
+								<div class="w-5 h-1 mb-1 bg-white" />
+								<div class="w-5 h-1 bg-white" />
+							</div>
+							<div class="hidden md:flex flex-row w-full mt-1">
+								<p class="text-[80%] px-[1%] rotate-180">عσ ש</p>
+								<p class="text-[80%] px-[1%]  rotate-180">χαع 니σ</p>
+								<p class="text-[80%] px-[1%]  rotate-180">אָχεπ</p>
+								<p class="text-[80%] px-[1%]  rotate-180">ع비ائع</p>
+								<p class="text-[80%] px-[1%]  rotate-180">عσ ש</p>
+							</div>
+						</div>
+						<div class="relative text-white py-20 border-white border-b-[2px] w-full">
+							<p class="rotate-180 m-auto font-bold text-2xl text-center">여لدאָχεπ ηש하ئ니</p>
+							<img
+								src="/wordpress-rex-icon.svg"
+								class="absolute top-0 bottom-0 right-0 left-0 m-auto opacity-30 w-[150px]"
+							/>
+						</div>
+						<div class="text-white border-white border-form m-4">
+							<p class="text-[9px] leading-normal p-2">
+								여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ
+								여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ ש 니عσ ש비 πιχσχσεε기را ش σט기را ד의 즈 χαع 니σ ίρ
+								여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ ا ش
+								σטאָχεπ즈 χαع ιχσε πιχσχσεε기را شσט기را ד의 즈 χعσ ש비 πιχσχσεε기را ش σט기را ד의 즈
+								χαع 니σ ίρ 여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 π
 							</p>
 						</div>
 					</div>
-					<div id="hero-main" class="flex pt-5 pl-3 text-white flex-row">
-						<div class="w-[52%]">
-							<div class="pl-5 pb-5">
-								<p class="rotat-180 text-3xl font-bold pt-3 rotate-180 text-right">
-									여لدאָχεπ ηש하ئ니
-								</p>
-								<p class="text-xs pb-4 leading-loose">
-									여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ
-								</p>
-								<div class="flex flex-row justify-between max-w-[90%]">
+					<!-- #endregion step 1 -->
+				{:else if i === 1}
+					<!-- #region step 2 ui -->
+					<div
+						class="relative lg:-right-10 w-[90%] lg:w-1/2 overflow-hidden bg-white/20 w-full max-w-screen-sm m-auto border-white border-form rounded-md"
+					>
+						<div class="flex flex-row text-white py-3 px-4 md:px-4">
+							<div class="w-2/3 flex flex-row">
+								<img src="/j-ship-2.svg" class="-rotate-90 w-[26px] mr-2" />
+								<p class="font-bold">NEW SITE</p>
+							</div>
+							<div class="w-1/3 flex flex-col justify-center items-end pr-3 rounded-md">
+								<div class="w-6 h-1 mb-1 bg-white" />
+								<div class="w-6 h-1 mb-1 bg-white" />
+								<div class="w-6 h-1 bg-white" />
+							</div>
+						</div>
+						<div class="text-white flex flex-col py-3 px-2 max-w-[300px] mx-auto">
+							<p class="text-3xl font-bold rotate-180 mb-4 text-center">여لدאָχεπ ηש하ئ니</p>
+							<p class="rotate-180 text-sm text-center">
+								여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ
+							</p>
+							<div class="flex-row flex items-center justify-between w-full max-w-[230px] mx-auto">
+								<div class="border-white border-form rounded-md px-3 py-1 mt-1">
+									<p class="font-light text-xs pb-1">χαع비ا</p>
+								</div>
+								<div class="flex flex-row justify-center items-center font-light py-4">
 									<div
-										class="border-white border-form rounded-md px-3 py-1 mt-1 font-light text-xs"
+										class="rounded-full relative border-white border-form p-2 text-xs rotate-180 mr-3"
 									>
-										χαع비ا
+										<p class="text-xs -top-[1px] relative">ε기</p>
 									</div>
-									<div class="flex flex-row justify-center items-center font-light">
-										<div
-											class="rounded-full relative border-white border-form p-2 text-xs rotate-180 mr-3"
-										>
-											<p class="text-xs -top-[1px] relative">ε기</p>
-										</div>
-										<div
-											class="rounded-full relative border-white border-form p-2 text-xs rotate-90 mr-3"
-										>
-											<p class="text-xs -top-[2px] relative">שع</p>
-										</div>
-										<div
-											class="rounded-full relative border-white border-form p-2 text-xs rotate-90 mr-3"
-										>
-											<p class="text-xs -top-[2px] relative">ηש</p>
-										</div>
+									<div
+										class="rounded-full relative border-white border-form p-2 text-xs rotate-90 mr-3"
+									>
+										<p class="text-xs -top-[2px] relative">שع</p>
+									</div>
+									<div
+										class="rounded-full relative border-white border-form p-2 text-xs rotate-90 mr-3"
+									>
+										<p class="text-xs -top-[2px] relative">ηש</p>
 									</div>
 								</div>
 							</div>
-
-							<div class="border-white border-form my-4 py-6 px-6 rounded-md ml-3">
-								<p class="text-[7px] leading-[16px] leading-normal">
+						</div>
+						<div class="w-full px-4">
+							<div
+								class="text-white border-white border-[2px] my-5 bg-white/10 max-w-[350px] mx-auto"
+							>
+								<p class="text-[8px] leading-loose p-4">
 									여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ
 									여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ ש 니عσ ש비 πιχσχσεε기را ش σט기را ד의 즈 χαع 니σ
 									ίρ 여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ ا ش
@@ -446,21 +501,83 @@
 								</p>
 							</div>
 						</div>
-						<div class="w-[230px] h-full">
-							<img src="/background-j.svg" class="w-full pl-5 object-fill opacity-20" />
-						</div>
+
+						<img
+							src="/j-ship-2.svg"
+							class="top-0 -rotate-90 opacity-10 h-full absolute w-full -right-[20%]"
+						/>
 					</div>
-					is here
-				</div>
-				<p class="text-white pb-10 leading-xl">
-					{step.body}
-				</p>
-				<div>
-					<Button
-						styles="mx-0 bg-villainRed-200/70 hover:bg-villainRed-200 shadow-villainRed-200/40 hover:shadow-villainRed-200"
-						>{step.cta.title}</Button
+					<!-- #endregion step 2 ui -->
+				{:else}
+					<!-- #region step 3 ui -->
+					<div class="flex flex-row lg:flex-col justify-center relative lg:-right-16">
+						<PieChart value={355}>Page <br /> Speed</PieChart>
+						<PieChart value={350}>Best <br /> Practices</PieChart>
+						<PieChart value={350}>SEO</PieChart>
+					</div>
+
+					<div
+						class="relative hidden lg:block lg:-right-20 w-[90%] lg:w-1/2 overflow-hidden bg-white/20 w-full max-w-screen-sm m-auto border-white border-form rounded-md"
 					>
-				</div>
+						<div class="flex flex-row text-white py-3 px-4 md:px-4">
+							<div class="w-2/3 flex flex-row">
+								<img src="/j-ship-2.svg" class="-rotate-90 w-[26px] mr-2" />
+								<p class="font-bold">NEW SITE</p>
+							</div>
+							<div class="w-1/3 flex flex-col justify-center items-end pr-3 rounded-md">
+								<div class="w-6 h-1 mb-1 bg-white" />
+								<div class="w-6 h-1 mb-1 bg-white" />
+								<div class="w-6 h-1 bg-white" />
+							</div>
+						</div>
+						<div class="text-white flex flex-col py-3 px-2 max-w-[300px] mx-auto">
+							<p class="text-3xl font-bold rotate-180 mb-4 text-center">여لدאָχεπ ηש하ئ니</p>
+							<p class="rotate-180 text-sm text-center">
+								여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ
+							</p>
+							<div class="flex-row flex items-center justify-between w-full max-w-[230px] mx-auto">
+								<div class="border-white border-form rounded-md px-3 py-1 mt-1">
+									<p class="font-light text-xs pb-1">χαع비ا</p>
+								</div>
+								<div class="flex flex-row justify-center items-center font-light py-4">
+									<div
+										class="rounded-full relative border-white border-form p-2 text-xs rotate-180 mr-3"
+									>
+										<p class="text-xs -top-[1px] relative">ε기</p>
+									</div>
+									<div
+										class="rounded-full relative border-white border-form p-2 text-xs rotate-90 mr-3"
+									>
+										<p class="text-xs -top-[2px] relative">שع</p>
+									</div>
+									<div
+										class="rounded-full relative border-white border-form p-2 text-xs rotate-90 mr-3"
+									>
+										<p class="text-xs -top-[2px] relative">ηש</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="w-full px-4">
+							<div
+								class="text-white border-white border-[2px] my-5 bg-white/10 max-w-[350px] mx-auto"
+							>
+								<p class="text-[8px] leading-loose p-4">
+									여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ
+									여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ ש 니عσ ש비 πιχσχσεε기را ش σט기را ד의 즈 χαع 니σ
+									ίρ 여لدאָχεπ즈 χαع비ائع ηש하ئ니σ ίρ שعσ ש비 πιχσε기را ش σט ד의 즈 χαع 니σ ίρ ا ش
+									σטאָχεπ즈 χαع
+								</p>
+							</div>
+						</div>
+
+						<img
+							src="/j-ship-2.svg"
+							class="top-0 -rotate-90 opacity-10 h-full absolute w-full -right-[20%]"
+						/>
+					</div>
+					<!-- #endregion step 3 ui -->
+				{/if}
 			</div>
 		{/each}
 	</div>

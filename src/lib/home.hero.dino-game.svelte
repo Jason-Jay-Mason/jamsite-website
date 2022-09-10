@@ -6,40 +6,58 @@
 	export let container;
 
 	let canvas;
+	let frame;
+	let windowSize = container.clientWidth;
 
 	function setDimensions() {
-		canvas.width = innerWidth;
-		canvas.height = container.offsetHeight;
+		if (canvas) {
+			canvas.width = innerWidth;
+			canvas.height = container.offsetHeight;
+		}
+		windowSize = innerWidth;
+		cancelAnimationFrame(frame);
+		renderLoop();
 	}
 
-	onMount(() => {
-		canvas.width = innerWidth;
-		canvas.height = container.offsetHeight;
-		const ctx = canvas.getContext('2d');
+	function renderLoop() {
+		if (canvas) {
+			canvas.width = innerWidth;
+			canvas.height = container.offsetHeight;
+			const ctx = canvas.getContext('2d');
 
-		const dinoGame = new DinoGame({
-			dinosaurCount: 4,
-			context: ctx,
-			width: canvas.width,
-			height: canvas.height,
-			isAi: ai
-		});
+			const dinoGame = new DinoGame({
+				dinosaurCount: 4,
+				context: ctx,
+				width: canvas.width,
+				height: canvas.height,
+				isAi: ai
+			});
 
-		let frame = requestAnimationFrame(loop);
-
-		function loop(time) {
 			frame = requestAnimationFrame(loop);
-			if (dinoGame.width !== innerWidth || dinoGame.height !== container.offsetHeight) {
-				dinoGame.width = innerWidth;
-				canvas.height = container.offsetHeight;
+
+			function loop(time) {
+				if (canvas) {
+					frame = requestAnimationFrame(loop);
+					if (dinoGame.width !== innerWidth || dinoGame.height !== container.offsetHeight) {
+						dinoGame.width = innerWidth;
+						canvas.height = container.offsetHeight;
+					}
+					dinoGame.update(time);
+				}
 			}
-			dinoGame.update(time);
 		}
 
 		return () => {
+			console.log('here');
 			cancelAnimationFrame(frame);
 		};
-	});
+	}
+
+	onMount(renderLoop);
 </script>
 
-<canvas use:windowResize on:windowresize={setDimensions} bind:this={canvas} class="absolute top-0 z-10 block h-full w-full" />
+<div use:windowResize on:windowresize={setDimensions}>
+	{#if windowSize > 1000}
+		<canvas bind:this={canvas} class=" absolute top-0 z-10 hidden h-full w-full md:block" />
+	{/if}
+</div>

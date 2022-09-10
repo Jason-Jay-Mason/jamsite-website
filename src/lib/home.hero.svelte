@@ -1,18 +1,18 @@
 <script>
 	import Cta from '$lib/home.hero.cta.svelte';
 	import BoxHighlight from '$lib/box-highlight.svelte';
-	import VideoBtn from '$lib/home.hero.video.btn.svelte';
 	import TypeWriter from '$lib/type-writer.svelte';
 	import DinoGame from '$lib/home.hero.dino-game.svelte';
 	import { schedulerModalVisible } from '$lib/stores.js';
-	import { videoModalVisible } from '$lib/stores.js';
+	// import { videoModalVisible } from '$lib/stores.js';
+	// import VideoBtn from '$lib/home.hero.video.btn.svelte';
 
 	function showScheduleModel() {
 		schedulerModalVisible.update((v) => (v = true));
 	}
-	function showVideoModel() {
-		videoModalVisible.update((v) => (v = true));
-	}
+	// function showVideoModel() {
+	// 	videoModalVisible.update((v) => (v = true));
+	// }
 
 	let heroContainer;
 	let messages = ['ranks higher.', 'loads faster.', 'looks better.', 'wins more sales.'];

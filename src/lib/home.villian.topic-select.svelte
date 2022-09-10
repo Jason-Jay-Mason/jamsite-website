@@ -5,6 +5,7 @@
 	const DATA = [
 		{
 			title: 'WordPress',
+			alt: 'Wordpress Rex',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex-dark2.svg',
 			blurb:
@@ -26,6 +27,7 @@
 		},
 		{
 			title: 'WordPress',
+			alt: 'Wordpress Rex',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
@@ -47,6 +49,7 @@
 		},
 		{
 			title: 'WordPress',
+			alt: 'Wordpress Rex',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
@@ -68,6 +71,7 @@
 		},
 		{
 			title: 'WordPress',
+			alt: 'Wordpress Rex',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
@@ -89,6 +93,7 @@
 		},
 		{
 			title: 'WordPress',
+			alt: 'Wordpress Rex',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
@@ -110,6 +115,7 @@
 		},
 		{
 			title: 'WordPress',
+			alt: 'Wordpress Rex',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
@@ -164,16 +170,16 @@
 			<div class={selected === dino ? 'block animate-fadeIn' : 'hidden'}>
 				<div class="flex flex-row items-center justify-center">
 					{#if frame}
-						<img src={dino.sprite} class="mr-10 hidden h-[170px] w-[170px] object-cover object-left filter  xl:block" />
+						<img alt={`${dino.alt} animated`} src={dino.sprite} class="mr-10 hidden h-[170px] w-[170px] object-cover object-left filter  xl:block" />
 					{:else}
-						<img src={dino.sprite} class="mr-10 hidden h-[170px] w-[170px] object-cover object-right filter xl:block" />
+						<img alt={`${dino.alt} animated`} src={dino.sprite} class="mr-10 hidden h-[170px] w-[170px] object-cover object-right filter xl:block" />
 					{/if}
 					<p class="text-center text-white lg:text-left">{dino.blurb}</p>
 				</div>
 				<div class="flex w-full flex-row flex-wrap items-center justify-center pt-10 lg:justify-start">
 					{#each dino.downsides as downside}
 						<div class="flex max-w-[240px] flex-row items-center justify-start py-2 md:pr-3 xl:w-[33%]">
-							<img src="/negative-arrow.svg" />
+							<img alt="Negative down arrow" src="/negative-arrow.svg" />
 							<div>
 								<p class="font-rubik font-semibold text-white">{downside.title}</p>
 								<p class="leading-tight text-white">{downside.blurb}</p>

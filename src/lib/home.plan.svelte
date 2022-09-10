@@ -90,7 +90,7 @@
 						</div>
 						<div class="relative m-auto w-[90%] w-full max-w-screen-sm rounded-md border-form border-white bg-white/20 lg:-right-20 lg:w-1/2">
 							<div class="align-center relative my-[0%] flex flex-row  justify-start border-b-[2px] border-white px-[2%] text-white">
-								<img src="/wordpress-rex-icon.svg" class="w-[6%] min-w-[30px] " />
+								<img alt="wordpress rex logo" src="/wordpress-rex-icon.svg" class="w-[6%] min-w-[30px] " />
 								<p class="whitespace-nowrap px-2 text-[120%] font-bold">Your Site</p>
 
 								<div class="flex w-full flex-col items-end justify-center pr-3 md:hidden ">
@@ -108,7 +108,11 @@
 							</div>
 							<div class="relative w-full border-b-[2px] border-white py-20 text-white">
 								<p class="m-auto rotate-180 text-center text-2xl font-bold">여لدאָχεπ ηש하ئ니</p>
-								<img src="/wordpress-rex-icon.svg" class="absolute top-0 bottom-0 right-0 left-0 m-auto w-[150px] opacity-30" />
+								<img
+									alt="wordpress rex background"
+									src="/wordpress-rex-icon.svg"
+									class="absolute top-0 bottom-0 right-0 left-0 m-auto w-[150px] opacity-30"
+								/>
 							</div>
 							<div class="m-4 border-form border-white text-white">
 								<p class="p-2 text-[9px] leading-normal">
@@ -126,7 +130,7 @@
 						>
 							<div class="flex flex-row py-3 px-4 text-white md:px-4">
 								<div class="flex w-2/3 flex-row">
-									<img src="/j-ship-2.svg" class="mr-2 w-[26px] -rotate-90" />
+									<img alt="j-ship logo" src="/j-ship-2.svg" class="mr-2 w-[26px] -rotate-90" />
 									<p class="font-bold">NEW SITE</p>
 								</div>
 								<div class="flex w-1/3 flex-col items-end justify-center rounded-md pr-3">
@@ -164,7 +168,7 @@
 								</div>
 							</div>
 
-							<img src="/j-ship-2.svg" class="absolute top-0 -right-[20%] h-full w-full -rotate-90 opacity-10" />
+							<img alt="j-ship background" src="/j-ship-2.svg" class="absolute top-0 -right-[20%] h-full w-full -rotate-90 opacity-10" />
 						</div>
 						<!-- #endregion step 2 ui -->
 					{:else}
@@ -180,7 +184,7 @@
 						>
 							<div class="flex flex-row py-3 px-4 text-white md:px-4">
 								<div class="flex w-2/3 flex-row">
-									<img src="/j-ship-2.svg" class="mr-2 w-[26px] -rotate-90" />
+									<img alt="j-ship logo" src="/j-ship-2.svg" class="mr-2 w-[26px] -rotate-90" />
 									<p class="font-bold">NEW SITE</p>
 								</div>
 								<div class="flex w-1/3 flex-col items-end justify-center rounded-md pr-3">
@@ -218,7 +222,7 @@
 								</div>
 							</div>
 
-							<img src="/j-ship-2.svg" class="absolute top-0 -right-[20%] h-full w-full -rotate-90 opacity-10" />
+							<img alt="j-ship background" src="/j-ship-2.svg" class="absolute top-0 -right-[20%] h-full w-full -rotate-90 opacity-10" />
 						</div>
 						<!-- #endregion step 3 ui -->
 					{/if}
@@ -325,7 +329,7 @@
 							`}
 									>
 										<div id="villian-nav" class="flex flex-row items-center justify-start border-b-[2px] border-white px-5 py-4 text-white ">
-											<img id="villian-nav-logo" src="/wordpress-rex-icon.svg" class="w-9" />
+											<img alt="Wordpress rex logo" id="villian-nav-logo" src="/wordpress-rex-icon.svg" class="w-9" />
 											<p class="px-3 text-xl font-bold">Your Site</p>
 											<div id="villian-links" class="relative top-1 flex flex-row">
 												<p class="rotate-180 px-3 text-base">عσ ש</p>
@@ -337,7 +341,11 @@
 										</div>
 										<div id="villian-hero" class="relative flex items-center justify-center border-b-[2px] border-white py-16">
 											<p class="rotate-180 text-4xl font-semibold text-white">여لدאָχεπ ηש하ئ니</p>
-											<img src="/wordpress-rex-icon.svg" class="absolute m-auto h-28 opacity-20 drop-shadow-smIconWhite filter" />
+											<img
+												alt="Wordpress rex logo"
+												src="/wordpress-rex-icon.svg"
+												class="absolute m-auto h-28 opacity-20 drop-shadow-smIconWhite filter"
+											/>
 										</div>
 										<div id="villian-text-blocks" class="flex flex-row items-center justify-center px-8 py-7 text-[7px] text-white">
 											<div class="border-form border-white px-3 py-8">
@@ -358,7 +366,7 @@
 									<!-- ui for new website -->
 									<div id="hero-nav" class="flex flex-row items-center justify-between px-7 py-5 text-white">
 										<div id="hero-logo" class="flex w-[90px] flex-row " style={`opacity:${getStyleValue(progress, 0.48, 0.08, 0, 1)}`}>
-											<img src="/j-ship-2.svg" class="mr-2 w-5 -rotate-90" />
+											<img alt="j-ship logo" src="/j-ship-2.svg" class="mr-2 w-5 -rotate-90" />
 											<p class="whitespace-nowrap font-rubik text-lg font-semibold">NEW SITE</p>
 										</div>
 										<div class="rounded-md border-form border-white px-4" style={`opacity:${getStyleValue(progress, 0.5, 0.08, 0, 1)}`}>
@@ -425,7 +433,7 @@
 											</div>
 										</div>
 										<div class="h-full w-[220px]" style={`opacity:${getStyleValue(progress, 0.54, 0.08, 0, 1)}`}>
-											<img src="/background-j.svg" class="w-full object-fill pl-5 opacity-20" />
+											<img alt="background jship" src="/background-j.svg" class="w-full object-fill pl-5 opacity-20" />
 										</div>
 									</div>
 								{/if}

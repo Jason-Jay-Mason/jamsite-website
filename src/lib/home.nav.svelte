@@ -11,7 +11,7 @@
 	<div class="container mx-auto flex max-w-screen-2xl items-center justify-between py-4 px-4 md:px-12">
 		<div class="flex items-center text-white">
 			<a href="/">
-				<img src="/jamsite-logo-v1.svg" class="mr-9 w-[115px] md:w-32" />
+				<img alt="Jamsite logo" src="/jamsite-logo-v1.svg" class="mr-9 w-[115px] md:w-32" />
 			</a>
 			<div class="hidden lg:flex">
 				<!-- <Link href="#solutions" prefetch={true}>Our Solutions</Link> -->

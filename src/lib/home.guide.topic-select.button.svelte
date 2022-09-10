@@ -10,7 +10,7 @@
 <div id="guide-button" class={styles + (selected ? 'bg-jamAqua-200 hover:bg-jamAqua-200' : 'bg-transparent hover:bg-white/10')}>
 	<div class="flex flex-row items-center justify-center">
 		<div class={'flex items-center justify-center pr-5 lg:w-28 lg:pr-3 ' + (selected && 'drop-shadow-icon filter')}>
-			<img class="w-10 md:w-9 xl:w-10" src={imgSrc} />
+			<img alt={buttonSub} class="w-10 md:w-9 xl:w-10" src={imgSrc} />
 		</div>
 
 		<div id="guide-button-text" class={'w-full text-left text-white ' + (selected && 'drop-shadow-space filter')}>

@@ -77,7 +77,7 @@
 						<p class="text-lg font-bold text-white/30">Primary arsenal...</p>
 						<div id="guide-toolingImgs" class="flex flex-row flex-wrap justify-center pt-7 lg:justify-start">
 							{#each topic.toolingImgs as img}
-								<img src={img.imgSrc || '/'} class="w-32 pr-8 pb-7 md:w-36" />
+								<img alt={`${topic.headline}`} src={img.imgSrc || '/'} class="w-32 pr-8 pb-7 md:w-36" />
 							{/each}
 						</div>
 					</div>

@@ -12,6 +12,23 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+
+	<title>JamSite</title>
+	<meta name="robots" content="follow" />
+	<meta name="description" content="A web design and development agency helping businesses absolutely crush it with jamstack technology!" />
+	<meta property="og:url" content="https://www.jamsite.agency" />
+	<link rel="canonical" href="https://www.jamsite.agency" />
+	<meta property="og:site_name" content="JamSite" />
+	<meta property="og:title" content="JamSite" />
+	<meta property="og:description" content="A web design and development agency helping businesses absolutely crush it with jamstack technology!" />
+	<meta property="og:image" content="/site-image.jpg" />
+	<meta property="twitter:title" content="JamSite" />
+	<meta
+		property="twitter:description"
+		content="A web design and development agency helping businesses absolutely crush it with jamstack technology!"
+	/>
+	<meta property="twitter:image" content="/site-image-tw.jpg" />
+	<meta property="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <Video />

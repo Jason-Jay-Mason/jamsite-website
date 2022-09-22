@@ -9,5 +9,7 @@
 <div class="flex w-full flex-col py-7 text-white md:px-4">
 	<img alt={`${headline} icon`} src={iconSrc} class="w-12 pb-6" style={iconStyle} />
 	<h4 class="pb-3 text-xl md:text-2xl">{headline}</h4>
-	<p>{body}</p>
+	<p>
+		<slot />
+	</p>
 </div>

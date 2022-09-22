@@ -15,18 +15,18 @@
 	// }
 
 	let heroContainer;
-	let messages = ['ranks higher.', 'loads faster.', 'looks better.', 'wins more sales.'];
+	let messages = ['load faster.', 'rank higher.', 'win more sales.'];
 </script>
 
 <div bind:this={heroContainer} class="relative h-[100vh] min-h-hero w-full bg-analogBlack-400 bg-subtleGameGrid xl:-mb-[65vh] xl:h-[150vh]">
 	<div class="relative mx-auto flex h-[100vh] min-h-hero max-w-3xl flex-col items-center justify-center px-2 text-center">
 		<h1 class="pb-9 text-4xl font-bold leading-normal text-white/90 sm:text-5xl sm:leading-normal md:text-7xl md:leading-snug ">
-			Get a website that<br />
+			Your Website will<br />
 			<BoxHighlight classes="px-4 md:px-9"><TypeWriter data={messages}>ranks higher</TypeWriter></BoxHighlight>
 		</h1>
 		<h2 class="font-body text-base font-light leading-xl text-white/90 md:text-lg md:leading-xl">
-			We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Schedule a
-			call and get a free site audit.
+			Your slow website is costing you. We are web performance experts on a mission to defend businesses from outdated technology. Schedule a call and
+			get your free loss report.
 		</h2>
 		<div class="container relative z-20 flex flex-col justify-center pt-12 md:flex-row">
 			<span on:click={showScheduleModel}>

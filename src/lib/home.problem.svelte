@@ -60,7 +60,7 @@ type of bug with the global.css in applying leading styling.
 	<section id="problem" class="block bg-analogBlack-400 bg-subtleGameGrid xl:block ">
 		<AnimationFrame bind:progress frameHeight="h-[400vh]">
 			<div class="flex h-[100vh] items-center justify-center py-9">
-				<div class="relative mx-auto grid max-w-screen-2xl grid-cols-1 items-center justify-center px-6 md:grid-cols-2 md:px-8 xl:grid-cols-4">
+				<div class="relative mx-auto grid max-w-screen-2xl grid-cols-1 items-start justify-center px-6 md:grid-cols-2 md:px-8 xl:grid-cols-4">
 					<h3
 						style={`opacity:${getStyleValue(progress, 0.1, 0.1, 0, 1)}; transform:translateX(${getStyleValue(
 							progress,
@@ -69,10 +69,10 @@ type of bug with the global.css in applying leading styling.
 							160,
 							0
 						)}%) scale(${getStyleValue(progress, 0.25, 0.1, 150, 100)}%)`}
-						class="relative w-full whitespace-nowrap pb-12 text-4xl font-bold leading-tight
+						class="relative w-full self-center whitespace-nowrap pb-12 text-4xl font-bold leading-tight
 					md:top-12 md:pr-9 md:text-5xl md:leading-tight"
 					>
-						The <span class="text-villainRed-200">problem </span><br />with the web<br /> today...
+						How is a <br /> slow website <br /><span class="text-villainRed-200">costing </span>you?
 					</h3>
 					<div style={`opacity:${getStyleValue(progress, 0.3, 0.15, 0, 1)}`}>
 						<Blurb
@@ -86,9 +86,18 @@ type of bug with the global.css in applying leading styling.
 							)}, 0.46))
 						`}
 							iconSrc="/red-icon-dummy.svg"
-							headline="Scalability"
-							body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
-						/>
+							headline="Lost Sales"
+						>
+							<a
+								class="font-bold text-white/90 hover:text-white"
+								target="_blank"
+								href="https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/"
+								>A Google study</a
+							>
+							showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translates
+							to estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
+							<a class="text-villainRed-100 hover:text-villainRed-200" href="/">See how much you're losing.</a>
+						</Blurb>
 					</div>
 
 					<div style={`opacity:${getStyleValue(progress, 0.55, 0.15, 0, 1)}`}>
@@ -103,17 +112,22 @@ type of bug with the global.css in applying leading styling.
 							)}, 0.46))
 						`}
 							iconSrc="/red-icon-dummy.svg"
-							headline="Scalability"
-							body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
-						/>
+							headline="Decreased Traffic"
+							>Search engines like Google use site speed as a <a
+								class="font-bold text-white/90 hover:text-white"
+								target="_blank"
+								href="https://developers.google.com/search/blog/2021/04/more-details-page-experience?hl=en">strong ranking factor.</a
+							>
+							That means poor site performance is directly lowering your website’s ranking in the search results—making it harder for customers to find
+							you, and reducing your site's traffic.
+							<a class="text-villainRed-100 hover:text-villainRed-200" href="/">Learn how site speed impacts your ranking.</a>
+						</Blurb>
 					</div>
 					<div style={`opacity:${getStyleValue(progress, 0.8, 0.15, 0, 1)}`}>
-						<Blurb
-							iconStyle="filter:drop-shadow(0px 0px 17px rgba(206,77,69,0.46))"
-							iconSrc="/red-icon-dummy.svg"
-							headline="Vendor Lockin"
-							body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
-						/>
+						<Blurb iconStyle="filter:drop-shadow(0px 0px 17px rgba(206,77,69,0.46))" iconSrc="/red-icon-dummy.svg" headline="Unhappy users">
+							The remaining 47% of site visitors that do not leave after 3 seconds have been shown to make negative split second judgments about your
+							brand. Consumers are expecting near instant feedback on today's devices, even on 3g and 4g networks.
+						</Blurb>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,13 @@
 <script>
 	import DinoButton from '$lib/home.villian.topic-select.dino-button.svelte';
 	import { onDestroy } from 'svelte';
+	import { schedulerModalVisible } from '$lib/stores.js';
+
+	//function to open the scheduler by updating the show modal store
+	function showModal() {
+		schedulerModalVisible.update((value) => (value = true));
+	}
+
 	//#region data
 	const DATA = [
 		{
@@ -9,142 +16,147 @@
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex-dark2.svg',
 			blurb:
-				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
+				'Wordpress is the content management system behind 43% of websites online. Despite being the platform that most businesses/agencies choose to use when building a website, the combination of a lack of technical know-how, and inherent issues with wordpress itself, have led many businesses to reap disastrous consequences.',
+			linkText: 'Learn more about how your wordpress website is effecting your bottom line and how to fix it.',
 			downsides: [
 				{
 					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					blurb: '612% slower than modern sites'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Security',
+					blurb: '90% of all hacking attempts'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Vendor Lockin',
+					blurb: '$50-$600/month for quality hosting'
 				}
 			]
 		},
 		{
-			title: 'WordPress',
-			alt: 'Wordpress Rex',
+			title: 'Analytics',
+			alt: 'Google Analytics',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
-				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
+				'Many businesses use Google products like Analytics on their websites. Each of the products are essentially blocks of code that are fetched from Google’s slow servers when a user loads a webpage. As a result, page speed scores are negatively impacted. ',
+			linkText: 'Learn about the impact of 3rd party scripts like Google Analytics.',
 			downsides: [
 				{
 					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					blurb: 'Can add over 1 second load time'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
-				},
-				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Search Rank',
+					blurb: 'Can cause lower search engine rank'
 				}
 			]
 		},
 		{
-			title: 'WordPress',
-			alt: 'Wordpress Rex',
+			title: 'Wix',
+			alt: 'Wix',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
-				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
+				'Wix is a page builder and second most popular content management system. Due to the outdated technology they use under the hood, the average page speed for a wix site is slower than modern best practices. Unlike Wordpress, Wix’s page builder is purely visual which means that technical improvements to the base site speed are nearly impossible in most cases.',
+			linkText: 'Learn about page builders that perform better than Wix.',
 			downsides: [
 				{
 					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					blurb: '496% slower than modern sites'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'No Code',
+					blurb: 'Speed improvements are impossible'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Vendor Lockin',
+					blurb: 'Locked in to paid membership'
 				}
 			]
 		},
 		{
-			title: 'WordPress',
+			title: 'Adobe',
 			alt: 'Wordpress Rex',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
-				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
+				'Adobe sells a host of premier enterprise tier content management tools that are used by the likes of Ben n Jerry’s, Helly Hanson, and Land Rover just to name a few. Despite the clout, this platform is associated with websites that have THE worst performance scores out of all outdated technologies. ',
+			linkText: 'Learn how you can improve enterprise site speed without sacrificing the convenience of content management.',
 			downsides: [
 				{
 					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					blurb: '1235% slower than modern sites'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Maintence',
+					blurb: 'Many moving parts involved'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Cost',
+					blurb: 'Used in enterprise businesses'
 				}
 			]
 		},
 		{
-			title: 'WordPress',
-			alt: 'Wordpress Rex',
+			title: 'Shopify',
+			alt: 'Shopify page builder',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
-				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
+				'Shopify is a complete ecommerce solution geared toward small to enterprise tier businesses. Many businesses choose to build their websites using shopify themes and page builders that are not optimized for performance. Unfortunately, these businesses suffer lost sales as a result despite the real benefits of using shopify. ',
+			linkText: 'Learn how you can use headless shopify to win back lost sales.',
 			downsides: [
 				{
 					title: 'Site Speed',
 					blurb: '50% of site load > 5 seconds'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Customizability',
+					blurb: 'Contraints in design capabilies'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Sales',
+					blurb: '53% of visitors leave after 3 seconds'
 				}
 			]
 		},
 		{
-			title: 'WordPress',
-			alt: 'Wordpress Rex',
+			title: 'Squarespace',
+			alt: 'Squarespace',
 			imgSrc: '/wordpress-rex-icon.svg',
 			sprite: '/wordpress-rex.svg',
 			blurb:
-				'Some blurb here We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit.',
+				'Squarespace is a page builder and third most popular content management system. Many squarespace sites are not optimized with current site speed techniques out of the box, which results in poor performance in many cases.',
+			linkText: 'Learn how you can optimize a Squarespace website and improve site speed.',
 			downsides: [
 				{
 					title: 'Site Speed',
 					blurb: '50% of site load > 5 seconds'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Functionality',
+					blurb: 'Advanced use cases not possible'
 				},
 				{
-					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					title: 'Vendor Lockin',
+					blurb: 'Locked in to paid membership'
 				}
 			]
 		}
 	];
 	//#endregion data
 	let selected = DATA[0];
-	let frame = false;
+
+	//handle animating the large dino
+	let frame = false; //since the sprite only has two frames we use false->frame 1 true->frame 2
 
 	function updateFrame() {
 		frame = !frame;
 	}
-	let interval = setInterval(updateFrame, 1000);
+	let interval = setInterval(updateFrame, 1000); //Change the frame every second
 
+	//Do the clean up for the interval
 	onDestroy(() => {
 		clearInterval(interval);
 	});
@@ -174,7 +186,12 @@
 					{:else}
 						<img alt={`${dino.alt} animated`} src={dino.sprite} class="mr-10 hidden h-[170px] w-[170px] object-cover object-right filter xl:block" />
 					{/if}
-					<p class="text-center text-white lg:text-left">{dino.blurb}</p>
+					<p class="text-center text-white lg:text-left">
+						{dino.blurb}
+						{#if dino.linkText}
+							<span on:click={showModal} class="cursor-pointer text-villainRed-100 hover:text-villainRed-200">{dino.linkText}</span>
+						{/if}
+					</p>
 				</div>
 				<div class="flex w-full flex-row flex-wrap items-center justify-center pt-10 lg:justify-start">
 					{#each dino.downsides as downside}

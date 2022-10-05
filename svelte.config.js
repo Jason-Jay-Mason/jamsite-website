@@ -6,7 +6,6 @@ import { fileURLToPath } from 'url';
 
 const dirname = path.resolve(fileURLToPath(import.meta.url), '../');
 
-/** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.svelte.md', '.md', '.svx', '.svelte'],
 	preprocess: [

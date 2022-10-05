@@ -11,7 +11,7 @@ module.exports = {
 			triangle: '12px 16px'
 		},
 		fontFamily: {
-			body: ['Open Sans', 'sans-serif'],
+			body: ['Tahoma', 'sans-serif'],
 			rubik: ['Rubik', 'sans-serif']
 		},
 		colors: {

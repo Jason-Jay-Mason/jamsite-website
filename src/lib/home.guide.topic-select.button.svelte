@@ -4,7 +4,7 @@
 	export let selected;
 
 	const styles =
-		'w-full px-4 py-5 sm:py-6 lg:py-7 w-fit  max-w-lg  mx-auto flex flex-row justify-center lg:justify-center items-center  transition-all cursor-pointer m ';
+		'w-fit sm:w-full px-8 py-5 sm:py-6 lg:py-7 max-w-lg  mx-auto flex flex-row justify-center lg:justify-center items-center  transition-all cursor-pointer  ';
 </script>
 
 <div id="guide-button" class={styles + (selected ? 'bg-jamAqua-200 hover:bg-jamAqua-200' : 'bg-transparent hover:bg-white/10')}>

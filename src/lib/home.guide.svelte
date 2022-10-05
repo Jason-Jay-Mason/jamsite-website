@@ -22,7 +22,7 @@
 	<!-- mobile -->
 	<section id="guide-mobile" class="bg-analogBlack-400">
 		<Villians />
-		<div class="bg-jamAqua-300 py-28 px-3 md:py-44 lg:px-0 ">
+		<div class="bg-jamAqua-300 py-28 px-3 md:py-44">
 			<Headline subHeadline="The Solution">That's why we started <span class="text-jamAqua-100">JamSite</span></Headline>
 			<TopicSelect />
 		</div>
@@ -43,7 +43,7 @@
 			<Villians />
 			<AnimationFrame bind:progress frameHeight="h-auto">
 				<div class="flex h-auto items-center justify-center pt-56">
-					<div class="relative block w-full" id="solutions">
+					<div class="relative block w-full px-3" id="solutions">
 						<Headline subHeadline="The Solution">That's why we created <span class="text-jamAqua-100">JamSite</span></Headline>
 						<TopicSelect />
 					</div>

@@ -25,7 +25,7 @@
 	const DATA = [
 		{
 			headline: 'Schedule Site Audit',
-			body: 'We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit. We’re a web design and development agency ',
+			body: "Whether you're looking for performance improvements on a current website or you're ready to invest in a new website, it all starts with a free call with an expert. Click the button below and choose the time that works best for you and we will work with you to accomplish your goals.",
 			cta: {
 				tailwindClasses: 'bg-villainRed-200/60 hover:bg-villainRed-200 shadow-villainRed-200/40 hover:shadow-villainRed-200 ',
 				title: 'Book a Call',
@@ -35,8 +35,8 @@
 			}
 		},
 		{
-			headline: 'Implement Attack Plan',
-			body: 'We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit. We’re a web design and development agency ',
+			headline: 'Develop Attack Plan',
+			body: '    If we are 100% confident that working together will be a slam dunk, we will develop a plan that will help you accomplish your goals. Click the button below and schedule an initial phone call.',
 			cta: {
 				tailwindClasses: 'bg-warnYellow-100/70 hover:bg-warnYellow-100 shadow-warnYellow-100/40 hover:shadow-warnYellow-100 ',
 				title: 'Book a Call',
@@ -46,8 +46,8 @@
 			}
 		},
 		{
-			headline: 'Deploy New Site',
-			body: 'We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit. We’re a web design and development agency ',
+			headline: 'Deploy Attack Plan',
+			body: 'We will build and deploy the changes to your website that have been shown to drive the best results in your niche. Click the button below to schedule a meeting to learn about how we will help you drive more sales. ',
 			cta: {
 				tailwindClasses: 'bg-successGreen-200/70 hover:bg-successGreen-200 shadow-successGreen-200/40 hover:shadow-successGreen-200 ',
 				title: 'Book a Call',
@@ -131,7 +131,7 @@
 							<div class="flex flex-row py-3 px-4 text-white md:px-4">
 								<div class="flex w-2/3 flex-row">
 									<img alt="j-ship logo" src="/j-ship-2.svg" class="mr-2 w-[26px] -rotate-90" />
-									<p class="font-bold">NEW SITE</p>
+									<p class="font-bold">YOUR SITE</p>
 								</div>
 								<div class="flex w-1/3 flex-col items-end justify-center rounded-md pr-3">
 									<div class="mb-1 h-1 w-6 bg-white" />
@@ -185,7 +185,7 @@
 							<div class="flex flex-row py-3 px-4 text-white md:px-4">
 								<div class="flex w-2/3 flex-row">
 									<img alt="j-ship logo" src="/j-ship-2.svg" class="mr-2 w-[26px] -rotate-90" />
-									<p class="font-bold">NEW SITE</p>
+									<p class="font-bold">YOUR SITE</p>
 								</div>
 								<div class="flex w-1/3 flex-col items-end justify-center rounded-md pr-3">
 									<div class="mb-1 h-1 w-6 bg-white" />
@@ -367,7 +367,7 @@
 									<div id="hero-nav" class="flex flex-row items-center justify-between px-7 py-5 text-white">
 										<div id="hero-logo" class="flex w-[90px] flex-row " style={`opacity:${getStyleValue(progress, 0.48, 0.08, 0, 1)}`}>
 											<img alt="j-ship logo" src="/j-ship-2.svg" class="mr-2 w-5 -rotate-90" />
-											<p class="whitespace-nowrap font-rubik text-lg font-semibold">NEW SITE</p>
+											<p class="whitespace-nowrap font-rubik text-lg font-semibold">YOUR SITE</p>
 										</div>
 										<div class="rounded-md border-form border-white px-4" style={`opacity:${getStyleValue(progress, 0.5, 0.08, 0, 1)}`}>
 											<div class="flex flex-row" style={`opacity:${getStyleValue(progress, 0.6, 0.08, 0, 1)}`}>

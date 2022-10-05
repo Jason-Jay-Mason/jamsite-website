@@ -162,7 +162,7 @@
 	});
 </script>
 
-<div id="villian-dislplay" class="mx-3 flex max-w-screen-2xl flex-col items-center justify-center lg:mx-auto lg:flex-row  lg:pr-4">
+<div id="villian-dislplay" class="flex max-w-screen-2xl flex-col items-center justify-center lg:mx-auto lg:flex-row  ">
 	<div
 		id="dino-select"
 		class="mx-auto mb-10 flex w-full max-w-screen-sm items-center justify-center  border-1 border-white/50 bg-analogBlack-400 bg-gameGrid shadow-button shadow-white/10 lg:mb-0 lg:w-1/2 lg:max-w-none xl:w-[40%]"

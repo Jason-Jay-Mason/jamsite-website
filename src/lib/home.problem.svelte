@@ -9,6 +9,12 @@ type of bug with the global.css in applying leading styling.
 	import { getStyleValue } from '$lib/utils/animation.js'; //Helper function to get the opacity value for any progress value
 	import Blurb from '$lib/featured-icon-blurb.svelte'; //Component for the icon columns in this section
 	import { onMount } from 'svelte';
+	import { schedulerModalVisible } from '$lib/stores.js';
+
+	function showModel() {
+		schedulerModalVisible.update((v) => (v = true));
+	}
+
 	let progress; //Need to bind progress to the animation frame component which will reflect the percent progress through the section
 
 	import { windowWidth } from '$lib/stores.js';
@@ -32,26 +38,37 @@ type of bug with the global.css in applying leading styling.
 					The <span class="text-villainRed-300">problem </span>with the web today...
 				</h3>
 				<div>
-					<Blurb
-						iconSrc="/dummy-icon.svg"
-						headline="Site Speed"
-						body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
-					/>
+					<Blurb iconSrc="/dummy-icon.svg" headline="Site Speed">
+						<a
+							class="font-bold text-white/90 hover:text-white"
+							target="_blank"
+							href="https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/">A Google study</a
+						>
+						showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translates
+						to estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
+						<span class="cursor-pointer text-villainRed-100 hover:text-villainRed-200" on:click={showModel}>See how much you're losing.</span>
+					</Blurb>
 				</div>
 
 				<div>
-					<Blurb
-						iconSrc="/dummy-icon.svg"
-						headline="Scalability"
-						body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
-					/>
+					<Blurb iconSrc="/dummy-icon.svg" headline="Scalability">
+						Search engines like Google use site speed as a <a
+							class="font-bold text-white/90 hover:text-white"
+							target="_blank"
+							href="https://developers.google.com/search/blog/2021/04/more-details-page-experience?hl=en">strong ranking factor.</a
+						>
+						That means poor site performance is directly lowering your website’s ranking in the search results—making it harder for customers to find you,
+						and reducing your site's traffic.
+						<span class="cursor-pointer text-villainRed-100 hover:text-villainRed-200" on:click={showModel}
+							>Learn how site speed impacts your ranking.</span
+						>
+					</Blurb>
 				</div>
 				<div>
-					<Blurb
-						iconSrc="/dummy-icon.svg"
-						headline="Vendor Lockin"
-						body="We’re a web design and development agency on a mission to defend businesses from cyberspace dinosaurs and feed starving children. Click the button below to book a call and get a free site audit."
-					/>
+					<Blurb iconSrc="/dummy-icon.svg" headline="Vendor Lockin">
+						The remaining 47% of site visitors that do not leave after 3 seconds have been shown to make negative split second judgments about your
+						brand. Consumers are expecting near instant feedback on today's devices, even on 3g and 4g networks.
+					</Blurb>
 				</div>
 			</div>
 		</div>
@@ -96,7 +113,7 @@ type of bug with the global.css in applying leading styling.
 							>
 							showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translates
 							to estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
-							<a class="text-villainRed-100 hover:text-villainRed-200" href="/">See how much you're losing.</a>
+							<span class="cursor-pointer text-villainRed-100 hover:text-villainRed-200" on:click={showModel}>See how much you're losing.</span>
 						</Blurb>
 					</div>
 
@@ -113,14 +130,17 @@ type of bug with the global.css in applying leading styling.
 						`}
 							iconSrc="/red-icon-dummy.svg"
 							headline="Decreased Traffic"
-							>Search engines like Google use site speed as a <a
+						>
+							Search engines like Google use site speed as a <a
 								class="font-bold text-white/90 hover:text-white"
 								target="_blank"
 								href="https://developers.google.com/search/blog/2021/04/more-details-page-experience?hl=en">strong ranking factor.</a
 							>
 							That means poor site performance is directly lowering your website’s ranking in the search results—making it harder for customers to find
 							you, and reducing your site's traffic.
-							<a class="text-villainRed-100 hover:text-villainRed-200" href="/">Learn how site speed impacts your ranking.</a>
+							<span class="cursor-pointer text-villainRed-100 hover:text-villainRed-200" on:click={showModel}
+								>Learn how site speed impacts your ranking.</span
+							>
 						</Blurb>
 					</div>
 					<div style={`opacity:${getStyleValue(progress, 0.8, 0.15, 0, 1)}`}>

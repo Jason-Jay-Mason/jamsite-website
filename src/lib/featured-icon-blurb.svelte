@@ -1,7 +1,6 @@
 <!-- Simple component to be used in sections for the site look at the "problem" section on the homepage to see an example -->
 <script>
 	export let headline;
-	export let body;
 	export let iconSrc;
 	export let iconStyle;
 </script>

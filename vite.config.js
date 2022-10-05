@@ -1,8 +1,14 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+// import path from 'path';
+// import { partytownVite } from '@builder.io/partytown/utils';
 
-/** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [sveltekit()]
+	plugins: [
+		sveltekit(),
+		// partytownVite({
+  //       dest: path.join(__dirname, 'static', '~partytown'),
+		// })
+	]
 };
 
 export default config;

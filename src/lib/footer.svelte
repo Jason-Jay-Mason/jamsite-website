@@ -2,7 +2,7 @@
 	import Link from '$lib/footer.link.svelte';
 </script>
 
-<div class="relative w-full bg-analogBlack-400 py-14 px-4 text-center">
+<footer class="relative w-full bg-analogBlack-400 py-14 px-4 text-center">
 	<div class="container m-auto flex max-w-screen-xl flex-col items-center justify-between p-4 md:flex-row">
 		<a href="/" class="z-50">
 			<img alt="jamsite logo" src="/jamsite-logo-v1.svg" class="w-28 pb-7 md:mr-9 md:w-28" />
@@ -14,4 +14,4 @@
 		</div>
 		<p class="text-sm  text-white md:text-xs lg:text-sm">All rights reserved - 2022 JamSite LLC</p>
 	</div>
-</div>
+</footer>

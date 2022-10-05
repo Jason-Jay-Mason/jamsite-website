@@ -3,7 +3,7 @@
 	export let dino;
 	export let isSelected;
 	const styles = 'relative max-w-[160px] md:max-w-none flex flex-col transition-all justify-center items-center cursor-pointer w-10/12 h-full group ';
-	const imgStyles = 'w-[90%] transition-all filter py-2 ';
+	const imgStyles = 'w-20 transition-all filter py-2 ';
 </script>
 
 <div class={isSelected ? styles + 'bg-villainRed-300' : styles + 'hover:bg-white/10'}>

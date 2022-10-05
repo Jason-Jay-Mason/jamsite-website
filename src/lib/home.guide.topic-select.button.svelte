@@ -4,13 +4,13 @@
 	export let selected;
 
 	const styles =
-		'w-fit sm:w-full px-8 py-5 sm:py-6 lg:py-7 max-w-lg  mx-auto flex flex-row justify-center lg:justify-center items-center  transition-all cursor-pointer  ';
+		'w-fit max-w-[420px] sm:w-full px-8 py-5 sm:py-6 lg:py-7 max-w-lg  mx-auto flex flex-row justify-center lg:justify-start items-center  transition-all cursor-pointer  ';
 </script>
 
 <div id="guide-button" class={styles + (selected ? 'bg-jamAqua-200 hover:bg-jamAqua-200' : 'bg-transparent hover:bg-white/10')}>
 	<div class="flex flex-row items-center justify-center">
-		<div class={'flex items-center justify-center pr-5 lg:w-28 lg:pr-3 ' + (selected && 'drop-shadow-icon filter')}>
-			<img alt={buttonSub} class="w-10 md:w-9 xl:w-10" src={imgSrc} />
+		<div class={'flex items-center justify-center pr-5 lg:w-28 lg:pr-6 ' + (selected && 'drop-shadow-icon filter')}>
+			<img alt={buttonSub} src={imgSrc} />
 		</div>
 
 		<div id="guide-button-text" class={'w-full text-left text-white ' + (selected && 'drop-shadow-space filter')}>

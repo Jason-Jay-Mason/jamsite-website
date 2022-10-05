@@ -11,7 +11,7 @@ module.exports = {
 			triangle: '12px 16px'
 		},
 		fontFamily: {
-			body: ['Tahoma', 'sans-serif'],
+			body: ['Arial', 'sans-serif'],
 			rubik: ['Rubik', 'sans-serif']
 		},
 		colors: {
@@ -62,7 +62,7 @@ module.exports = {
 			},
 			lineHeight: {
 				5: '1.25rem',
-				xl: '2.4rem'
+				xl: '2.3rem'
 			},
 			keyframes: {
 				fadeIn: {

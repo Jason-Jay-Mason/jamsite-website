@@ -165,7 +165,7 @@
 <div id="villian-dislplay" class="flex max-w-screen-2xl flex-col items-center justify-center lg:mx-auto lg:flex-row  ">
 	<div
 		id="dino-select"
-		class="mx-auto mb-10 flex w-full max-w-screen-sm items-center justify-center  border-1 border-white/50 bg-analogBlack-400 bg-gameGrid shadow-button shadow-white/10 lg:mb-0 lg:w-1/2 lg:max-w-none xl:w-[40%]"
+		class="mx-auto mb-10 flex w-full max-w-screen-sm items-center justify-center  border-1 border-white/50 bg-analogBlack-300 bg-gameGrid shadow-button shadow-white/10 lg:mb-0 lg:w-1/2 lg:max-w-none xl:w-[40%]"
 	>
 		<div
 			class="grid max-w-md grid-cols-2 items-center justify-center py-10 px-1 sm:grid-cols-3 lg:max-w-none lg:grid-cols-3 lg:py-10 lg:px-10 xl:py-16 xl:px-10"

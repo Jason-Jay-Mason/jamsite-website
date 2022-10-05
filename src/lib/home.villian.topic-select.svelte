@@ -193,7 +193,7 @@
 						{/if}
 					</p>
 				</div>
-				<div class="flex w-full flex-row flex-wrap items-center justify-center pt-10 lg:justify-start">
+				<div class="flex w-full flex-row flex-wrap items-center justify-center pt-8 lg:justify-start">
 					{#each dino.downsides as downside}
 						<div class="flex max-w-[240px] flex-row items-center justify-start py-2 md:pr-3 xl:w-[33%]">
 							<img alt="Negative down arrow" src="/negative-arrow.svg" />

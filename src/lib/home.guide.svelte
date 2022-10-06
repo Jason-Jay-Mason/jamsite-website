@@ -76,7 +76,7 @@
 
 				<div class="absolute -right-32" style={`transform: translateX(-${getStyleValue(progress, 0, 2, 0, 120)}vw)`}>
 					<img
-						src="/wordpress-rex-dark2.svg"
+						src="/wordpress-rex.svg"
 						alt="wordpress rex being shot at"
 						class="h-[100px] w-[100px] object-cover object-left drop-shadow-black filter"
 						style={`transform: rotate(${getStyleValue(progress, 1.2, 1, 0, 360)}deg) translateY(53px)`}

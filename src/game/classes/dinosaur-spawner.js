@@ -11,10 +11,12 @@ export class DinosaurSpawner {
 		this.spawnPlace = 1;
 		this.lastSpawnTime = null;
 		this.game = game;
+		this.currentDinoIndex = 0
 	}
 	//get a random spawn point for the dino
 	getSpawnPoint() {
-		const imageIndex = Math.round(getBoundedRandom(0, this.images.length - 1)); //get a random image from the available dino images
+		// const imageIndex = Math.round(getBoundedRandom(0, this.images.length - 1)); //get next image from the available dino images
+		this.currentDinoIndex = this.currentDinoIndex === this.images.length - 1 ? this.currentDinoIndex = 0 : this.currentDinoIndex = this.currentDinoIndex+1
 		const spawnPadding = 40; //add some padding so that the dino spawns off screen
 		let spawnPosition;
 		let spawnVelocity;
@@ -54,7 +56,7 @@ export class DinosaurSpawner {
 
 		// set the next spawn position
 		this.spawnPlace === 3 ? (this.spawnPlace = 1) : this.spawnPlace++;
-		return { spawnPosition, spawnVelocity, imageIndex };
+		return { spawnPosition, spawnVelocity, imageIndex: this.currentDinoIndex};
 	}
 	buildDinosaurs(frame) {
 		//get the keys of the dinosaurs obj for looping

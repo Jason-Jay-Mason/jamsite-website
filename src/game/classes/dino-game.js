@@ -22,15 +22,29 @@ export class DinoGame {
 		const laserImg = new Image();
 		laserImg.src = '/laser.svg';
 
-		const wordPressRex = new Image();
-		wordPressRex.src = '/wordpress-rex-dark2.svg';
-		const wixRaptor = new Image();
-		wixRaptor.src = '/wix-raptor-dark.svg';
+		//load dino images
+		const wordpress = new Image();
+		wordpress.src = '/wrd-sprite.svg';
+		const wix = new Image();
+		wix.src = '/wx-sprite.svg';
+		const squarespace = new Image();
+		squarespace.src = '/sqr-sprite.svg';
+		const adobe = new Image();
+		adobe.src = '/ade-sprite.svg';
+		const shopify = new Image();
+		shopify.src = '/shp-sprite.svg';
+		const analytics = new Image();
+		analytics.src = '/glg-sprite.svg';
 
 		//create an array of dino images to cycle through in the dino spawner
 		const dinoImages = [
-			{ image: wixRaptor, width: 90, height: 90 },
-			{ image: wordPressRex, width: 100, height: 100 }
+			{ image: squarespace, width: 100, height: 100 },
+			{ image: wordpress, width: 100, height: 100 },
+			{ image: wix, width: 90, height: 90 },
+			{ image: shopify, width: 100, height: 100 },
+			{ image: adobe, width: 100, height: 100 },
+			{ image: analytics, width: 100, height: 100 },
+
 		];
 
 		//create a game object to reference game props in the dinos and player

@@ -38,7 +38,7 @@ type of bug with the global.css in applying leading styling.
 					The <span class="text-villainRed-300">problem </span>with the web today...
 				</h3>
 				<div>
-					<Blurb iconSrc="/dummy-icon.svg" headline="Site Speed">
+					<Blurb iconSrc="/lost-sales.svg" headline="Lost Sales">
 						<a
 							class="font-bold text-white/90 hover:text-white"
 							target="_blank"
@@ -51,7 +51,7 @@ type of bug with the global.css in applying leading styling.
 				</div>
 
 				<div>
-					<Blurb iconSrc="/dummy-icon.svg" headline="Scalability">
+					<Blurb iconSrc="/decreased-traffic.svg" headline="Decreased Traffic">
 						Search engines like Google use site speed as a <a
 							class="font-bold text-white/90 hover:text-white"
 							target="_blank"
@@ -65,7 +65,7 @@ type of bug with the global.css in applying leading styling.
 					</Blurb>
 				</div>
 				<div>
-					<Blurb iconSrc="/dummy-icon.svg" headline="Vendor Lockin">
+					<Blurb iconSrc="/thumb-down.svg" headline="Unhappy Users">
 						The remaining 47% of site visitors that do not leave after 3 seconds have been shown to make negative split second judgments about your
 						brand. Consumers are expecting near instant feedback on today's devices, even on 3g and 4g networks.
 					</Blurb>
@@ -102,7 +102,7 @@ type of bug with the global.css in applying leading styling.
 								255
 							)}, 0.46))
 						`}
-							iconSrc="/red-icon-dummy.svg"
+							iconSrc="/lost-sales.svg"
 							headline="Lost Sales"
 						>
 							<a
@@ -128,7 +128,7 @@ type of bug with the global.css in applying leading styling.
 								255
 							)}, 0.46))
 						`}
-							iconSrc="/red-icon-dummy.svg"
+							iconSrc="/decreased-traffic.svg"
 							headline="Decreased Traffic"
 						>
 							Search engines like Google use site speed as a <a
@@ -144,7 +144,7 @@ type of bug with the global.css in applying leading styling.
 						</Blurb>
 					</div>
 					<div style={`opacity:${getStyleValue(progress, 0.8, 0.15, 0, 1)}`}>
-						<Blurb iconStyle="filter:drop-shadow(0px 0px 17px rgba(206,77,69,0.46))" iconSrc="/red-icon-dummy.svg" headline="Unhappy users">
+						<Blurb iconStyle="filter:drop-shadow(0px 0px 17px rgba(206,77,69,0.46))" iconSrc="/thumb-down.svg" headline="Unhappy Users">
 							The remaining 47% of site visitors that do not leave after 3 seconds have been shown to make negative split second judgments about your
 							brand. Consumers are expecting near instant feedback on today's devices, even on 3g and 4g networks.
 						</Blurb>

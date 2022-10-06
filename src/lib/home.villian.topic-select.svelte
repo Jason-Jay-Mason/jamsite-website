@@ -14,7 +14,7 @@
 			title: 'WordPress',
 			alt: 'Wordpress Rex',
 			imgSrc: '/wordpress-rex-icon.svg',
-			sprite: '/wordpress-rex-dark2.svg',
+			sprite: '/wordpress-rex.svg',
 			blurb:
 				'Wordpress is the content management system behind 43% of websites online. Despite being the platform that most businesses/agencies choose to use when building a website, the combination of a lack of technical know-how, and inherent issues with wordpress itself, have led many businesses to reap disastrous consequences.',
 			linkText: 'Learn more about how your wordpress website is effecting your bottom line and how to fix it.',
@@ -36,8 +36,8 @@
 		{
 			title: 'Analytics',
 			alt: 'Google Analytics',
-			imgSrc: '/wordpress-rex-icon.svg',
-			sprite: '/wordpress-rex.svg',
+			imgSrc: '/glg-icon.svg',
+			sprite: '/glg-sprite.svg',
 			blurb:
 				'Many businesses use Google products like Analytics on their websites. Each of the products are essentially blocks of code that are fetched from Google’s slow servers when a user loads a webpage. As a result, page speed scores are negatively impacted. ',
 			linkText: 'Learn about the impact of 3rd party scripts like Google Analytics.',
@@ -55,8 +55,8 @@
 		{
 			title: 'Wix',
 			alt: 'Wix',
-			imgSrc: '/wordpress-rex-icon.svg',
-			sprite: '/wordpress-rex.svg',
+			imgSrc: '/wix-raptor-icon.svg',
+			sprite: '/wx-sprite.svg',
 			blurb:
 				'Wix is a page builder and second most popular content management system. Due to the outdated technology they use under the hood, the average page speed for a wix site is slower than modern best practices. Unlike Wordpress, Wix’s page builder is purely visual which means that technical improvements to the base site speed are nearly impossible in most cases.',
 			linkText: 'Learn about page builders that perform better than Wix.',
@@ -78,8 +78,8 @@
 		{
 			title: 'Adobe',
 			alt: 'Wordpress Rex',
-			imgSrc: '/wordpress-rex-icon.svg',
-			sprite: '/wordpress-rex.svg',
+			imgSrc: '/ade-icon.svg',
+			sprite: '/ade-sprite.svg',
 			blurb:
 				'Adobe sells a host of premier enterprise tier content management tools that are used by the likes of Ben n Jerry’s, Helly Hanson, and Land Rover just to name a few. Despite the clout, this platform is associated with websites that have THE worst performance scores out of all outdated technologies. ',
 			linkText: 'Learn how you can improve enterprise site speed without sacrificing the convenience of content management.',
@@ -101,8 +101,8 @@
 		{
 			title: 'Shopify',
 			alt: 'Shopify page builder',
-			imgSrc: '/wordpress-rex-icon.svg',
-			sprite: '/wordpress-rex.svg',
+			imgSrc: '/shp-icon.svg',
+			sprite: '/shp-sprite.svg',
 			blurb:
 				'Shopify is a complete ecommerce solution geared toward small to enterprise tier businesses. Many businesses choose to build their websites using shopify themes and page builders that are not optimized for performance. Unfortunately, these businesses suffer lost sales as a result despite the real benefits of using shopify. ',
 			linkText: 'Learn how you can use headless shopify to win back lost sales.',
@@ -124,8 +124,8 @@
 		{
 			title: 'Squarespace',
 			alt: 'Squarespace',
-			imgSrc: '/wordpress-rex-icon.svg',
-			sprite: '/wordpress-rex.svg',
+			imgSrc: '/sqr-icon.svg',
+			sprite: '/sqr-sprite.svg',
 			blurb:
 				'Squarespace is a page builder and third most popular content management system. Many squarespace sites are not optimized with current site speed techniques out of the box, which results in poor performance in many cases.',
 			linkText: 'Learn how you can optimize a Squarespace website and improve site speed.',

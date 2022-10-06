@@ -59,5 +59,8 @@
 <div use:windowResize on:windowresize={setDimensions}>
 	{#if windowSize > 1000}
 		<canvas bind:this={canvas} class=" absolute top-0 z-10 hidden h-full w-full md:block" />
+	{:else}
+		<img src="/right-hero.svg" alt="ship shooting dinos" class="absolute top-20 right-0 -z-[1]" />
+		<img src="/left-hero.svg" alt="ship shooting dinos" class="absolute top-32 left-0 -z-[1]" />
 	{/if}
 </div>

@@ -28,7 +28,7 @@
 					blurb: '90% of all hacking attempts'
 				},
 				{
-					title: 'Vendor Lockin',
+					title: 'Cost',
 					blurb: '$50-$600/month for quality hosting'
 				}
 			]
@@ -113,7 +113,7 @@
 				},
 				{
 					title: 'Customizability',
-					blurb: 'Contraints in design capabilies'
+					blurb: 'Constraints in design capabilies'
 				},
 				{
 					title: 'Sales',
@@ -132,7 +132,7 @@
 			downsides: [
 				{
 					title: 'Site Speed',
-					blurb: '50% of site load > 5 seconds'
+					blurb: '50% of sites load > 5 seconds'
 				},
 				{
 					title: 'Functionality',

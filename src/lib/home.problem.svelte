@@ -45,7 +45,7 @@ type of bug with the global.css in applying leading styling.
 							href="https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/">A Google study</a
 						>
 						showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translates
-						to estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
+						to an estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
 						<span class="cursor-pointer text-villainRed-100 hover:text-villainRed-200" on:click={showModel}>See how much you're losing.</span>
 					</Blurb>
 				</div>
@@ -112,7 +112,7 @@ type of bug with the global.css in applying leading styling.
 								>A Google study</a
 							>
 							showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translates
-							to estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
+							to an estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
 							<span class="cursor-pointer text-villainRed-100 hover:text-villainRed-200" on:click={showModel}>See how much you're losing.</span>
 						</Blurb>
 					</div>

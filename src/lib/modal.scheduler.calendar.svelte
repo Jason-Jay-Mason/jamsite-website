@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 
 	export let clientTimes;
-	const clientTimesArr = Object.keys(clientTimes);
+	const clientTimesArr = Object.values(clientTimes);
 	export let selectedTime;
 	export let page;
 
@@ -12,13 +12,13 @@
 
 <div transition:fade class="mx-auto flex h-auto max-w-lg flex-col items-center justify-center md:h-full">
 	<div class="flex flex-col items-center justify-center md:flex-row ">
-		{#each clientTimesArr as clientTimeKey}
+		{#each clientTimesArr as clientTime}
 			<div class="flex w-32 flex-col items-center pt-8 md:pt-0">
-				<p class="pb-1 text-xl text-white">{clientTimes[clientTimeKey].day}</p>
+				<p class="pb-1 text-xl text-white">{clientTime.day}</p>
 				<p class="pb-3 text-sm text-white">
-					{clientTimes[clientTimeKey].longMonth + ' ' + clientTimes[clientTimeKey].singleDate}
+					{clientTime.longMonth + ' ' + clientTime.singleDate}
 				</p>
-				{#each clientTimes[clientTimeKey].times as time, i}
+				{#each clientTime.times as time, i}
 					{#if i < 4}
 						<button
 							on:click={() => {

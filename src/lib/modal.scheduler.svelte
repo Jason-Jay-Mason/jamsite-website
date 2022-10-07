@@ -323,7 +323,6 @@
 	{:else if errorMessage}
 		<Error>{errorMessage}</Error>
 	{:else if clientTimes && page === 1}
-		<p class="mx-auto -mb-5 px-3 pt-10 text-center font-rubik text-2xl font-bold text-white">Choose a time for a call.</p>
 		<Calendar bind:page bind:clientTimes bind:selectedTime />
 	{:else if clientTimes && page === 2 && selectedTime}
 		<div transition:fade class="mx-auto flex h-full w-full flex-col items-center justify-center px-3 md:w-96">

@@ -11,6 +11,7 @@
 
 <div transition:fade class="mx-auto flex h-auto max-w-lg flex-col items-center justify-center md:h-full">
 	<div class="flex flex-col items-center justify-center md:flex-row ">
+		<p>Select a date and time</p>
 		{#each Object.keys(clientTimes) as clientTimeKey}
 			<div class="flex w-32 flex-col items-center">
 				<p class="pb-1 text-xl text-white">{clientTimes[clientTimeKey].day}</p>

@@ -35,7 +35,7 @@ type of bug with the global.css in applying leading styling.
 					class="relative top-auto w-full pb-12 text-4xl font-bold leading-tight
 					md:top-12 md:pr-9 md:text-5xl md:leading-tight"
 				>
-					The <span class="text-villainRed-300">problem </span>with the web today...
+						How is a <br /> slow website <br /><span class="text-villainRed-200">costing </span>you?
 				</h3>
 				<div>
 					<Blurb iconSrc="/lost-sales.svg" headline="Lost Sales">

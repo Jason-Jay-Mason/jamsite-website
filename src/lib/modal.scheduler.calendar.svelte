@@ -4,16 +4,15 @@
 
 	export let clientTimes;
 	const clientTimesArr = Object.values(clientTimes);
-	const timesString = JSON.stringify(clientTimes);
 	export let selectedTime;
 	export let page;
+	let submitDiv;
 
 	const buttonStyles = 'transition-all shadow-transparent border-1 justify-center items-center text-base font-light w-10/12 py-2 my-2 rounded-sm';
 </script>
 
 <div transition:fade class="mx-auto flex h-auto max-w-lg flex-col items-center justify-center md:h-full">
 	<p class="mx-auto px-3 py-5 text-center font-rubik text-2xl font-bold text-white">Choose a time for a call.</p>
-	<p class="text-sm text-white">{timesString}</p>
 	<div class="flex flex-col items-center justify-center md:flex-row ">
 		{#each clientTimesArr as clientTime}
 			<div class="flex w-32 flex-col items-center pt-8 md:pt-0">
@@ -24,8 +23,9 @@
 				{#each clientTime.times as time, i}
 					{#if i < 4}
 						<button
-							on:click={() => {
+							on:click={(e) => {
 								selectedTime = time;
+								submitDiv.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
 							}}
 							class={selectedTime === time
 								? buttonStyles + ' border-successGreen-100 bg-analogBlack-300 text-successGreen-100'
@@ -38,7 +38,7 @@
 	</div>
 	<div class="mb-12 h-32">
 		{#if selectedTime}
-			<div transition:fade class="flex w-full  flex-col  items-center justify-center">
+			<div transition:fade bind:this={submitDiv} id="next" class="mb-44 flex  w-full  flex-col items-center justify-center">
 				<p class="pb-9 pt-6 text-center text-white">
 					{selectedTime.day}
 					{selectedTime.longMonth}

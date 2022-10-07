@@ -239,7 +239,7 @@
 				}
 			}
 
-			if (clientTimes.length < 1) {
+			if (Object.keys(clientTimes).length < 1) {
 				//if we did not get times back then we must not have availibility
 				loading = false;
 				errorMessage =

@@ -57,11 +57,11 @@
 
 	<div
 		id="guide-blurb"
-		class="mx-auto flex w-full max-w-screen-sm flex-col items-start justify-center pt-14 text-center md:pt-0 lg:ml-7  lg:w-1/2 lg:max-w-none lg:text-left xl:ml-16 xl:w-[60%]"
+		class="mx-auto flex w-full max-w-screen-sm flex-col items-start justify-center px-2 pt-14 text-center md:pt-0  lg:ml-7 lg:w-1/2 lg:max-w-none lg:text-left xl:ml-16 xl:w-[60%]"
 	>
 		{#each DATA as topic, i}
 			{#if selected === i}
-				<div class="mr-5 animate-fadeIn">
+				<div class="mr-0 animate-fadeIn lg:mr-5">
 					<h5 class="pb-7 font-rubik text-3xl font-bold xl:text-4xl">{topic.headline}</h5>
 					<p class=" pb-5 text-white"><span class="font-bold">{topic.hook}</span>&nbsp; {topic.body}</p>
 					<p class="text-lg font-bold text-white/80">Perfect for...</p>

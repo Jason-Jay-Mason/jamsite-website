@@ -29,7 +29,7 @@ type of bug with the global.css in applying leading styling.
 
 {#if width <= 1280}
 	<section class="block" id="problem-mobile">
-		<div class="flex  items-center justify-center bg-analogBlack-400 py-28 lg:py-44">
+		<div class="flex items-center justify-center bg-analogBlack-400 py-28 lg:py-44">
 			<div class="mx-auto grid max-w-screen-2xl grid-cols-1 items-center justify-center px-4 md:grid-cols-2 md:px-8 xl:grid-cols-4">
 				<h3
 					class="relative top-auto w-full pb-12 text-4xl font-bold leading-tight

@@ -18,7 +18,7 @@
 	let messages = ['load faster.', 'rank higher.', 'win more sales.'];
 </script>
 
-<div bind:this={heroContainer} class="relative z-[1] h-[100vh] min-h-hero w-full bg-analogBlack-400 bg-subtleGameGrid xl:-mb-[65vh] xl:h-[150vh]">
+<div bind:this={heroContainer} class="relative z-[0] h-[100vh] min-h-hero w-full bg-analogBlack-400 bg-subtleGameGrid xl:-mb-[65vh] xl:h-[150vh]">
 	<div class="relative mx-auto flex h-[100vh] min-h-hero max-w-3xl flex-col items-center justify-center px-2 text-center">
 		<h1 class="pb-9 text-4xl font-bold leading-normal text-white/90 sm:text-5xl sm:leading-normal md:text-7xl md:leading-snug ">
 			Your Website will<br />

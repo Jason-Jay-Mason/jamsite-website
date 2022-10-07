@@ -88,12 +88,14 @@
 							<PieChart value={180}>Best <br /> Practices</PieChart>
 							<PieChart value={200}>SEO</PieChart>
 						</div>
-						<div class="relative m-auto w-[90%] w-full max-w-screen-sm rounded-md border-form border-white bg-white/20 lg:-right-20 lg:w-1/2">
-							<div class="align-center relative my-[0%] flex flex-row  justify-start border-b-[2px] border-white px-[2%] text-white">
-								<img alt="wordpress rex logo" src="/wordpress-rex-icon.svg" class="w-[6%] min-w-[30px] " />
-								<p class="whitespace-nowrap px-2 text-[120%] font-bold">Your Site</p>
+						<div class="relative m-auto w-[90%] max-w-screen-sm rounded-md border-form border-white bg-white/20 lg:-right-20 lg:w-1/2">
+							<div class="align-center relative my-[0%] flex flex-row justify-start border-b-[2px] border-white px-[2%] text-white">
+								<div class="flex w-full flex-row ">
+									<img alt="wordpress rex logo" src="/wordpress-rex-icon.svg" class="w-[6%] min-w-[30px] " />
+									<p class="whitespace-nowrap px-2 text-[90%] font-bold">Your Site</p>
+								</div>
 
-								<div class="flex w-full flex-col items-end justify-center pr-3 md:hidden ">
+								<div class="flex w-fit flex-col items-end justify-center pr-3 md:hidden ">
 									<div class="mb-1 h-1 w-5 bg-white" />
 									<div class="mb-1 h-1 w-5 bg-white" />
 									<div class="h-1 w-5 bg-white" />
@@ -126,12 +128,12 @@
 					{:else if i === 1}
 						<!-- #region step 2 ui -->
 						<div
-							class="relative m-auto w-[90%] w-full max-w-screen-sm overflow-hidden rounded-md border-form border-white bg-white/20 lg:-right-10 lg:w-1/2"
+							class="relative m-auto w-[90%]  max-w-screen-sm overflow-hidden rounded-md border-form border-white bg-white/20 lg:-right-10 lg:w-1/2"
 						>
 							<div class="flex flex-row py-3 px-4 text-white md:px-4">
 								<div class="flex w-2/3 flex-row">
 									<img alt="j-ship logo" src="/j-ship-2.svg" class="mr-2 w-[26px] -rotate-90" />
-									<p class="font-bold">YOUR SITE</p>
+									<p class="text-[14px] font-bold">YOUR SITE</p>
 								</div>
 								<div class="flex w-1/3 flex-col items-end justify-center rounded-md pr-3">
 									<div class="mb-1 h-1 w-6 bg-white" />

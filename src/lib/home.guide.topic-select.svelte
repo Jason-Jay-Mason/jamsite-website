@@ -20,10 +20,10 @@
 		},
 		{
 			buttonMain: 'JAMstack Websites',
-			buttonSub: 'Lighting fast websites that win',
+			buttonSub: 'Lightning fast websites that win',
 			buttonImgSrc: '/jamstack-logo.svg',
 			hook: 'Want to build a new site that will gain you a competitive advantage?',
-			headline: 'Lighting fast websites that win',
+			headline: 'Lightning fast websites that win',
 			body: 'JAMstack websites are lightning fast web applications that leverage all of the most recent web technology to deliver absolutely unmatched results in user experience, search engine optimization, site speed, functionality, and more.',
 			qualifier: 'Businesses that need a new website that gives them a competitive advantage.',
 			cta: 'Schedule Discovery Call'
@@ -32,10 +32,10 @@
 			buttonMain: 'JAMstack commerce',
 			buttonSub: 'The future of e-commerce',
 			buttonImgSrc: '/ecommerce.svg',
-			hook: 'Want to get an ecommerce site that doesn’t lose sales due to poor performance?',
+			hook: 'Want to get an e-commerce site that doesn’t lose sales due to poor performance?',
 			headline: 'The future of e-commerce is JAMstack',
-			body: 'JAMstack is THE modern way to build web applications offering unmatched performance, flexibility, functionality, and user experience. Join top ecommerce brands like Nike, Old Navy, Asus, and ditch the outdated tech. Work with us to find out if your business is a candidate for a modern JAMstack ecommerce experience. ',
-			qualifier: 'Ecommerce brands with outdated websites that are ready to take their sales to the next level.',
+			body: 'JAMstack is THE modern way to build web applications offering unmatched performance, flexibility, functionality, and user experience. Join top e-commerce brands like Nike, Old Navy, Asus, and ditch the outdated tech. Work with us to find out if your business is a candidate for a modern JAMstack e-commerce experience. ',
+			qualifier: 'E-commerce brands with outdated websites that are ready to take their sales to the next level.',
 			cta: 'Schedule Discovery Call'
 		}
 	];

@@ -104,7 +104,7 @@
 			imgSrc: '/shp-icon.svg',
 			sprite: '/shp-sprite.svg',
 			blurb:
-				'Shopify is a complete ecommerce solution geared toward small to enterprise tier businesses. Many businesses choose to build their websites using shopify themes and page builders that are not optimized for performance. Unfortunately, these businesses suffer lost sales as a result despite the real benefits of using shopify. ',
+				'Shopify is a complete e-commerce solution geared toward small to enterprise tier businesses. Many businesses choose to build their websites using shopify themes and page builders that are not optimized for performance. Unfortunately, these businesses suffer lost sales as a result despite the real benefits of using shopify. ',
 			linkText: 'Learn how you can use headless shopify to win back lost sales.',
 			downsides: [
 				{

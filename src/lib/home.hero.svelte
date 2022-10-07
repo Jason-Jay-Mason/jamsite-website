@@ -21,7 +21,7 @@
 <div bind:this={heroContainer} class="relative z-[0] h-[100vh] min-h-hero w-full bg-analogBlack-400 bg-subtleGameGrid xl:-mb-[65vh] xl:h-[150vh]">
 	<div class="relative mx-auto flex h-[100vh] min-h-hero max-w-3xl flex-col items-center justify-center px-2 text-center">
 		<h1 class="pb-9 text-4xl font-bold leading-normal text-white/90 sm:text-5xl sm:leading-normal md:text-7xl md:leading-snug ">
-			Your Website will<br />
+			Your website will<br />
 			<BoxHighlight classes="px-4 md:px-9"><TypeWriter data={messages}>ranks higher</TypeWriter></BoxHighlight>
 		</h1>
 		<h2 class="font-body text-base font-light leading-xl text-white/90 md:text-lg md:leading-xl">

@@ -35,7 +35,7 @@ type of bug with the global.css in applying leading styling.
 					class="relative top-auto w-full pb-12 text-4xl font-bold leading-tight
 					md:top-12 md:pr-9 md:text-5xl md:leading-tight"
 				>
-						How is a <br /> slow website <br /><span class="text-villainRed-200">costing </span>you?
+					How is a <br /> slow website <br /><span class="text-villainRed-200">costing </span>you?
 				</h3>
 				<div>
 					<Blurb iconSrc="/lost-sales.svg" headline="Lost Sales">
@@ -44,8 +44,8 @@ type of bug with the global.css in applying leading styling.
 							target="_blank"
 							href="https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/">A Google study</a
 						>
-						showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translates
-						to an estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
+						showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translated
+						to an estimated $140 billion in lost e-commerce sales due to poor site performance in 2021.
 						<span class="cursor-pointer text-villainRed-100 hover:text-villainRed-200" on:click={showModel}>See how much you're losing.</span>
 					</Blurb>
 				</div>
@@ -111,8 +111,8 @@ type of bug with the global.css in applying leading styling.
 								href="https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks/"
 								>A Google study</a
 							>
-							showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translates
-							to an estimated $140 billion in lost ecommerce sales due to poor site performance in 2021.
+							showed that 70% of mobile landing pages take longer than five seconds to load resulting in a loss of over 53% of site visitors. This translated
+							to an estimated $140 billion in lost e-commerce sales due to poor site performance in 2021.
 							<span class="cursor-pointer text-villainRed-100 hover:text-villainRed-200" on:click={showModel}>See how much you're losing.</span>
 						</Blurb>
 					</div>

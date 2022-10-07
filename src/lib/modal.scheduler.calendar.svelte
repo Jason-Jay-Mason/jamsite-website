@@ -36,9 +36,9 @@
 			</div>
 		{/each}
 	</div>
-	<div class="mb-12 h-32">
+	<div class="mb-96 h-32 md:mb-20" bind:this={submitDiv}>
 		{#if selectedTime}
-			<div transition:fade bind:this={submitDiv} id="next" class="mb-44 flex  w-full  flex-col items-center justify-center">
+			<div transition:fade id="next" class="flex  w-full  flex-col items-center justify-center">
 				<p class="pb-9 pt-6 text-center text-white">
 					{selectedTime.day}
 					{selectedTime.longMonth}

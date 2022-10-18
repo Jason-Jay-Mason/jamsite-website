@@ -10,7 +10,8 @@ const config = {
 	extensions: ['.svelte', '.svelte.md', '.md', '.svx', '.svelte'],
 	preprocess: [
 		preprocess({
-			postcss: true
+			postcss: true,
+			preserve:['partytown']
 		}),
 		mdsvex({
 			extensions: ['.svelte.md', '.md', '.svx', '.svelte'],

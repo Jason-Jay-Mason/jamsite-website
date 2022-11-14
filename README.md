@@ -1,6 +1,6 @@
 # JamSite website
 
-This is my site built with Sveltekit and Tailind CSS.
+This is the JamSite website built with Sveltekit and Tailind CSS.
 
 ## Getting this running on your system
 

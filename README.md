@@ -7,9 +7,6 @@ This is my site built with Sveltekit and Tailind CSS.
 Clone this repo then:
 
 ```bash
-# cd into the directory
-cd jasonmasondev
-
 # install dependencies
 npm install
 
